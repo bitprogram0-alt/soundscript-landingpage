@@ -4,14 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SoundScript – Professional TTS Studio by BitProgram</title>
+    <meta name="description" content="SoundScript is a desktop text-to-speech studio. Use cloud engines (ElevenLabs, Gemini) or run everything locally (Anhad, Nuqta) — no subscriptions, no telemetry, your data stays on your machine." />
 
-    <!-- Google Fonts (only one, fast loading) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
 
-    <!-- Font Awesome (for feature icons, not the app icon) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <style>
         /* ─── Reset & Base ─── */
@@ -142,7 +141,7 @@
         .hero p {
             font-size: 1.2rem;
             color: #475569;
-            max-width: 640px;
+            max-width: 660px;
             margin: 0 auto 28px;
         }
         .hero .cta-group {
@@ -376,15 +375,8 @@
         .cta-section p {
             font-size: 1.05rem;
             opacity: 0.85;
-            max-width: 540px;
+            max-width: 560px;
             margin: 0 auto 32px;
-        }
-        .cta-section .btn-primary {
-            background: #4A6CF7;
-            box-shadow: 0 8px 24px rgba(74, 108, 247, 0.4);
-        }
-        .cta-section .btn-primary:hover {
-            background: #3B5CDB;
         }
 
         /* ─── Footer ─── */
@@ -511,8 +503,8 @@
                 <a href="#features">Features</a>
                 <a href="#why">Why SoundScript</a>
                 <a href="#about">About</a>
-                <a href="#download" class="btn-primary">
-                    <i class="fas fa-download"></i> Explore
+                <a href="https://bitprogrammer.gumroad.com/l/soundscript" class="btn-primary">
+                    <i class="fas fa-shopping-cart"></i> Buy Now
                 </a>
             </nav>
         </div>
@@ -526,22 +518,23 @@
                 <span>Natural, Expressive Audio</span>
             </h1>
             <p>
-                SoundScript is a professional text‑to‑speech studio powered by ElevenLabs
-                and Gemini – built for creators, educators, and storytellers.
-                <strong>Pay only for what you generate.</strong>
+                SoundScript is a desktop text‑to‑speech studio with <strong>four AI engines</strong> —
+                use <strong>ElevenLabs</strong> and <strong>Gemini</strong> in the cloud, or run everything
+                <strong>fully offline</strong> with <strong>Anhad</strong> and <strong>Nuqta</strong>.
+                No subscriptions. No telemetry. Your data stays on your machine.
             </p>
             <div class="cta-group">
-                <a href="#download" class="btn-primary">
-                    <i class="fas fa-download"></i> Explore More
+                <a href="https://bitprogrammer.gumroad.com/l/soundscript" class="btn-primary">
+                    <i class="fas fa-shopping-cart"></i> Buy Now
                 </a>
                 <a href="#features" class="btn-secondary">
-                    <i class="fas fa-rocket"></i> Explore Features
+                    <i class="fas fa-rocket"></i> See Features
                 </a>
             </div>
             <div class="badge">
-                <span><i class="fas fa-check-circle"></i> 41+ Voices</span>
+                <span><i class="fas fa-check-circle"></i> 25+ Curated Voices</span>
+                <span><i class="fas fa-check-circle"></i> Works Offline</span>
                 <span><i class="fas fa-check-circle"></i> Batch Processing</span>
-                <span><i class="fas fa-check-circle"></i> Gemini AI Assistant</span>
                 <span><i class="fas fa-check-circle"></i> Smart Caching</span>
             </div>
             <div class="platform-badges">
@@ -560,18 +553,23 @@
             <div class="grid">
                 <div class="card">
                     <i class="fas fa-microphone-alt"></i>
-                    <h3>41+ High‑Quality Voices</h3>
-                    <p>Choose from a diverse range of voices across multiple languages and accents.</p>
+                    <h3>25+ Curated Voices</h3>
+                    <p>Hand‑picked voices from ElevenLabs and Anhad, covering multiple languages and accents.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-sliders-h"></i>
-                    <h3>Emotion & Pacing Control</h3>
+                    <h3>Emotion &amp; Pacing Control</h3>
                     <p>Fine‑tune stability, similarity, speed, and tone to match your creative vision.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-wifi"></i>
+                    <h3>Runs Fully Offline</h3>
+                    <p>Download the Anhad and Nuqta models once and generate speech and scripts with no internet connection.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-layer-group"></i>
                     <h3>Batch Processing</h3>
-                    <p>Generate audio for multiple text files at once – perfect for large projects.</p>
+                    <p>Generate audio for multiple text files at once — perfect for large projects.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-database"></i>
@@ -580,13 +578,8 @@
                 </div>
                 <div class="card">
                     <i class="fas fa-robot"></i>
-                    <h3>Gemini Script Copilot</h3>
-                    <p>Get AI‑powered script assistance, tone suggestions, and multilingual support.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-folder-open"></i>
-                    <h3>Custom Output Folder</h3>
-                    <p>Organise your audio files your way – with automatic naming and folder management.</p>
+                    <h3>AI Script Copilot</h3>
+                    <p>Write, rewrite, and brainstorm scripts with Gemini (cloud) or Nuqta (offline).</p>
                 </div>
             </div>
         </div>
@@ -596,33 +589,33 @@
     <section class="why" id="why">
         <div class="container">
             <h2>Why Choose SoundScript?</h2>
-            <p class="subtitle">Professional TTS that puts you in control – of your budget, your data, and your workflow.</p>
+            <p class="subtitle">Professional TTS that puts you in control — of your budget, your data, and your workflow.</p>
             <div class="why-grid">
                 <div class="why-card">
                     <i class="fas fa-coins"></i>
-                    <h3>Pay‑As‑You‑Go – No Subscriptions</h3>
+                    <h3>No Subscriptions, Ever</h3>
                     <p>
-                        No monthly fees, no hidden costs. SoundScript uses your own ElevenLabs API key –
-                        you pay <strong>only for the minutes of audio you generate</strong>. Perfect for
-                        individuals and small teams who want professional results without recurring bills.
+                        SoundScript is a <strong>one‑time purchase</strong>. Use your own ElevenLabs and Gemini
+                        API keys for cloud generation, or run the built‑in local engines for free.
+                        No monthly fees, no hidden costs, no lock‑in.
                     </p>
                 </div>
                 <div class="why-card">
                     <i class="fas fa-shield-alt"></i>
                     <h3>Your Data Stays on Your Machine</h3>
                     <p>
-                        <strong>Zero cloud storage.</strong> All your scripts, voice settings, and audio files
-                        remain <strong>100% local</strong>. SoundScript does not upload, store, or share
-                        your content – only your direct API calls to ElevenLabs. Your privacy is non‑negotiable.
+                        <strong>Zero cloud storage. Zero telemetry.</strong> All your scripts, voice settings,
+                        and audio files remain <strong>100% local</strong>. SoundScript does not upload, store,
+                        or share your content.
                     </p>
                 </div>
                 <div class="why-card">
                     <i class="fas fa-laptop-code"></i>
                     <h3>Native on Windows &amp; Linux</h3>
                     <p>
-                        Built as a true desktop application – <strong>no browser, no cloud dependency</strong>.
+                        Built as a true desktop application — <strong>no browser, no cloud dependency</strong>.
                         Available for <strong>Windows 10/11</strong> and <strong>Linux</strong> (Ubuntu, Fedora,
-                        and most modern distros). macOS support is on the roadmap.
+                        Kali, and most modern distros). macOS support is on the roadmap.
                     </p>
                 </div>
             </div>
@@ -640,11 +633,11 @@
                     marketing, audiobooks, and more.
                 </p>
                 <ul>
-                    <li><i class="fas fa-check-circle"></i> No subscription – pay‑as‑you‑go with ElevenLabs</li>
-                    <li><i class="fas fa-check-circle"></i> Offline caching for lightning‑fast regeneration</li>
-                    <li><i class="fas fa-check-circle"></i> Built‑in Gemini integration for script refinement</li>
+                    <li><i class="fas fa-check-circle"></i> One‑time purchase — no subscription</li>
+                    <li><i class="fas fa-check-circle"></i> Cloud (ElevenLabs, Gemini) and local (Anhad, Nuqta) engines</li>
+                    <li><i class="fas fa-check-circle"></i> Works offline with downloaded models</li>
                     <li><i class="fas fa-check-circle"></i> Windows &amp; Linux native apps</li>
-                    <li><i class="fas fa-check-circle"></i> Completely private – your data stays on your machine</li>
+                    <li><i class="fas fa-check-circle"></i> Completely private — your data stays on your machine</li>
                 </ul>
             </div>
             <div class="about-image">
@@ -662,17 +655,17 @@
         <div class="container">
             <h2>Ready to Bring Your Scripts to Life?</h2>
             <p>
-                Download SoundScript now and start creating professional voice‑overs.
-                <strong>Pay only for what you generate</strong> – no subscriptions, no surprises.
+                Get SoundScript today and start creating professional voice‑overs.
+                <strong>One purchase, lifetime access</strong> — no subscriptions, no surprises.
             </p>
             <a href="https://bitprogrammer.gumroad.com/l/soundscript" class="btn-primary">
-                <i class="fas fa-download"></i> Explore More
+                <i class="fas fa-shopping-cart"></i> Buy on Gumroad
             </a>
             <p style="margin-top:20px; font-size:0.85rem; opacity:0.6;">
                 Windows 10/11 • Linux (Ubuntu / Fedora / Kali)
             </p>
             <p style="margin-top:4px; font-size:0.75rem; opacity:0.4;">
-                v1.0.0 • Requires ElevenLabs API key
+                v1.0.0 • Bring your own API keys for cloud engines. Local engines run free.
             </p>
         </div>
     </section>
@@ -691,13 +684,17 @@
                 <a href="#features">Features</a>
                 <a href="#why">Why SoundScript</a>
                 <a href="#about">About</a>
-                <a href="#download">Download</a>
-                <a href="https://soundscript.app" target="_blank">Website</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="https://bitprogrammer.gumroad.com/l/soundscript" target="_blank" rel="noopener">Buy on Gumroad</a>
             </div>
             <div class="copyright">
                 SoundScript is a proprietary product of BitProgram. All trademarks are the property of their respective owners.
                 <br />
-                <span style="font-size:0.7rem;">ElevenLabs and Gemini are registered trademarks of their respective companies.</span>
+                <span style="font-size:0.7rem;">
+                    ElevenLabs and Gemini are trademarks of their respective companies.
+                    Anhad and Nuqta are locally‑run engines included with SoundScript.
+                </span>
             </div>
         </div>
     </footer>
