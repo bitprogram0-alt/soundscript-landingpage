@@ -32,7 +32,7 @@ Cloud engines deliver top-tier voice quality. Local engines work without interne
 
 ## Features
 
-- 🎙️ **24 built-in voices** across ElevenLabs and Anhad
+- 🎙️ **29 curated voices** — 14 from ElevenLabs, 15 from Anhad, with American and British English accents
 - 🤖 **AI script assistant** powered by Gemini (cloud) or Nuqta (offline)
 - 🔌 **Works fully offline** with downloaded models
 - 💾 **Smart caching** — never pay to regenerate the same audio twice
@@ -40,7 +40,7 @@ Cloud engines deliver top-tier voice quality. Local engines work without interne
 - 🎚️ **Tone tuning** — stability, similarity, and speed controls
 - 🎭 **v3 emotion tags** — expressive delivery for supported models
 - 🛡️ **Local-first privacy** — no telemetry, no cloud storage, no tracking
-- 🚫 **No subscription** — one-time purchase, lifetime access
+- 🚫 **One-time purchase** — no subscription, lifetime access
 
 ---
 
@@ -76,7 +76,9 @@ When you launch SoundScript for the first time, an activation dialog appears.
 3. Paste it into the activation dialog and click **Activate Product**.
 4. SoundScript will verify your key with Gumroad and unlock.
 
-**One license activates up to 3 devices.** You can deactivate old devices by contacting support if you've reached the limit.
+**One license activates up to 3 devices.** Activation requires internet on first run only — after that, SoundScript verifies your license locally and works fully offline.
+
+If you've reached the 3-device limit and need to transfer a license, contact support.
 
 ### 2. Choose Your Engines (Optional)
 
@@ -162,7 +164,11 @@ Cache size can be limited in **Settings → Cache**. Clearing the cache is one c
 - **[Privacy Policy](https://bitprogram0-alt.github.io/soundscript-landingpage/privacy.html)** — Full details on what data SoundScript does and doesn't collect.
 - **[Terms of Service](https://bitprogram0-alt.github.io/soundscript-landingpage/terms.html)** — License terms, refund policy, and acceptable use.
 
-**Summary:** SoundScript is local-first. We operate no servers that store your data. The only things that leave your device are (1) text you explicitly submit to cloud AI services, (2) your license key and a hashed machine identifier sent to Gumroad for verification, and (3) model downloads when you install a local engine.
+**Summary:** SoundScript is local-first. We operate no servers that store your data. The only things that leave your device are:
+
+1. Text you explicitly submit to cloud AI services (ElevenLabs, Google Gemini).
+2. Your license key and a cryptographically hashed machine identifier sent to Gumroad — **during initial activation only**.
+3. Model files downloaded from public repositories when you install a local engine.
 
 ---
 
@@ -186,6 +192,9 @@ Local generation speed depends on your CPU. Nuqta-4B and Anhad are noticeably sl
 **License activation limit reached**
 Your license covers 3 devices. Contact support to reset activations if you've replaced hardware.
 
+**Speech sounds robotic with certain Anhad voices**
+Anhad currently ships with English-only voices (US and UK). Non-English voices are on the roadmap. For other languages, use the ElevenLabs cloud engine.
+
 ---
 
 ## Support
@@ -206,6 +215,7 @@ When reporting a bug, please include:
 
 ### v1.0.0 — Initial Release
 - Four AI engines: ElevenLabs, Anhad, Gemini, Nuqta
+- **29 curated voices** across ElevenLabs and Anhad (US & UK English)
 - Studio, Assistant, Library, Settings, and About tabs
 - Smart audio caching with configurable limits
 - Batch generation from `.txt` files
@@ -227,7 +237,7 @@ SoundScript is built on the shoulders of excellent open-source projects:
 - **onnxruntime** — MIT
 - **lameenc** — LGPL v3
 
-Full third-party licenses are available in-app under **About → View Third-Party Licenses**.
+Full third-party licenses are available in-app under **About → Third-Party Licenses**.
 
 ---
 
