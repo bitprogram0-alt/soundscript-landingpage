@@ -1,284 +1,964 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - SoundScript</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Service — SoundScript</title>
+    <meta name="description" content="SoundScript Terms of Service. Legal terms governing the use of SoundScript by BitProgram." />
+    <meta name="theme-color" content="#4A6CF7" />
+    <link rel="canonical" href="https://bitprogram0-alt.github.io/soundscript-landingpage/terms.html" />
+    <link rel="icon" type="image/png" href="assets/app_icon.png" />
+    <link rel="apple-touch-icon" href="assets/app_icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
     <style>
+        /* ═══════════════════════════════════════════════════════════
+           DESIGN TOKENS
+           ═══════════════════════════════════════════════════════════ */
+        :root {
+            --brand:        #4A6CF7;
+            --brand-dark:   #3B5CDB;
+            --brand-soft:   #eef2ff;
+            --ink:          #0f172a;
+            --ink-2:        #1e293b;
+            --ink-3:        #334155;
+            --muted:        #64748b;
+            --muted-2:      #94a3b8;
+            --line:         #e2e8f0;
+            --line-2:       #cbd5e1;
+            --bg:           #ffffff;
+            --bg-soft:      #f8fafc;
+            --bg-alt:       #f1f5f9;
+            --warn-bg:      #fef3c7;
+            --warn-border:  #f59e0b;
+            --warn-text:    #78350f;
+
+            --radius:     12px;
+            --radius-sm:  8px;
+            --max-w:      1160px;
+            --toc-w:      260px;
+
+            --shadow-sm:  0 1px 3px rgba(15, 23, 42, 0.06);
+            --shadow:     0 4px 16px rgba(15, 23, 42, 0.06);
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           RESET
+           ═══════════════════════════════════════════════════════════ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+            -webkit-text-size-adjust: 100%;
+        }
+
         body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            line-height: 1.6;
-            color: #000;
-            background-color: #fff;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        h1 {
-            font-size: 28px;
-            text-align: center;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
-        h2 {
-            font-size: 18px;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-        h3 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             font-size: 16px;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-weight: bold;
+            line-height: 1.7;
+            color: var(--ink-2);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        p {
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-        ul {
-            margin-bottom: 15px;
-            padding-left: 30px;
-        }
-        li {
-            margin-bottom: 8px;
-            text-align: justify;
-        }
-        .date {
-            text-align: center;
-            margin-bottom: 30px;
-            font-style: italic;
-        }
-        .all-caps {
-            text-transform: uppercase;
-        }
-        .indent {
-            padding-left: 20px;
-        }
+
         a {
-            color: #3030F1;
+            color: var(--brand);
+            text-decoration: none;
+            transition: color 0.15s ease;
+        }
+        a:hover { color: var(--brand-dark); text-decoration: underline; }
+
+        /* ═══════════════════════════════════════════════════════════
+           HEADER
+           ═══════════════════════════════════════════════════════════ */
+        header.site {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 14px 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: saturate(180%) blur(14px);
+            -webkit-backdrop-filter: saturate(180%) blur(14px);
+            border-bottom: 1px solid var(--line);
+        }
+
+        header.site .container {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--ink);
+            letter-spacing: -0.02em;
             text-decoration: none;
         }
-        a:hover {
-            text-decoration: underline;
+        .brand:hover { text-decoration: none; }
+
+        /* ─── Brand mark: now an image container ─── */
+        .brand-mark {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(74, 108, 247, 0.3);
+            flex-shrink: 0;
         }
-        .contact-info {
-            margin-top: 20px;
-            padding-left: 20px;
+
+        .brand-mark img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .brand span { color: var(--brand); }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-link {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--ink-3);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+        }
+        .header-link:hover { color: var(--brand); text-decoration: none; }
+
+        /* ═══════════════════════════════════════════════════════════
+           PAGE HERO
+           ═══════════════════════════════════════════════════════════ */
+        .page-hero {
+            padding: 56px 0 40px;
+            background:
+                radial-gradient(600px 300px at 20% 0%, rgba(74, 108, 247, 0.08), transparent 60%),
+                var(--bg-soft);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .page-hero .container {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .breadcrumb {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.82rem;
+            color: var(--muted);
+            margin-bottom: 16px;
+            text-decoration: none;
+        }
+
+        .breadcrumb:hover { color: var(--brand); text-decoration: none; }
+
+        .breadcrumb i { font-size: 0.7rem; }
+
+        .page-hero h1 {
+            font-size: clamp(2rem, 3.4vw, 2.8rem);
+            font-weight: 800;
+            color: var(--ink);
+            letter-spacing: -0.025em;
+            margin-bottom: 12px;
+            line-height: 1.1;
+        }
+
+        .page-hero .updated {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .page-hero .updated i { color: var(--brand); }
+
+        /* ═══════════════════════════════════════════════════════════
+           LAYOUT: SIDEBAR + CONTENT
+           ═══════════════════════════════════════════════════════════ */
+        .layout {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+            display: grid;
+            grid-template-columns: var(--toc-w) 1fr;
+            gap: 56px;
+            align-items: start;
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           SIDEBAR TOC
+           ═══════════════════════════════════════════════════════════ */
+        .toc {
+            position: sticky;
+            top: 90px;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+            padding-right: 12px;
+        }
+
+        .toc::-webkit-scrollbar { width: 4px; }
+        .toc::-webkit-scrollbar-thumb {
+            background: var(--line-2);
+            border-radius: 2px;
+        }
+
+        .toc-title {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .toc-list a {
+            display: block;
+            padding: 7px 12px;
+            border-radius: var(--radius-sm);
+            font-size: 0.84rem;
+            color: var(--ink-3);
+            font-weight: 500;
+            line-height: 1.35;
+            border-left: 2px solid transparent;
+            transition: all 0.15s ease;
+            text-decoration: none;
+        }
+
+        .toc-list a:hover {
+            background: var(--brand-soft);
+            color: var(--brand);
+            text-decoration: none;
+        }
+
+        .toc-list a.active {
+            background: var(--brand-soft);
+            color: var(--brand);
+            border-left-color: var(--brand);
+            font-weight: 600;
+        }
+
+        .toc-num {
+            color: var(--muted-2);
+            font-weight: 600;
+            margin-right: 6px;
+            font-size: 0.75rem;
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           CONTENT
+           ═══════════════════════════════════════════════════════════ */
+        .content {
+            max-width: 760px;
+            min-width: 0;
+        }
+
+        .intro {
+            padding: 22px 24px;
+            background: var(--bg-soft);
+            border-left: 3px solid var(--brand);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin-bottom: 40px;
+            font-size: 0.96rem;
+            color: var(--ink-3);
+        }
+
+        .intro p + p { margin-top: 12px; }
+
+        .content h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--ink);
+            letter-spacing: -0.015em;
+            margin-top: 52px;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--line);
+            scroll-margin-top: 90px;
+        }
+
+        .content h2:first-of-type { margin-top: 0; }
+
+        .content h2 .num {
+            display: inline-block;
+            color: var(--brand);
+            margin-right: 8px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .content h3 {
+            font-size: 1.02rem;
+            font-weight: 600;
+            color: var(--ink);
+            margin-top: 28px;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            margin-bottom: 16px;
+            color: var(--ink-3);
+        }
+
+        .content strong {
+            color: var(--ink);
+            font-weight: 600;
+        }
+
+        .content ul, .content ol {
+            margin-bottom: 20px;
+            padding-left: 22px;
+        }
+
+        .content li {
+            margin-bottom: 10px;
+            color: var(--ink-3);
+            padding-left: 4px;
+        }
+
+        .content li::marker {
+            color: var(--brand);
+            font-weight: 600;
+        }
+
+        .content ul li::marker { content: "▸  "; }
+
+        /* ─── Callout blocks ─── */
+        .callout {
+            padding: 18px 22px;
+            border-radius: var(--radius-sm);
+            margin: 20px 0;
+            font-size: 0.94rem;
+        }
+
+        .callout.warn {
+            background: var(--warn-bg);
+            border-left: 3px solid var(--warn-border);
+            color: var(--warn-text);
+        }
+
+        .callout.warn strong { color: #451a03; }
+
+        .caps-block {
+            padding: 22px 24px;
+            background: var(--bg-soft);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-sm);
+            font-size: 0.88rem;
+            line-height: 1.7;
+            color: var(--ink-3);
+            letter-spacing: 0.005em;
+            margin: 16px 0 24px;
+        }
+
+        /* ─── Contact block ─── */
+        .contact-card {
+            padding: 24px;
+            background: var(--bg-soft);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-card .label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .contact-card .value {
+            font-size: 0.96rem;
+            color: var(--ink);
+            font-weight: 500;
+        }
+
+        .contact-card a {
+            color: var(--brand);
+            font-weight: 600;
+        }
+
+        /* ─── Footer note ─── */
+        .credit-note {
+            margin-top: 56px;
+            padding-top: 24px;
+            border-top: 1px solid var(--line);
+            font-size: 0.82rem;
+            color: var(--muted);
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .credit-note a {
+            color: var(--muted);
+            text-decoration: underline;
+            text-decoration-color: var(--line-2);
+        }
+        .credit-note a:hover { color: var(--brand); }
+
+        /* ═══════════════════════════════════════════════════════════
+           FOOTER
+           ═══════════════════════════════════════════════════════════ */
+        footer.site {
+            background: #0a0f24;
+            color: var(--muted-2);
+            padding: 40px 0 24px;
+            font-size: 0.86rem;
+        }
+
+        footer.site .container {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            padding-bottom: 24px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-links a {
+            color: var(--muted-2);
+            font-weight: 500;
+            text-decoration: none;
+        }
+        .footer-links a:hover { color: #fff; text-decoration: none; }
+
+        .footer-copy {
+            text-align: center;
+            font-size: 0.78rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           BACK TO TOP
+           ═══════════════════════════════════════════════════════════ */
+        .back-top {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--brand);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            box-shadow: 0 8px 20px rgba(74, 108, 247, 0.35);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.25s ease;
+            border: none;
+            z-index: 90;
+        }
+
+        .back-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-top:hover { background: var(--brand-dark); }
+
+        /* ═══════════════════════════════════════════════════════════
+           RESPONSIVE
+           ═══════════════════════════════════════════════════════════ */
+        @media (max-width: 960px) {
+            .layout {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 32px 24px 64px;
+            }
+
+            .toc {
+                position: static;
+                max-height: none;
+                padding: 20px;
+                background: var(--bg-soft);
+                border: 1px solid var(--line);
+                border-radius: var(--radius);
+            }
+
+            .toc-list {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 6px;
+            }
+
+            .toc-list a {
+                padding: 6px 12px;
+                background: #fff;
+                border: 1px solid var(--line);
+                border-left: 1px solid var(--line);
+                font-size: 0.8rem;
+                border-radius: 999px;
+            }
+
+            .toc-list a.active {
+                border-left-color: var(--line);
+            }
+
+            .toc-num { display: none; }
+        }
+
+        @media (max-width: 640px) {
+            .page-hero { padding: 40px 0 28px; }
+            .content h2 { font-size: 1.15rem; margin-top: 40px; }
+            .content h3 { font-size: 0.98rem; }
+            .content p, .content li { font-size: 0.94rem; }
+            .back-top { bottom: 20px; right: 20px; }
+            .header-link .label { display: none; }
+            .footer-links { gap: 16px; }
+        }
+
+        /* Reduce motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            * { transition-duration: 0.01ms !important; }
+        }
+
+        /* Print */
+        @media print {
+            header.site, .toc, .back-top, footer.site { display: none; }
+            .layout { grid-template-columns: 1fr; padding: 0; }
+            .content { max-width: 100%; }
+            .content h2 { page-break-after: avoid; }
+            body { font-size: 11pt; }
         }
     </style>
 </head>
 <body>
 
-    <h1>Terms of Service</h1>
-    <div class="date">Last updated: September 20, 2026</div>
+    <!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
+    <header class="site">
+        <div class="container">
+            <a href="index.html" class="brand">
+                <span class="brand-mark"><img src="assets/app_icon.png" alt="SoundScript" /></span>
+                Sound<span>Script</span>
+            </a>
+            <div class="header-actions">
+                <a href="privacy.html" class="header-link">
+                    <i class="fas fa-shield-alt"></i>
+                    <span class="label">Privacy Policy</span>
+                </a>
+                <a href="index.html" class="header-link">
+                    <i class="fas fa-arrow-left"></i>
+                    <span class="label">Back to site</span>
+                </a>
+            </div>
+        </div>
+    </header>
 
-    <h2>Agreement to Our Legal Terms</h2>
-    <p>We are <strong>BitProgram</strong> ("Company," "we," "us," "our").</p>
-    <p>We operate the desktop application <strong>SoundScript</strong>, as well as any other related products and services that refer or link to these legal terms (the "Legal Terms") (collectively, the "Services").</p>
-    <p>You can contact us by email at <a href="mailto:bitprogram0@gmail.com">bitprogram0@gmail.com</a> or by mail at BitProgram, Pakistan.</p>
-    <p>These Legal Terms constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you"), and BitProgram, concerning your access to and use of the Services. You agree that by accessing the Services, you have read, understood, and agreed to be bound by all of these Legal Terms. IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL TERMS, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU MUST DISCONTINUE USE IMMEDIATELY.</p>
-    <p>Supplemental terms and conditions or documents that may be posted on the Services from time to time are hereby expressly incorporated herein by reference. We reserve the right, in our sole discretion, to make changes or modifications to these Legal Terms at any time and for any reason. We will alert you about any changes by updating the "Last updated" date of these Legal Terms, and you waive any right to receive specific notice of each such change. It is your responsibility to periodically review these Legal Terms to stay informed of updates. You will be subject to, and will be deemed to have been made aware of and to have accepted, the changes in any revised Legal Terms by your continued use of the Services after the date such revised Legal Terms are posted.</p>
-    <p>We recommend that you print a copy of these Legal Terms for your records.</p>
+    <!-- ═══════════════════════════ PAGE HERO ═══════════════════════════ -->
+    <section class="page-hero">
+        <div class="container">
+            <a href="index.html" class="breadcrumb">
+                <i class="fas fa-home"></i>
+                Home
+                <i class="fas fa-chevron-right"></i>
+                Legal
+            </a>
+            <h1>Terms of Service</h1>
+            <div class="updated">
+                <i class="fas fa-calendar-alt"></i>
+                Last updated: September 20, 2026
+            </div>
+        </div>
+    </section>
 
-    <h2>Table of Contents</h2>
-    <ol>
-        <li>OUR SERVICES</li>
-        <li>INTELLECTUAL PROPERTY RIGHTS</li>
-        <li>USER REPRESENTATIONS</li>
-        <li>PROHIBITED ACTIVITIES</li>
-        <li>USER GENERATED CONTRIBUTIONS</li>
-        <li>CONTRIBUTION LICENSE</li>
-        <li>SERVICES MANAGEMENT</li>
-        <li>TERM AND TERMINATION</li>
-        <li>MODIFICATIONS AND INTERRUPTIONS</li>
-        <li>GOVERNING LAW</li>
-        <li>DISPUTE RESOLUTION</li>
-        <li>CORRECTIONS</li>
-        <li>DISCLAIMER</li>
-        <li>LIMITATIONS OF LIABILITY</li>
-        <li>INDEMNIFICATION</li>
-        <li>USER DATA</li>
-        <li>ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES</li>
-        <li>MISCELLANEOUS</li>
-        <li>CONTACT US</li>
-        <li>LICENSE SCOPE AND THIRD-PARTY DEPENDENCIES</li>
-    </ol>
+    <!-- ═══════════════════════════ MAIN LAYOUT ═══════════════════════════ -->
+    <div class="layout">
 
-    <h2>1. OUR SERVICES</h2>
-    <p>The information provided when using the Services is not intended for distribution to or use by any person or entity in any jurisdiction or country where such distribution or use would be contrary to law or regulation or which would subject us to any registration requirement within such jurisdiction or country. Accordingly, those persons who choose to access the Services from other locations do so on their own initiative and are solely responsible for compliance with local laws, if and to the extent local laws are applicable.</p>
+        <!-- ─── SIDEBAR TOC ─── -->
+        <aside class="toc">
+            <div class="toc-title">Contents</div>
+            <ul class="toc-list">
+                <li><a href="#sec-1"><span class="toc-num">01</span>Our Services</a></li>
+                <li><a href="#sec-2"><span class="toc-num">02</span>Intellectual Property</a></li>
+                <li><a href="#sec-3"><span class="toc-num">03</span>User Representations</a></li>
+                <li><a href="#sec-4"><span class="toc-num">04</span>Prohibited Activities</a></li>
+                <li><a href="#sec-5"><span class="toc-num">05</span>User Contributions</a></li>
+                <li><a href="#sec-6"><span class="toc-num">06</span>Contribution License</a></li>
+                <li><a href="#sec-7"><span class="toc-num">07</span>Services Management</a></li>
+                <li><a href="#sec-8"><span class="toc-num">08</span>Term and Termination</a></li>
+                <li><a href="#sec-9"><span class="toc-num">09</span>Modifications</a></li>
+                <li><a href="#sec-10"><span class="toc-num">10</span>Governing Law</a></li>
+                <li><a href="#sec-11"><span class="toc-num">11</span>Dispute Resolution</a></li>
+                <li><a href="#sec-12"><span class="toc-num">12</span>Corrections</a></li>
+                <li><a href="#sec-13"><span class="toc-num">13</span>Disclaimer</a></li>
+                <li><a href="#sec-14"><span class="toc-num">14</span>Limitations of Liability</a></li>
+                <li><a href="#sec-15"><span class="toc-num">15</span>Indemnification</a></li>
+                <li><a href="#sec-16"><span class="toc-num">16</span>User Data</a></li>
+                <li><a href="#sec-17"><span class="toc-num">17</span>Electronic Communications</a></li>
+                <li><a href="#sec-18"><span class="toc-num">18</span>Miscellaneous</a></li>
+                <li><a href="#sec-19"><span class="toc-num">19</span>Contact Us</a></li>
+                <li><a href="#sec-20"><span class="toc-num">20</span>License Scope</a></li>
+            </ul>
+        </aside>
 
-    <h2>2. INTELLECTUAL PROPERTY RIGHTS</h2>
-    <h3>Our intellectual property</h3>
-    <p>We are the owner or the licensee of all intellectual property rights in our Services, including all source code, databases, functionality, software, website designs, audio, video, text, photographs, and graphics in the Services (collectively, the "Content"), as well as the trademarks, service marks, and logos contained therein (the "Marks").</p>
-    <p>Our Content and Marks are protected by copyright and trademark laws (and various other intellectual property rights and unfair competition laws) and treaties around the world.</p>
-    <p>The Content and Marks are provided in or through the Services "AS IS" for your personal, non-commercial use or internal business purpose only.</p>
+        <!-- ─── CONTENT ─── -->
+        <main class="content">
 
-    <h3>Your use of our Services</h3>
-    <p>Subject to your compliance with these Legal Terms, including the "PROHIBITED ACTIVITIES" section below, we grant you a non-exclusive, non-transferable, revocable license to:</p>
-    <ul>
-        <li>access the Services; and</li>
-        <li>download or print a copy of any portion of the Content to which you have properly gained access,</li>
-    </ul>
-    <p>solely for your personal, non-commercial use or internal business purpose.</p>
-    <p>Except as set out in this section or elsewhere in our Legal Terms, no part of the Services and no Content or Marks may be copied, reproduced, aggregated, republished, uploaded, posted, publicly displayed, encoded, translated, transmitted, distributed, sold, licensed, or otherwise exploited for any commercial purpose whatsoever, without our express prior written permission.</p>
-    <p>If you wish to make any use of the Services, Content, or Marks other than as set out in this section or elsewhere in our Legal Terms, please address your request to: <a href="mailto:bitprogram0@gmail.com">bitprogram0@gmail.com</a>. If we ever grant you the permission to post, reproduce, or publicly display any part of our Services or Content, you must identify us as the owners or licensors of the Services, Content, or Marks and ensure that any copyright or proprietary notice appears or is visible on posting, reproducing, or displaying our Content.</p>
-    <p>We reserve all rights not expressly granted to you in and to the Services, Content, and Marks.</p>
-    <p>Any breach of these Intellectual Property Rights will constitute a material breach of our Legal Terms and your right to use our Services will terminate immediately.</p>
+            <!-- Intro -->
+            <div class="intro">
+                <p>We are <strong>BitProgram</strong> ("Company," "we," "us," "our").</p>
+                <p>We operate the desktop application <strong>SoundScript</strong>, as well as any other related products and services that refer or link to these legal terms (the "Legal Terms") (collectively, the "Services").</p>
+                <p>You can contact us by email at <a href="mailto:bitprogram0@gmail.com">bitprogram0@gmail.com</a> or by mail at BitProgram, Pakistan.</p>
+            </div>
 
-    <h3>Your submissions</h3>
-    <p>Please review this section and the "PROHIBITED ACTIVITIES" section carefully prior to using our Services to understand the (a) rights you give us and (b) obligations you have when you post or upload any content through the Services.</p>
-    <p><strong>Submissions:</strong> By directly sending us any question, comment, suggestion, idea, feedback, or other information about the Services ("Submissions"), you agree to assign to us all intellectual property rights in such Submission. You agree that we shall own this Submission and be entitled to its unrestricted use and dissemination for any lawful purpose, commercial or otherwise, without acknowledgment or compensation to you.</p>
-    <p><strong>You are responsible for what you post or upload:</strong> By sending us Submissions through any part of the Services you:</p>
-    <ul>
-        <li>confirm that you have read and agree with our "PROHIBITED ACTIVITIES" and will not post, send, publish, upload, or transmit through the Services any Submission that is illegal, harassing, hateful, harmful, defamatory, obscene, bullying, abusive, discriminatory, threatening to any person or group, sexually explicit, false, inaccurate, deceitful, or misleading;</li>
-        <li>to the extent permissible by applicable law, waive any and all moral rights to any such Submission;</li>
-        <li>warrant that any such Submission are original to you or that you have the necessary rights and licenses to submit such Submissions and that you have full authority to grant us the above-mentioned rights in relation to your Submissions; and</li>
-        <li>warrant and represent that your Submissions do not constitute confidential information.</li>
-    </ul>
-    <p>You are solely responsible for your Submissions and you expressly agree to reimburse us for any and all losses that we may suffer because of your breach of (a) this section, (b) any third party’s intellectual property rights, or (c) applicable law.</p>
+            <p>These Legal Terms constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you"), and BitProgram, concerning your access to and use of the Services. You agree that by accessing the Services, you have read, understood, and agreed to be bound by all of these Legal Terms.</p>
 
-    <h2>3. USER REPRESENTATIONS</h2>
-    <p>By using the Services, you represent and warrant that: (1) you have the legal capacity and you agree to comply with these Legal Terms; (2) you are not a minor in the jurisdiction in which you reside; (3) you will not access the Services through automated or non-human means, whether through a bot, script or otherwise; (4) you will not use the Services for any illegal or unauthorized purpose; and (5) your use of the Services will not violate any applicable law or regulation.</p>
-    <p>If you provide any information that is untrue, inaccurate, not current, or incomplete, we have the right to suspend or terminate your account and refuse any and all current or future use of the Services (or any portion thereof).</p>
+            <div class="callout warn">
+                <strong>Important:</strong> If you do not agree with all of these Legal Terms, then you are expressly prohibited from using the Services and you must discontinue use immediately.
+            </div>
 
-    <h2>4. PROHIBITED ACTIVITIES</h2>
-    <p>You may not access or use the Services for any purpose other than that for which we make the Services available. The Services may not be used in connection with any commercial endeavors except those that are specifically endorsed or approved by us.</p>
-    <p>As a user of the Services, you agree not to:</p>
-    <ul>
-        <li>Systematically retrieve data or other content from the Services to create or compile, directly or indirectly, a collection, compilation, database, or directory without written permission from us.</li>
-        <li>Trick, defraud, or mislead us and other users, especially in any attempt to learn sensitive account information such as user passwords.</li>
-        <li>Circumvent, disable, or otherwise interfere with security-related features of the Services, including features that prevent or restrict the use or copying of any Content or enforce limitations on the use of the Services and/or the Content contained therein.</li>
-        <li>Disparage, tarnish, or otherwise harm, in our opinion, us and/or the Services.</li>
-        <li>Use any information obtained from the Services in order to harass, abuse, or harm another person.</li>
-        <li>Make improper use of our support services or submit false reports of abuse or misconduct.</li>
-        <li>Use the Services in a manner inconsistent with any applicable laws or regulations.</li>
-        <li>Engage in unauthorized framing of or linking to the Services.</li>
-        <li>Upload or transmit (or attempt to upload or to transmit) viruses, Trojan horses, or other material, including excessive use of capital letters and spamming (continuous posting of repetitive text), that interferes with any party’s uninterrupted use and enjoyment of the Services or modifies, impairs, disrupts, alters, or interferes with the use, features, functions, operation, or maintenance of the Services.</li>
-        <li>Engage in any automated use of the system, such as using scripts to send comments or messages, or using any data mining, robots, or similar data gathering and extraction tools.</li>
-        <li>Delete the copyright or other proprietary rights notice from any Content.</li>
-        <li>Attempt to impersonate another user or person or use the username of another user.</li>
-        <li>Upload or transmit (or attempt to upload or to transmit) any material that acts as a passive or active information collection or transmission mechanism, including without limitation, clear graphics interchange formats ("gifs"), 1×1 pixels, web bugs, cookies, or other similar devices (sometimes referred to as "spyware" or "passive collection mechanisms" or "pcms").</li>
-        <li>Interfere with, disrupt, or create an undue burden on the Services or the networks or services connected to the Services.</li>
-        <li>Harass, annoy, intimidate, or threaten any of our employees or agents engaged in providing any portion of the Services to you.</li>
-        <li>Attempt to bypass any measures of the Services designed to prevent or restrict access to the Services, or any portion of the Services.</li>
-        <li>Copy or adapt the Services' software, including but not limited to Flash, PHP, HTML, JavaScript, or other code.</li>
-        <li>Except as permitted by applicable law, decipher, decompile, disassemble, or reverse engineer any of the software comprising or in any way making up a part of the Services.</li>
-        <li>Except as may be the result of standard search engine or Internet browser usage, use, launch, develop, or distribute any automated system, including without limitation, any spider, robot, cheat utility, scraper, or offline reader that accesses the Services, or use or launch any unauthorized script or other software.</li>
-        <li>Use a buying agent or purchasing agent to make purchases on the Services.</li>
-        <li>Make any unauthorized use of the Services, including collecting usernames and/or email addresses of users by electronic or other means for the purpose of sending unsolicited email, or creating user accounts by automated means or under false pretenses.</li>
-        <li>Use the Services as part of any effort to compete with us or otherwise use the Services and/or the Content for any revenue-generating endeavor or commercial enterprise.</li>
-        <li><strong>Generate, synthesize, or distribute content that is illegal, defamatory, harassing, threatening, hateful, or sexually explicit.</strong></li>
-        <li><strong>Use text-to-speech features to impersonate any real person — including public figures, celebrities, or private individuals — without their explicit consent, or to create deepfakes, fraudulent audio, or misleading content.</strong></li>
-        <li><strong>Reverse engineer, decompile, disassemble, modify, or attempt to bypass the license activation, encryption, or anti-piracy mechanisms of the software.</strong></li>
-        <li><strong>Resell, sublicense, rent, lease, share, or redistribute the software, license keys, or generated API credentials to any third party without prior written permission from BitProgram.</strong></li>
-        <li><strong>Use the Services in any way that violates the acceptable use policies of ElevenLabs, Google, Gumroad, or any other third-party service integrated with the software.</strong></li>
-    </ul>
+            <p>Supplemental terms and conditions or documents that may be posted on the Services from time to time are hereby expressly incorporated herein by reference. We reserve the right, in our sole discretion, to make changes or modifications to these Legal Terms at any time and for any reason. We will alert you about any changes by updating the "Last updated" date of these Legal Terms, and you waive any right to receive specific notice of each such change. It is your responsibility to periodically review these Legal Terms to stay informed of updates. You will be subject to, and will be deemed to have been made aware of and to have accepted, the changes in any revised Legal Terms by your continued use of the Services after the date such revised Legal Terms are posted.</p>
 
-    <h2>5. USER GENERATED CONTRIBUTIONS</h2>
-    <p>The Services does not offer users to submit or post content. We may provide you with the opportunity to create, submit, post, display, transmit, perform, publish, distribute, or broadcast content and materials to us or on the Services, including but not limited to text, writings, video, audio, photographs, graphics, comments, suggestions, or personal information or other material (collectively, "Contributions"). Contributions may be viewable by other users of the Services and through third-party websites. When you create or make available any Contributions, you thereby represent and warrant that:</p>
-    <ul>
-        <li>The creation, distribution, transmission, public display, or performance, and the accessing, downloading, or copying of your Contributions do not and will not infringe the proprietary rights, including but not limited to the copyright, patent, trademark, trade secret, or moral rights of any third party.</li>
-        <li>You are the creator and owner of or have the necessary licenses, rights, consents, releases, and permissions to use and to authorize us, the Services, and other users of the Services to use your Contributions in any manner contemplated by the Services and these Legal Terms.</li>
-        <li>You have the written consent, release, and/or permission of each and every identifiable individual person in your Contributions to use the name or likeness of each and every such identifiable individual person to enable inclusion and use of your Contributions in any manner contemplated by the Services and these Legal Terms.</li>
-        <li>Your Contributions are not false, inaccurate, or misleading.</li>
-        <li>Your Contributions are not unsolicited or unauthorized advertising, promotional materials, pyramid schemes, chain letters, spam, mass mailings, or other forms of solicitation.</li>
-        <li>Your Contributions are not obscene, lewd, lascivious, filthy, violent, harassing, libelous, slanderous, or otherwise objectionable (as determined by us).</li>
-        <li>Your Contributions do not ridicule, mock, disparage, intimidate, or abuse anyone.</li>
-        <li>Your Contributions are not used to harass or threaten (in the legal sense of those terms) any other person and to promote violence against a specific person or class of people.</li>
-        <li>Your Contributions do not violate any applicable law, regulation, or rule.</li>
-        <li>Your Contributions do not violate the privacy or publicity rights of any third party.</li>
-        <li>Your Contributions do not violate any applicable law concerning child pornography, or otherwise intended to protect the health or well-being of minors.</li>
-        <li>Your Contributions do not include any offensive comments that are connected to race, national origin, gender, sexual preference, or physical handicap.</li>
-        <li>Your Contributions do not otherwise violate, or link to material that violates, any provision of these Legal Terms, or any applicable law or regulation.</li>
-    </ul>
+            <p>We recommend that you print a copy of these Legal Terms for your records.</p>
 
-    <h2>6. CONTRIBUTION LICENSE</h2>
-    <p>You and Services agree that we may access, store, process, and use any information and personal data that you provide and your choices (including settings).</p>
-    <p>By submitting suggestions or other feedback regarding the Services, you agree that we can use and share such feedback for any purpose without compensation to you.</p>
-    <p>We do not assert any ownership over your Contributions. You retain full ownership of all of your Contributions and any intellectual property rights or other proprietary rights associated with your Contributions. We are not liable for any statements or representations in your Contributions provided by you in any area on the Services. You are solely responsible for your Contributions to the Services and you expressly agree to exonerate us from any and all responsibility and to refrain from any legal action against us regarding your Contributions.</p>
+            <!-- 1 -->
+            <h2 id="sec-1"><span class="num">1.</span>Our Services</h2>
+            <p>The information provided when using the Services is not intended for distribution to or use by any person or entity in any jurisdiction or country where such distribution or use would be contrary to law or regulation or which would subject us to any registration requirement within such jurisdiction or country. Accordingly, those persons who choose to access the Services from other locations do so on their own initiative and are solely responsible for compliance with local laws, if and to the extent local laws are applicable.</p>
 
-    <h2>7. SERVICES MANAGEMENT</h2>
-    <p>We reserve the right, but not the obligation, to: (1) monitor the Services for violations of these Legal Terms; (2) take appropriate legal action against anyone who, in our sole discretion, violates the law or these Legal Terms, including without limitation, reporting such user to law enforcement authorities; (3) in our sole discretion and without limitation, refuse, restrict access to, limit the availability of, or disable (to the extent technologically feasible) any of your Contributions or any portion thereof; (4) in our sole discretion and without limitation, notice, or liability, to remove from the Services or otherwise disable all files and content that are excessive in size or are in any way burdensome to our systems; and (5) otherwise manage the Services in a manner designed to protect our rights and property and to facilitate the proper functioning of the Services.</p>
+            <!-- 2 -->
+            <h2 id="sec-2"><span class="num">2.</span>Intellectual Property Rights</h2>
 
-    <h2>8. TERM AND TERMINATION</h2>
-    <p>These Legal Terms shall remain in full force and effect while you use the Services. WITHOUT LIMITING ANY OTHER PROVISION OF THESE LEGAL TERMS, WE RESERVE THE RIGHT TO, IN OUR SOLE DISCRETION AND WITHOUT NOTICE OR LIABILITY, DENY ACCESS TO AND USE OF THE SERVICES (INCLUDING BLOCKING CERTAIN IP ADDRESSES), TO ANY PERSON FOR ANY REASON OR FOR NO REASON, INCLUDING WITHOUT LIMITATION FOR BREACH OF ANY REPRESENTATION, WARRANTY, OR COVENANT CONTAINED IN THESE LEGAL TERMS OR OF ANY APPLICABLE LAW OR REGULATION. WE MAY TERMINATE YOUR USE OR PARTICIPATION IN THE SERVICES OR DELETE ANY CONTENT OR INFORMATION THAT YOU POSTED AT ANY TIME, WITHOUT WARNING, IN OUR SOLE DISCRETION.</p>
-    <p>If we terminate or suspend your account for any reason, you are prohibited from registering and creating a new account under your name, a fake or borrowed name, or the name of any third party, even if you may be acting on behalf of the third party. In addition to terminating or suspending your account, we reserve the right to take appropriate legal action, including without limitation pursuing civil, criminal, and injunctive redress.</p>
+            <h3>Our intellectual property</h3>
+            <p>We are the owner or the licensee of all intellectual property rights in our Services, including all source code, databases, functionality, software, website designs, audio, video, text, photographs, and graphics in the Services (collectively, the "Content"), as well as the trademarks, service marks, and logos contained therein (the "Marks").</p>
+            <p>Our Content and Marks are protected by copyright and trademark laws (and various other intellectual property rights and unfair competition laws) and treaties around the world.</p>
+            <p>The Content and Marks are provided in or through the Services "AS IS" for your personal, non-commercial use or internal business purpose only.</p>
 
-    <h2>9. MODIFICATIONS AND INTERRUPTIONS</h2>
-    <p>We reserve the right to change, modify, or remove the contents of the Services at any time or for any reason at our sole discretion without notice. However, we have no obligation to update any information on our Services. We will not be liable to you or any third party for any modification, price change, suspension, or discontinuance of the Services.</p>
-    <p>We cannot guarantee the Services will be available at all times. We may experience hardware, software, or other problems or need to perform maintenance related to the Services, resulting in interruptions, delays, or errors. We reserve the right to change, revise, update, suspend, discontinue, or otherwise modify the Services at any time or for any reason without notice to you. You agree that we have no liability whatsoever for any loss, damage, or inconvenience caused by your inability to access or use the Services during any downtime or discontinuance of the Services. Nothing in these Legal Terms will be construed to obligate us to maintain and support the Services or to supply any corrections, updates, or releases in connection therewith.</p>
+            <h3>Your use of our Services</h3>
+            <p>Subject to your compliance with these Legal Terms, including the "Prohibited Activities" section below, we grant you a non-exclusive, non-transferable, revocable license to:</p>
+            <ul>
+                <li>access the Services; and</li>
+                <li>download or print a copy of any portion of the Content to which you have properly gained access,</li>
+            </ul>
+            <p>solely for your personal, non-commercial use or internal business purpose.</p>
+            <p>Except as set out in this section or elsewhere in our Legal Terms, no part of the Services and no Content or Marks may be copied, reproduced, aggregated, republished, uploaded, posted, publicly displayed, encoded, translated, transmitted, distributed, sold, licensed, or otherwise exploited for any commercial purpose whatsoever, without our express prior written permission.</p>
+            <p>If you wish to make any use of the Services, Content, or Marks other than as set out in this section or elsewhere in our Legal Terms, please address your request to: <a href="mailto:bitprogram0@gmail.com">bitprogram0@gmail.com</a>. If we ever grant you the permission to post, reproduce, or publicly display any part of our Services or Content, you must identify us as the owners or licensors of the Services, Content, or Marks and ensure that any copyright or proprietary notice appears or is visible on posting, reproducing, or displaying our Content.</p>
+            <p>We reserve all rights not expressly granted to you in and to the Services, Content, and Marks.</p>
+            <p>Any breach of these Intellectual Property Rights will constitute a material breach of our Legal Terms and your right to use our Services will terminate immediately.</p>
 
-    <h2>10. GOVERNING LAW</h2>
-    <p>These Legal Terms shall be governed by and defined following the laws of <strong>Pakistan</strong>. BitProgram and yourself irrevocably consent that the courts of <strong>Pakistan</strong> shall have exclusive jurisdiction to resolve any dispute which may arise in connection with these Legal Terms.</p>
+            <h3>Your submissions</h3>
+            <p>Please review this section and the "Prohibited Activities" section carefully prior to using our Services to understand the (a) rights you give us and (b) obligations you have when you post or upload any content through the Services.</p>
+            <p><strong>Submissions:</strong> By directly sending us any question, comment, suggestion, idea, feedback, or other information about the Services ("Submissions"), you agree to assign to us all intellectual property rights in such Submission. You agree that we shall own this Submission and be entitled to its unrestricted use and dissemination for any lawful purpose, commercial or otherwise, without acknowledgment or compensation to you.</p>
+            <p><strong>You are responsible for what you post or upload:</strong> By sending us Submissions through any part of the Services you:</p>
+            <ul>
+                <li>confirm that you have read and agree with our "Prohibited Activities" and will not post, send, publish, upload, or transmit through the Services any Submission that is illegal, harassing, hateful, harmful, defamatory, obscene, bullying, abusive, discriminatory, threatening to any person or group, sexually explicit, false, inaccurate, deceitful, or misleading;</li>
+                <li>to the extent permissible by applicable law, waive any and all moral rights to any such Submission;</li>
+                <li>warrant that any such Submission are original to you or that you have the necessary rights and licenses to submit such Submissions and that you have full authority to grant us the above-mentioned rights in relation to your Submissions; and</li>
+                <li>warrant and represent that your Submissions do not constitute confidential information.</li>
+            </ul>
+            <p>You are solely responsible for your Submissions and you expressly agree to reimburse us for any and all losses that we may suffer because of your breach of (a) this section, (b) any third party's intellectual property rights, or (c) applicable law.</p>
 
-    <h2>11. DISPUTE RESOLUTION</h2>
-    <h3>Informal Negotiations</h3>
-    <p>To expedite resolution and control the cost of any dispute, controversy, or claim related to these Legal Terms (each a "Dispute" and collectively, the "Disputes") brought by either you or us (individually, a "Party" and collectively, the "Parties"), the Parties agree to first attempt to negotiate any Dispute (except those Disputes expressly provided below) informally for at least <strong>30</strong> days before initiating arbitration. Such informal negotiations commence upon written notice from one Party to the other Party.</p>
-    
-    <h3>Binding Arbitration</h3>
-    <p>If the Parties are unable to resolve a Dispute through informal negotiations, the Dispute shall be finally resolved by arbitration in accordance with the United Nations Commission on International Trade Law Arbitration Rules in force at the time of the commencement of the arbitration. The number of arbitrators shall be <strong>one (1)</strong>. The seat, or legal place, or arbitration shall be <strong>Lahore, Pakistan</strong>. The language of the proceedings shall be <strong>English</strong>. The governing law of these Legal Terms shall be substantive law of <strong>Pakistan</strong>.</p>
+            <!-- 3 -->
+            <h2 id="sec-3"><span class="num">3.</span>User Representations</h2>
+            <p>By using the Services, you represent and warrant that: (1) you have the legal capacity and you agree to comply with these Legal Terms; (2) you are not a minor in the jurisdiction in which you reside; (3) you will not access the Services through automated or non-human means, whether through a bot, script or otherwise; (4) you will not use the Services for any illegal or unauthorized purpose; and (5) your use of the Services will not violate any applicable law or regulation.</p>
+            <p>If you provide any information that is untrue, inaccurate, not current, or incomplete, we have the right to suspend or terminate your account and refuse any and all current or future use of the Services (or any portion thereof).</p>
 
-    <h3>Restrictions</h3>
-    <p>The Parties agree that any arbitration shall be limited to the Dispute between the Parties individually. To the full extent permitted by law, (a) no arbitration shall be joined with any other proceeding; (b) there is no right or authority for any Dispute to be arbitrated on a class-action basis or to utilize class action procedures; and (c) there is no right or authority for any Dispute to be brought in a purported representative capacity on behalf of the general public or any other persons.</p>
+            <!-- 4 -->
+            <h2 id="sec-4"><span class="num">4.</span>Prohibited Activities</h2>
+            <p>You may not access or use the Services for any purpose other than that for which we make the Services available. The Services may not be used in connection with any commercial endeavors except those that are specifically endorsed or approved by us.</p>
+            <p>As a user of the Services, you agree not to:</p>
+            <ul>
+                <li>Systematically retrieve data or other content from the Services to create or compile, directly or indirectly, a collection, compilation, database, or directory without written permission from us.</li>
+                <li>Trick, defraud, or mislead us and other users, especially in any attempt to learn sensitive account information such as user passwords.</li>
+                <li>Circumvent, disable, or otherwise interfere with security-related features of the Services, including features that prevent or restrict the use or copying of any Content or enforce limitations on the use of the Services and/or the Content contained therein.</li>
+                <li>Disparage, tarnish, or otherwise harm, in our opinion, us and/or the Services.</li>
+                <li>Use any information obtained from the Services in order to harass, abuse, or harm another person.</li>
+                <li>Make improper use of our support services or submit false reports of abuse or misconduct.</li>
+                <li>Use the Services in a manner inconsistent with any applicable laws or regulations.</li>
+                <li>Engage in unauthorized framing of or linking to the Services.</li>
+                <li>Upload or transmit (or attempt to upload or to transmit) viruses, Trojan horses, or other material, including excessive use of capital letters and spamming (continuous posting of repetitive text), that interferes with any party's uninterrupted use and enjoyment of the Services or modifies, impairs, disrupts, alters, or interferes with the use, features, functions, operation, or maintenance of the Services.</li>
+                <li>Engage in any automated use of the system, such as using scripts to send comments or messages, or using any data mining, robots, or similar data gathering and extraction tools.</li>
+                <li>Delete the copyright or other proprietary rights notice from any Content.</li>
+                <li>Attempt to impersonate another user or person or use the username of another user.</li>
+                <li>Upload or transmit (or attempt to upload or to transmit) any material that acts as a passive or active information collection or transmission mechanism, including without limitation, clear graphics interchange formats ("gifs"), 1×1 pixels, web bugs, cookies, or other similar devices (sometimes referred to as "spyware" or "passive collection mechanisms" or "pcms").</li>
+                <li>Interfere with, disrupt, or create an undue burden on the Services or the networks or services connected to the Services.</li>
+                <li>Harass, annoy, intimidate, or threaten any of our employees or agents engaged in providing any portion of the Services to you.</li>
+                <li>Attempt to bypass any measures of the Services designed to prevent or restrict access to the Services, or any portion of the Services.</li>
+                <li>Copy or adapt the Services' software, including but not limited to Flash, PHP, HTML, JavaScript, or other code.</li>
+                <li>Except as permitted by applicable law, decipher, decompile, disassemble, or reverse engineer any of the software comprising or in any way making up a part of the Services.</li>
+                <li>Except as may be the result of standard search engine or Internet browser usage, use, launch, develop, or distribute any automated system, including without limitation, any spider, robot, cheat utility, scraper, or offline reader that accesses the Services, or use or launch any unauthorized script or other software.</li>
+                <li>Use a buying agent or purchasing agent to make purchases on the Services.</li>
+                <li>Make any unauthorized use of the Services, including collecting usernames and/or email addresses of users by electronic or other means for the purpose of sending unsolicited email, or creating user accounts by automated means or under false pretenses.</li>
+                <li>Use the Services as part of any effort to compete with us or otherwise use the Services and/or the Content for any revenue-generating endeavor or commercial enterprise.</li>
+            </ul>
 
-    <h3>Exceptions to Informal Negotiations and Arbitration</h3>
-    <p>The Parties agree that the following Disputes are not subject to the above provisions concerning informal negotiations binding arbitration: (a) any Disputes seeking to enforce or protect, or concerning the validity of, any of the intellectual property rights of a Party; (b) any Dispute related to, or arising from, allegations of theft, piracy, invasion of privacy, or unauthorized use; and (c) any claim for injunctive relief. If this provision is found to be illegal or unenforceable, then neither Party will elect to arbitrate any Dispute falling within that portion of this provision found to be illegal or unenforceable and such Dispute shall be decided by a court of competent jurisdiction within the courts listed for jurisdiction above, and the Parties agree to submit to the personal jurisdiction of that court.</p>
+            <div class="callout warn">
+                <strong>Additional prohibited activities specific to SoundScript:</strong>
+                <ul style="margin-top: 10px; margin-bottom: 0;">
+                    <li>Generate, synthesize, or distribute content that is illegal, defamatory, harassing, threatening, hateful, or sexually explicit.</li>
+                    <li>Use text-to-speech features to impersonate any real person — including public figures, celebrities, or private individuals — without their explicit consent, or to create deepfakes, fraudulent audio, or misleading content.</li>
+                    <li>Reverse engineer, decompile, disassemble, modify, or attempt to bypass the license activation, encryption, or anti-piracy mechanisms of the software.</li>
+                    <li>Resell, sublicense, rent, lease, share, or redistribute the software, license keys, or generated API credentials to any third party without prior written permission from BitProgram.</li>
+                    <li>Use the Services in any way that violates the acceptable use policies of ElevenLabs, Google, Gumroad, or any other third-party service integrated with the software.</li>
+                </ul>
+            </div>
 
-    <h2>12. CORRECTIONS</h2>
-    <p>There may be information on the Services that contains typographical errors, inaccuracies, or omissions, including descriptions, pricing, availability, and various other information. We reserve the right to correct any errors, inaccuracies, or omissions and to change or update the information on the Services at any time, without prior notice.</p>
+            <!-- 5 -->
+            <h2 id="sec-5"><span class="num">5.</span>User Generated Contributions</h2>
+            <p>The Services does not offer users to submit or post content. We may provide you with the opportunity to create, submit, post, display, transmit, perform, publish, distribute, or broadcast content and materials to us or on the Services, including but not limited to text, writings, video, audio, photographs, graphics, comments, suggestions, or personal information or other material (collectively, "Contributions"). Contributions may be viewable by other users of the Services and through third-party websites. When you create or make available any Contributions, you thereby represent and warrant that:</p>
+            <ul>
+                <li>The creation, distribution, transmission, public display, or performance, and the accessing, downloading, or copying of your Contributions do not and will not infringe the proprietary rights, including but not limited to the copyright, patent, trademark, trade secret, or moral rights of any third party.</li>
+                <li>You are the creator and owner of or have the necessary licenses, rights, consents, releases, and permissions to use and to authorize us, the Services, and other users of the Services to use your Contributions in any manner contemplated by the Services and these Legal Terms.</li>
+                <li>You have the written consent, release, and/or permission of each and every identifiable individual person in your Contributions to use the name or likeness of each and every such identifiable individual person to enable inclusion and use of your Contributions in any manner contemplated by the Services and these Legal Terms.</li>
+                <li>Your Contributions are not false, inaccurate, or misleading.</li>
+                <li>Your Contributions are not unsolicited or unauthorized advertising, promotional materials, pyramid schemes, chain letters, spam, mass mailings, or other forms of solicitation.</li>
+                <li>Your Contributions are not obscene, lewd, lascivious, filthy, violent, harassing, libelous, slanderous, or otherwise objectionable (as determined by us).</li>
+                <li>Your Contributions do not ridicule, mock, disparage, intimidate, or abuse anyone.</li>
+                <li>Your Contributions are not used to harass or threaten (in the legal sense of those terms) any other person and to promote violence against a specific person or class of people.</li>
+                <li>Your Contributions do not violate any applicable law, regulation, or rule.</li>
+                <li>Your Contributions do not violate the privacy or publicity rights of any third party.</li>
+                <li>Your Contributions do not violate any applicable law concerning child pornography, or otherwise intended to protect the health or well-being of minors.</li>
+                <li>Your Contributions do not include any offensive comments that are connected to race, national origin, gender, sexual preference, or physical handicap.</li>
+                <li>Your Contributions do not otherwise violate, or link to material that violates, any provision of these Legal Terms, or any applicable law or regulation.</li>
+            </ul>
 
-    <h2>13. DISCLAIMER</h2>
-    <p class="all-caps">THE SERVICES ARE PROVIDED ON AN AS-IS AND AS-AVAILABLE BASIS. YOU AGREE THAT YOUR USE OF THE SERVICES WILL BE AT YOUR SOLE RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, IN CONNECTION WITH THE SERVICES AND YOUR USE THEREOF, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE MAKE NO WARRANTIES OR REPRESENTATIONS ABOUT THE ACCURACY OR COMPLETENESS OF THE SERVICES' CONTENT OR THE CONTENT OF ANY WEBSITES OR MOBILE APPLICATIONS LINKED TO THE SERVICES AND WE WILL ASSUME NO LIABILITY OR RESPONSIBILITY FOR ANY (1) ERRORS, MISTAKES, OR INACCURACIES OF CONTENT AND MATERIALS, (2) PERSONAL INJURY OR PROPERTY DAMAGE, OF ANY NATURE WHATSOEVER, RESULTING FROM YOUR ACCESS TO AND USE OF THE SERVICES, (3) ANY UNAUTHORIZED ACCESS TO OR USE OF OUR SECURE SERVERS AND/OR ANY AND ALL PERSONAL INFORMATION AND/OR FINANCIAL INFORMATION STORED THEREIN, (4) ANY INTERRUPTION OR CESSATION OF TRANSMISSION TO OR FROM THE SERVICES, (5) ANY BUGS, VIRUSES, TROJAN HORSES, OR THE LIKE WHICH MAY BE TRANSMITTED TO OR THROUGH THE SERVICES BY ANY THIRD PARTY, AND/OR (6) ANY ERRORS OR OMISSIONS IN ANY CONTENT AND MATERIALS OR FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF THE USE OF ANY CONTENT POSTED, TRANSMITTED, OR OTHERWISE MADE AVAILABLE VIA THE SERVICES. WE DO NOT WARRANT, ENDORSE, GUARANTEE, OR ASSUME RESPONSIBILITY FOR ANY PRODUCT OR SERVICE ADVERTISED OR OFFERED BY A THIRD PARTY THROUGH THE SERVICES, ANY HYPERLINKED WEBSITE, OR ANY WEBSITE OR MOBILE APPLICATION FEATURED IN ANY BANNER OR OTHER ADVERTISING, AND WE WILL NOT BE A PARTY TO OR IN ANY WAY BE RESPONSIBLE FOR MONITORING ANY TRANSACTION BETWEEN YOU AND ANY THIRD-PARTY PROVIDERS OF PRODUCTS OR SERVICES. AS WITH THE PURCHASE OF A PRODUCT OR SERVICE THROUGH ANY MEDIUM OR IN ANY ENVIRONMENT, YOU SHOULD USE YOUR BEST JUDGMENT AND EXERCISE CAUTION WHERE APPROPRIATE.</p>
+            <!-- 6 -->
+            <h2 id="sec-6"><span class="num">6.</span>Contribution License</h2>
+            <p>You and Services agree that we may access, store, process, and use any information and personal data that you provide and your choices (including settings).</p>
+            <p>By submitting suggestions or other feedback regarding the Services, you agree that we can use and share such feedback for any purpose without compensation to you.</p>
+            <p>We do not assert any ownership over your Contributions. You retain full ownership of all of your Contributions and any intellectual property rights or other proprietary rights associated with your Contributions. We are not liable for any statements or representations in your Contributions provided by you in any area on the Services. You are solely responsible for your Contributions to the Services and you expressly agree to exonerate us from any and all responsibility and to refrain from any legal action against us regarding your Contributions.</p>
 
-    <h2>14. LIMITATIONS OF LIABILITY</h2>
-    <p class="all-caps">IN NO EVENT WILL WE OR OUR DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFIT, LOST REVENUE, LOSS OF DATA, OR OTHER DAMAGES ARISING FROM YOUR USE OF THE SERVICES, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. NOTWITHSTANDING ANYTHING TO THE CONTRARY CONTAINED HEREIN, OUR LIABILITY TO YOU FOR ANY CAUSE WHATSOEVER AND REGARDLESS OF THE FORM OF THE ACTION, WILL AT ALL TIMES BE LIMITED TO THE AMOUNT PAID, IF ANY, BY YOU TO US FOR THE SOFTWARE LICENSE. CERTAIN US STATE LAWS AND INTERNATIONAL LAWS DO NOT ALLOW LIMITATIONS ON IMPLIED WARRANTIES OR THE EXCLUSION OR LIMITATION OF CERTAIN DAMAGES. IF THESE LAWS APPLY TO YOU, SOME OR ALL OF THE ABOVE DISCLAIMERS OR LIMITATIONS MAY NOT APPLY TO YOU, AND YOU MAY HAVE ADDITIONAL RIGHTS.</p>
+            <!-- 7 -->
+            <h2 id="sec-7"><span class="num">7.</span>Services Management</h2>
+            <p>We reserve the right, but not the obligation, to: (1) monitor the Services for violations of these Legal Terms; (2) take appropriate legal action against anyone who, in our sole discretion, violates the law or these Legal Terms, including without limitation, reporting such user to law enforcement authorities; (3) in our sole discretion and without limitation, refuse, restrict access to, limit the availability of, or disable (to the extent technologically feasible) any of your Contributions or any portion thereof; (4) in our sole discretion and without limitation, notice, or liability, to remove from the Services or otherwise disable all files and content that are excessive in size or are in any way burdensome to our systems; and (5) otherwise manage the Services in a manner designed to protect our rights and property and to facilitate the proper functioning of the Services.</p>
 
-    <h2>15. INDEMNIFICATION</h2>
-    <p>You agree to defend, indemnify, and hold us harmless, including our subsidiaries, affiliates, and all of our respective officers, agents, partners, and employees, from and against any loss, damage, liability, claim, or demand, including reasonable attorneys’ fees and expenses, made by any third party due to or arising out of: (1) use of the Services; (2) breach of these Legal Terms; (3) any breach of your representations and warranties set forth in these Legal Terms; (4) your violation of the rights of a third party, including but not limited to intellectual property rights; or (5) any overt harmful act toward any other user of the Services with whom you connected via the Services. Notwithstanding the foregoing, we reserve the right, at your expense, to assume the exclusive defense and control of any matter for which you are required to indemnify us, and you agree to cooperate, at your expense, with our defense of such claims. We will use reasonable efforts to notify you of any such claim, action, or proceeding which is subject to this indemnification upon becoming aware of it.</p>
+            <!-- 8 -->
+            <h2 id="sec-8"><span class="num">8.</span>Term and Termination</h2>
+            <p>These Legal Terms shall remain in full force and effect while you use the Services. Without limiting any other provision of these Legal Terms, we reserve the right to, in our sole discretion and without notice or liability, deny access to and use of the Services (including blocking certain IP addresses), to any person for any reason or for no reason, including without limitation for breach of any representation, warranty, or covenant contained in these Legal Terms or of any applicable law or regulation. We may terminate your use or participation in the Services or delete any content or information that you posted at any time, without warning, in our sole discretion.</p>
+            <p>If we terminate or suspend your account for any reason, you are prohibited from registering and creating a new account under your name, a fake or borrowed name, or the name of any third party, even if you may be acting on behalf of the third party. In addition to terminating or suspending your account, we reserve the right to take appropriate legal action, including without limitation pursuing civil, criminal, and injunctive redress.</p>
 
-    <h2>16. USER DATA</h2>
-    <p>We will maintain certain data that you transmit to the Services for the purpose of managing the performance of the Services, as well as data relating to your use of the Services. Although we perform regular routine backups of data, you are solely responsible for all data that you transmit or that relates to any activity you have undertaken using the Services. You agree that we shall have no liability to you for any loss or corruption of any such data, and you hereby waive any right of action against us arising from any such loss or corruption of such data.</p>
+            <!-- 9 -->
+            <h2 id="sec-9"><span class="num">9.</span>Modifications and Interruptions</h2>
+            <p>We reserve the right to change, modify, or remove the contents of the Services at any time or for any reason at our sole discretion without notice. However, we have no obligation to update any information on our Services. We will not be liable to you or any third party for any modification, price change, suspension, or discontinuance of the Services.</p>
+            <p>We cannot guarantee the Services will be available at all times. We may experience hardware, software, or other problems or need to perform maintenance related to the Services, resulting in interruptions, delays, or errors. We reserve the right to change, revise, update, suspend, discontinue, or otherwise modify the Services at any time or for any reason without notice to you. You agree that we have no liability whatsoever for any loss, damage, or inconvenience caused by your inability to access or use the Services during any downtime or discontinuance of the Services. Nothing in these Legal Terms will be construed to obligate us to maintain and support the Services or to supply any corrections, updates, or releases in connection therewith.</p>
 
-    <h2>17. ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES</h2>
-    <p>Visiting the Services, sending us emails, and completing online forms constitute electronic communications. You consent to receive electronic communications, and you agree that all agreements, notices, disclosures, and other communications we provide to you electronically, via email and on the Services, satisfy any legal requirement that such communication be in writing. YOU HEREBY AGREE TO THE USE OF ELECTRONIC SIGNATURES, CONTRACTS, ORDERS, AND OTHER RECORDS, AND TO ELECTRONIC DELIVERY OF NOTICES, POLICIES, AND RECORDS OF TRANSACTIONS INITIATED OR COMPLETED BY US OR VIA THE SERVICES. You hereby waive any rights or requirements under any statutes, regulations, rules, ordinances, or other laws in any jurisdiction which require an original signature or delivery or retention of non-electronic records, or to payments or the granting of credits by any means other than electronic means.</p>
+            <!-- 10 -->
+            <h2 id="sec-10"><span class="num">10.</span>Governing Law</h2>
+            <p>These Legal Terms shall be governed by and defined following the laws of <strong>Pakistan</strong>. BitProgram and yourself irrevocably consent that the courts of <strong>Pakistan</strong> shall have exclusive jurisdiction to resolve any dispute which may arise in connection with these Legal Terms.</p>
 
-    <h2>18. MISCELLANEOUS</h2>
-    <p>These Legal Terms and any policies or operating rules posted by us on the Services or in respect to the Services constitute the entire agreement and understanding between you and us. Our failure to exercise or enforce any right or provision of these Legal Terms shall not operate as a waiver of such right or provision. These Legal Terms operate to the fullest extent permissible by law. We may assign any or all of our rights and obligations to others at any time. We shall not be responsible or liable for any loss, damage, delay, or failure to act caused by any cause beyond our reasonable control. If any provision or part of a provision of these Legal Terms is determined to be unlawful, void, or unenforceable, that provision or part of the provision is deemed severable from these Legal Terms and does not affect the validity and enforceability of any remaining provisions. There is no joint venture, partnership, employment or agency relationship created between you and us as a result of these Legal Terms or use of the Services. You agree that these Legal Terms will not be construed against us by virtue of having drafted them. You hereby waive any and all defenses you may have based on the electronic form of these Legal Terms and the lack of signing by the parties hereto to execute these Legal Terms.</p>
+            <!-- 11 -->
+            <h2 id="sec-11"><span class="num">11.</span>Dispute Resolution</h2>
 
-    <h2>19. CONTACT US</h2>
-    <p>In order to resolve a complaint regarding the Services or to receive further information regarding use of the Services, please contact us at:</p>
-    <div class="contact-info">
-        <p><strong>BitProgram</strong><br>
-        Pakistan<br>
-        <a href="mailto:bitprogram0@gmail.com">bitprogram0@gmail.com</a></p>
+            <h3>Informal Negotiations</h3>
+            <p>To expedite resolution and control the cost of any dispute, controversy, or claim related to these Legal Terms (each a "Dispute" and collectively, the "Disputes") brought by either you or us (individually, a "Party" and collectively, the "Parties"), the Parties agree to first attempt to negotiate any Dispute (except those Disputes expressly provided below) informally for at least <strong>30</strong> days before initiating arbitration. Such informal negotiations commence upon written notice from one Party to the other Party.</p>
+
+            <h3>Binding Arbitration</h3>
+            <p>If the Parties are unable to resolve a Dispute through informal negotiations, the Dispute shall be finally resolved by arbitration in accordance with the United Nations Commission on International Trade Law Arbitration Rules in force at the time of the commencement of the arbitration. The number of arbitrators shall be <strong>one (1)</strong>. The seat, or legal place, or arbitration shall be <strong>Lahore, Pakistan</strong>. The language of the proceedings shall be <strong>English</strong>. The governing law of these Legal Terms shall be substantive law of <strong>Pakistan</strong>.</p>
+
+            <h3>Restrictions</h3>
+            <p>The Parties agree that any arbitration shall be limited to the Dispute between the Parties individually. To the full extent permitted by law, (a) no arbitration shall be joined with any other proceeding; (b) there is no right or authority for any Dispute to be arbitrated on a class-action basis or to utilize class action procedures; and (c) there is no right or authority for any Dispute to be brought in a purported representative capacity on behalf of the general public or any other persons.</p>
+
+            <h3>Exceptions to Informal Negotiations and Arbitration</h3>
+            <p>The Parties agree that the following Disputes are not subject to the above provisions concerning informal negotiations binding arbitration: (a) any Disputes seeking to enforce or protect, or concerning the validity of, any of the intellectual property rights of a Party; (b) any Dispute related to, or arising from, allegations of theft, piracy, invasion of privacy, or unauthorized use; and (c) any claim for injunctive relief. If this provision is found to be illegal or unenforceable, then neither Party will elect to arbitrate any Dispute falling within that portion of this provision found to be illegal or unenforceable and such Dispute shall be decided by a court of competent jurisdiction within the courts listed for jurisdiction above, and the Parties agree to submit to the personal jurisdiction of that court.</p>
+
+            <!-- 12 -->
+            <h2 id="sec-12"><span class="num">12.</span>Corrections</h2>
+            <p>There may be information on the Services that contains typographical errors, inaccuracies, or omissions, including descriptions, pricing, availability, and various other information. We reserve the right to correct any errors, inaccuracies, or omissions and to change or update the information on the Services at any time, without prior notice.</p>
+
+            <!-- 13 -->
+            <h2 id="sec-13"><span class="num">13.</span>Disclaimer</h2>
+            <div class="caps-block">
+                THE SERVICES ARE PROVIDED ON AN AS-IS AND AS-AVAILABLE BASIS. YOU AGREE THAT YOUR USE OF THE SERVICES WILL BE AT YOUR SOLE RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, IN CONNECTION WITH THE SERVICES AND YOUR USE THEREOF, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE MAKE NO WARRANTIES OR REPRESENTATIONS ABOUT THE ACCURACY OR COMPLETENESS OF THE SERVICES' CONTENT OR THE CONTENT OF ANY WEBSITES OR MOBILE APPLICATIONS LINKED TO THE SERVICES AND WE WILL ASSUME NO LIABILITY OR RESPONSIBILITY FOR ANY (1) ERRORS, MISTAKES, OR INACCURACIES OF CONTENT AND MATERIALS, (2) PERSONAL INJURY OR PROPERTY DAMAGE, OF ANY NATURE WHATSOEVER, RESULTING FROM YOUR ACCESS TO AND USE OF THE SERVICES, (3) ANY UNAUTHORIZED ACCESS TO OR USE OF OUR SECURE SERVERS AND/OR ANY AND ALL PERSONAL INFORMATION AND/OR FINANCIAL INFORMATION STORED THEREIN, (4) ANY INTERRUPTION OR CESSATION OF TRANSMISSION TO OR FROM THE SERVICES, (5) ANY BUGS, VIRUSES, TROJAN HORSES, OR THE LIKE WHICH MAY BE TRANSMITTED TO OR THROUGH THE SERVICES BY ANY THIRD PARTY, AND/OR (6) ANY ERRORS OR OMISSIONS IN ANY CONTENT AND MATERIALS OR FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF THE USE OF ANY CONTENT POSTED, TRANSMITTED, OR OTHERWISE MADE AVAILABLE VIA THE SERVICES. WE DO NOT WARRANT, ENDORSE, GUARANTEE, OR ASSUME RESPONSIBILITY FOR ANY PRODUCT OR SERVICE ADVERTISED OR OFFERED BY A THIRD PARTY THROUGH THE SERVICES, ANY HYPERLINKED WEBSITE, OR ANY WEBSITE OR MOBILE APPLICATION FEATURED IN ANY BANNER OR OTHER ADVERTISING, AND WE WILL NOT BE A PARTY TO OR IN ANY WAY BE RESPONSIBLE FOR MONITORING ANY TRANSACTION BETWEEN YOU AND ANY THIRD-PARTY PROVIDERS OF PRODUCTS OR SERVICES. AS WITH THE PURCHASE OF A PRODUCT OR SERVICE THROUGH ANY MEDIUM OR IN ANY ENVIRONMENT, YOU SHOULD USE YOUR BEST JUDGMENT AND EXERCISE CAUTION WHERE APPROPRIATE.
+            </div>
+
+            <!-- 14 -->
+            <h2 id="sec-14"><span class="num">14.</span>Limitations of Liability</h2>
+            <div class="caps-block">
+                IN NO EVENT WILL WE OR OUR DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFIT, LOST REVENUE, LOSS OF DATA, OR OTHER DAMAGES ARISING FROM YOUR USE OF THE SERVICES, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. NOTWITHSTANDING ANYTHING TO THE CONTRARY CONTAINED HEREIN, OUR LIABILITY TO YOU FOR ANY CAUSE WHATSOEVER AND REGARDLESS OF THE FORM OF THE ACTION, WILL AT ALL TIMES BE LIMITED TO THE AMOUNT PAID, IF ANY, BY YOU TO US FOR THE SOFTWARE LICENSE. CERTAIN US STATE LAWS AND INTERNATIONAL LAWS DO NOT ALLOW LIMITATIONS ON IMPLIED WARRANTIES OR THE EXCLUSION OR LIMITATION OF CERTAIN DAMAGES. IF THESE LAWS APPLY TO YOU, SOME OR ALL OF THE ABOVE DISCLAIMERS OR LIMITATIONS MAY NOT APPLY TO YOU, AND YOU MAY HAVE ADDITIONAL RIGHTS.
+            </div>
+
+            <!-- 15 -->
+            <h2 id="sec-15"><span class="num">15.</span>Indemnification</h2>
+            <p>You agree to defend, indemnify, and hold us harmless, including our subsidiaries, affiliates, and all of our respective officers, agents, partners, and employees, from and against any loss, damage, liability, claim, or demand, including reasonable attorneys' fees and expenses, made by any third party due to or arising out of: (1) use of the Services; (2) breach of these Legal Terms; (3) any breach of your representations and warranties set forth in these Legal Terms; (4) your violation of the rights of a third party, including but not limited to intellectual property rights; or (5) any overt harmful act toward any other user of the Services with whom you connected via the Services. Notwithstanding the foregoing, we reserve the right, at your expense, to assume the exclusive defense and control of any matter for which you are required to indemnify us, and you agree to cooperate, at your expense, with our defense of such claims. We will use reasonable efforts to notify you of any such claim, action, or proceeding which is subject to this indemnification upon becoming aware of it.</p>
+
+            <!-- 16 -->
+            <h2 id="sec-16"><span class="num">16.</span>User Data</h2>
+            <p>We will maintain certain data that you transmit to the Services for the purpose of managing the performance of the Services, as well as data relating to your use of the Services. Although we perform regular routine backups of data, you are solely responsible for all data that you transmit or that relates to any activity you have undertaken using the Services. You agree that we shall have no liability to you for any loss or corruption of any such data, and you hereby waive any right of action against us arising from any such loss or corruption of such data.</p>
+
+            <!-- 17 -->
+            <h2 id="sec-17"><span class="num">17.</span>Electronic Communications, Transactions, and Signatures</h2>
+            <p>Visiting the Services, sending us emails, and completing online forms constitute electronic communications. You consent to receive electronic communications, and you agree that all agreements, notices, disclosures, and other communications we provide to you electronically, via email and on the Services, satisfy any legal requirement that such communication be in writing. You hereby agree to the use of electronic signatures, contracts, orders, and other records, and to electronic delivery of notices, policies, and records of transactions initiated or completed by us or via the Services. You hereby waive any rights or requirements under any statutes, regulations, rules, ordinances, or other laws in any jurisdiction which require an original signature or delivery or retention of non-electronic records, or to payments or the granting of credits by any means other than electronic means.</p>
+
+            <!-- 18 -->
+            <h2 id="sec-18"><span class="num">18.</span>Miscellaneous</h2>
+            <p>These Legal Terms and any policies or operating rules posted by us on the Services or in respect to the Services constitute the entire agreement and understanding between you and us. Our failure to exercise or enforce any right or provision of these Legal Terms shall not operate as a waiver of such right or provision. These Legal Terms operate to the fullest extent permissible by law. We may assign any or all of our rights and obligations to others at any time. We shall not be responsible or liable for any loss, damage, delay, or failure to act caused by any cause beyond our reasonable control. If any provision or part of a provision of these Legal Terms is determined to be unlawful, void, or unenforceable, that provision or part of the provision is deemed severable from these Legal Terms and does not affect the validity and enforceability of any remaining provisions. There is no joint venture, partnership, employment or agency relationship created between you and us as a result of these Legal Terms or use of the Services. You agree that these Legal Terms will not be construed against us by virtue of having drafted them. You hereby waive any and all defenses you may have based on the electronic form of these Legal Terms and the lack of signing by the parties hereto to execute these Legal Terms.</p>
+
+            <!-- 19 -->
+            <h2 id="sec-19"><span class="num">19.</span>Contact Us</h2>
+            <p>In order to resolve a complaint regarding the Services or to receive further information regarding use of the Services, please contact us at:</p>
+            <div class="contact-card">
+                <div class="label">Company</div>
+                <div class="value">BitProgram</div>
+                <div class="label">Location</div>
+                <div class="value">Pakistan</div>
+                <div class="label">Email</div>
+                <div class="value"><a href="mailto:bitprogram0@gmail.com">bitprogram0@gmail.com</a></div>
+            </div>
+
+            <!-- 20 -->
+            <h2 id="sec-20"><span class="num">20.</span>License Scope and Third-Party Dependencies</h2>
+
+            <h3>License Scope</h3>
+            <p>Subject to your compliance with these Legal Terms, BitProgram grants you a limited, non-exclusive, non-transferable, non-sublicensable, revocable license to install and use SoundScript on up to three (3) devices that you own or control, solely for your personal or internal business purposes.</p>
+            <p>You may not:</p>
+            <ul>
+                <li>Copy, modify, distribute, sell, lease, sublicense, or transfer the software or your license key to any third party.</li>
+                <li>Reverse engineer, decompile, disassemble, or attempt to derive the source code of the software, except to the extent permitted by applicable law.</li>
+                <li>Remove, alter, or circumvent any license activation, encryption, or anti-piracy mechanism.</li>
+            </ul>
+
+            <h3>Third-Party Dependencies</h3>
+            <p>SoundScript integrates with third-party services, including ElevenLabs (cloud text-to-speech), Google Gemini (cloud AI assistant), and Gumroad (license verification and payment processing). Your use of these services is governed by their own terms of service and privacy policies, which you agree to comply with.</p>
+            <p>You are solely responsible for:</p>
+            <ul>
+                <li>Obtaining and maintaining valid API keys for any third-party service you choose to use.</li>
+                <li>All charges incurred through your own API accounts with ElevenLabs, Google, or any other provider.</li>
+                <li>Ensuring that the text you submit to third-party AI services does not violate their acceptable use policies or any applicable law.</li>
+            </ul>
+            <p>BitProgram does not control and is not responsible for the availability, accuracy, performance, pricing, or continued operation of any third-party service. If a third-party provider changes, restricts, or discontinues its API, features of SoundScript that depend on that service may stop working. Such changes do not entitle you to a refund.</p>
+
+            <h3>Local AI Models</h3>
+            <p>SoundScript includes optional local AI engines (Anhad and Nuqta) that run entirely on your device. These models are third-party open-source models redistributed or downloaded under their respective licenses (Apache 2.0). BitProgram does not warrant the accuracy, safety, or suitability of any output generated by local models. You are responsible for reviewing any generated content before use.</p>
+
+            <!-- Credit -->
+            <div class="credit-note">
+                This Terms of Service was created using Termly's
+                <a href="https://termly.io/products/terms-and-conditions-generator/" target="_blank" rel="noopener external">Terms and Conditions Generator</a>.
+            </div>
+
+        </main>
     </div>
 
-    <h2>20. LICENSE SCOPE AND THIRD-PARTY DEPENDENCIES</h2>
-    <p><strong>LICENSE SCOPE</strong></p>
-    <p>Subject to your compliance with these Legal Terms, BitProgram grants you a limited, non-exclusive, non-transferable, non-sublicensable, revocable license to install and use SoundScript on up to three (3) devices that you own or control, solely for your personal or internal business purposes.</p>
-    <p>You may not:</p>
-    <ul>
-        <li>Copy, modify, distribute, sell, lease, sublicense, or transfer the software or your license key to any third party.</li>
-        <li>Reverse engineer, decompile, disassemble, or attempt to derive the source code of the software, except to the extent permitted by applicable law.</li>
-        <li>Remove, alter, or circumvent any license activation, encryption, or anti-piracy mechanism.</li>
-    </ul>
-    <p><strong>THIRD-PARTY DEPENDENCIES</strong></p>
-    <p>SoundScript integrates with third-party services, including ElevenLabs (cloud text-to-speech), Google Gemini (cloud AI assistant), and Gumroad (license verification and payment processing). Your use of these services is governed by their own terms of service and privacy policies, which you agree to comply with.</p>
-    <p>You are solely responsible for:</p>
-    <ul>
-        <li>Obtaining and maintaining valid API keys for any third-party service you choose to use.</li>
-        <li>All charges incurred through your own API accounts with ElevenLabs, Google, or any other provider.</li>
-        <li>Ensuring that the text you submit to third-party AI services does not violate their acceptable use policies or any applicable law.</li>
-    </ul>
-    <p>BitProgram does not control and is not responsible for the availability, accuracy, performance, pricing, or continued operation of any third-party service. If a third-party provider changes, restricts, or discontinues its API, features of SoundScript that depend on that service may stop working. Such changes do not entitle you to a refund.</p>
-    <p><strong>LOCAL AI MODELS</strong></p>
-    <p>SoundScript includes optional local AI engines (Anhad and Nuqta) that run entirely on your device. These models are third-party open-source models redistributed or downloaded under their respective licenses (Apache 2.0). BitProgram does not warrant the accuracy, safety, or suitability of any output generated by local models. You are responsible for reviewing any generated content before use.</p>
+    <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+    <footer class="site">
+        <div class="container">
+            <nav class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="mailto:bitprogram0@gmail.com">Contact</a>
+            </nav>
+            <div class="footer-copy">
+                &copy; 2026 BitProgram. All rights reserved.<br>
+                SoundScript is a proprietary product of BitProgram.
+            </div>
+        </div>
+    </footer>
 
-    <div style="text-align: center; margin-top: 40px; font-size: 12px; color: #666;">
-        This Terms of Service was created using Termly's <a href="https://termly.io/products/terms-and-conditions-generator/" target="_blank" rel="noopener external">Terms and Conditions Generator</a>.
-    </div>
+    <!-- ═══════════════════════════ BACK TO TOP ═══════════════════════════ -->
+    <button class="back-top" id="backTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ═══════════════════════════ SCRIPTS ═══════════════════════════ -->
+    <script>
+        // ─── Back to top ───
+        const backTop = document.getElementById('backTop');
+        window.addEventListener('scroll', () => {
+            backTop.classList.toggle('visible', window.scrollY > 600);
+        }, { passive: true });
+        backTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ─── Active TOC highlighting via IntersectionObserver ───
+        const tocLinks = Array.from(document.querySelectorAll('.toc-list a'));
+        const headings = tocLinks
+            .map(link => document.querySelector(link.getAttribute('href')))
+            .filter(Boolean);
+
+        if ('IntersectionObserver' in window && headings.length) {
+            const setActive = (id) => {
+                tocLinks.forEach(l => {
+                    l.classList.toggle('active', l.getAttribute('href') === `#${id}`);
+                });
+            };
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    const visible = entries
+                        .filter(e => e.isIntersecting)
+                        .sort((a, b) => a.target.offsetTop - b.target.offsetTop);
+                    if (visible.length) {
+                        setActive(visible[0].target.id);
+                    }
+                },
+                { rootMargin: '-80px 0px -60% 0px', threshold: 0 }
+            );
+
+            headings.forEach(h => observer.observe(h));
+        }
+
+        // ─── Smooth-scroll offset for anchors ───
+        document.querySelectorAll('.toc-list a').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                const target = document.querySelector(anchor.getAttribute('href'));
+                if (!target) return;
+                e.preventDefault();
+                const headerOffset = 80;
+                const targetY = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+                window.scrollTo({ top: targetY, behavior: 'smooth' });
+                history.replaceState(null, '', anchor.getAttribute('href'));
+            });
+        });
+    </script>
 
 </body>
 </html>

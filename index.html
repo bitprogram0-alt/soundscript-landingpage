@@ -3,713 +3,1801 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SoundScript – Professional TTS Studio by BitProgram</title>
-    <meta name="description" content="SoundScript is a desktop text-to-speech studio. Use cloud engines (ElevenLabs, Gemini) or run everything locally (Anhad, Nuqta) — no subscriptions, no telemetry, your data stays on your machine." />
 
+    <!-- ─── Primary SEO ─── -->
+    <title>SoundScript — Professional Text-to-Speech Studio for Desktop</title>
+    <meta name="description" content="SoundScript is a desktop text-to-speech studio with four AI engines. Use ElevenLabs & Gemini in the cloud, or run fully offline with Anhad & Nuqta. No subscriptions. No telemetry. Your data stays on your machine." />
+    <meta name="theme-color" content="#4A6CF7" />
+    <link rel="canonical" href="https://bitprogram0-alt.github.io/soundscript-landingpage/" />
+
+    <!-- ─── Open Graph ─── -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SoundScript — Professional Text-to-Speech Studio" />
+    <meta property="og:description" content="Four AI engines. Cloud or offline. No subscriptions. Your data stays on your machine." />
+    <meta property="og:url" content="https://bitprogram0-alt.github.io/soundscript-landingpage/" />
+    <meta property="og:image" content="https://bitprogram0-alt.github.io/soundscript-landingpage/assets/og-image.png" />
+
+    <!-- ─── Twitter Card ─── -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SoundScript — Professional TTS Studio" />
+    <meta name="twitter:description" content="Four AI engines. Cloud or offline. No subscriptions. Your data stays on your machine." />
+    <meta name="twitter:image" content="https://bitprogram0-alt.github.io/soundscript-landingpage/assets/og-image.png" />
+
+    <!-- ─── Favicon ─── -->
+    <link rel="icon" type="image/png" href="assets/app_icon.png" />
+    <link rel="apple-touch-icon" href="assets/app_icon.png" />
+
+    <!-- ─── Fonts ─── -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <style>
-        /* ─── Reset & Base ─── */
-        * {
+        /* ═══════════════════════════════════════════════════════════
+           DESIGN TOKENS
+           ═══════════════════════════════════════════════════════════ */
+        :root {
+            --brand:          #4A6CF7;
+            --brand-dark:     #3B5CDB;
+            --brand-darker:   #2A4AC7;
+            --brand-soft:     #eef2ff;
+            --ink:            #0f172a;
+            --ink-2:          #1e293b;
+            --ink-3:          #334155;
+            --muted:          #64748b;
+            --muted-2:        #94a3b8;
+            --line:           #e2e8f0;
+            --line-2:         #cbd5e1;
+            --bg:             #ffffff;
+            --bg-soft:        #f8fafc;
+            --bg-alt:         #f1f5f9;
+            --success:        #22c55e;
+            --warning:        #f59e0b;
+
+            --radius-sm:  8px;
+            --radius:     14px;
+            --radius-lg:  20px;
+            --radius-pill: 999px;
+
+            --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+            --shadow:    0 4px 16px rgba(15, 23, 42, 0.06);
+            --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.08);
+            --shadow-brand: 0 12px 28px rgba(74, 108, 247, 0.24);
+
+            --max-w: 1160px;
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           RESET & BASE
+           ═══════════════════════════════════════════════════════════ */
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background: #f8fafc;
-            color: #1e293b;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 16px;
             line-height: 1.6;
+            color: var(--ink-2);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         a {
-            text-decoration: none;
             color: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease;
         }
 
+        img, svg { display: block; max-width: 100%; }
+
+        button { font-family: inherit; }
+
         .container {
-            max-width: 1200px;
+            max-width: var(--max-w);
             margin: 0 auto;
             padding: 0 24px;
         }
 
-        /* ─── Buttons ─── */
-        .btn-primary {
-            background: #4A6CF7;
-            color: #fff;
-            padding: 14px 36px;
-            border-radius: 50px;
+        /* ═══════════════════════════════════════════════════════════
+           TYPOGRAPHY
+           ═══════════════════════════════════════════════════════════ */
+        .eyebrow {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--brand);
+            margin-bottom: 14px;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--ink);
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+
+        .section-title {
+            font-size: clamp(1.9rem, 3vw, 2.6rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 14px;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: var(--muted);
+            font-size: 1.05rem;
+            max-width: 640px;
+            margin: 0 auto 56px;
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           BUTTONS
+           ═══════════════════════════════════════════════════════════ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: var(--radius-pill);
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
+            letter-spacing: -0.01em;
             border: none;
             cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 8px 20px rgba(74, 108, 247, 0.3);
+            transition: transform 0.15s ease, background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--brand);
+            color: #fff;
+            box-shadow: var(--shadow-brand);
         }
         .btn-primary:hover {
-            background: #3B5CDB;
+            background: var(--brand-dark);
             transform: translateY(-2px);
+            box-shadow: 0 16px 34px rgba(74, 108, 247, 0.32);
         }
+        .btn-primary:active { transform: translateY(0); }
+
         .btn-secondary {
             background: transparent;
-            color: #4A6CF7;
-            padding: 14px 36px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            border: 2px solid #4A6CF7;
-            cursor: pointer;
-            transition: background 0.3s, color 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
+            color: var(--brand);
+            border: 1.5px solid var(--brand);
         }
         .btn-secondary:hover {
-            background: #4A6CF7;
+            background: var(--brand);
             color: #fff;
         }
 
-        /* ─── Header ─── */
-        header {
-            padding: 16px 0;
-            border-bottom: 1px solid #e2e8f0;
-            background: rgba(255, 255, 255, 0.88);
-            backdrop-filter: blur(8px);
+        .btn-ghost {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            border: 1.5px solid rgba(255, 255, 255, 0.24);
+            backdrop-filter: blur(6px);
+        }
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.14);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-lg { padding: 16px 34px; font-size: 1rem; }
+
+        /* ═══════════════════════════════════════════════════════════
+           HEADER
+           ═══════════════════════════════════════════════════════════ */
+        header.site {
             position: sticky;
             top: 0;
-            z-index: 50;
+            z-index: 100;
+            padding: 14px 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: saturate(180%) blur(14px);
+            -webkit-backdrop-filter: saturate(180%) blur(14px);
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
-        header .container {
+
+        header.site.scrolled {
+            border-bottom-color: var(--line);
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+        }
+
+        header.site .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 20px;
         }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #0f172a;
-        }
-        .logo span {
-            color: #4A6CF7;
-        }
-        .nav-links {
+
+        .brand {
             display: flex;
-            gap: 32px;
             align-items: center;
+            gap: 10px;
+            font-size: 1.28rem;
+            font-weight: 800;
+            color: var(--ink);
+            letter-spacing: -0.02em;
+        }
+
+        /* ─── Brand mark: now an image container ─── */
+        .brand-mark {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(74, 108, 247, 0.3);
+            flex-shrink: 0;
+        }
+
+        .brand-mark img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .brand span { color: var(--brand); }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav a.nav-link {
+            font-size: 0.92rem;
             font-weight: 500;
+            color: var(--ink-3);
+            position: relative;
         }
-        .nav-links a {
-            color: #334155;
-            transition: color 0.2s;
-        }
-        .nav-links a:hover {
-            color: #4A6CF7;
-        }
-        .nav-links .btn-primary {
-            padding: 10px 24px;
-            font-size: 0.9rem;
+        .nav a.nav-link:hover { color: var(--brand); }
+
+        .nav .btn-primary {
+            padding: 10px 22px;
+            font-size: 0.88rem;
             box-shadow: none;
         }
 
-        /* ─── Hero ─── */
+        .nav-toggle {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: transparent;
+            border: 1px solid var(--line);
+            color: var(--ink);
+            font-size: 16px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           HERO
+           ═══════════════════════════════════════════════════════════ */
         .hero {
-            padding: 80px 0 60px;
-            text-align: center;
-            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+            position: relative;
+            padding: 88px 0 72px;
+            overflow: hidden;
+            background:
+                radial-gradient(900px 480px at 15% 0%, rgba(74, 108, 247, 0.10), transparent 60%),
+                radial-gradient(700px 420px at 90% 30%, rgba(74, 108, 247, 0.08), transparent 60%),
+                var(--bg);
         }
-        .hero h1 {
-            font-size: 3.5rem;
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            align-items: center;
+            gap: 64px;
+        }
+
+        .hero-copy h1 {
+            font-size: clamp(2.2rem, 4.4vw, 3.4rem);
             font-weight: 800;
-            line-height: 1.1;
-            max-width: 800px;
-            margin: 0 auto 16px;
-            color: #0f172a;
-        }
-        .hero h1 span {
-            background: linear-gradient(135deg, #4A6CF7, #3B5CDB);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            color: #475569;
-            max-width: 660px;
-            margin: 0 auto 28px;
-        }
-        .hero .cta-group {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .hero .badge {
-            margin-top: 32px;
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            flex-wrap: wrap;
-            color: #475569;
-            font-size: 0.95rem;
-        }
-        .hero .badge i {
-            color: #4A6CF7;
-            margin-right: 6px;
-        }
-        .platform-badges {
-            margin-top: 16px;
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-        .platform-badges span {
-            background: #e2e8f0;
-            padding: 6px 18px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #1e293b;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .platform-badges span i {
-            color: #4A6CF7;
-        }
-
-        /* ─── Features ─── */
-        .features {
-            padding: 70px 0;
-            background: #fff;
-        }
-        .features h2 {
-            text-align: center;
-            font-size: 2.4rem;
-            font-weight: 700;
-            margin-bottom: 14px;
-            color: #0f172a;
-        }
-        .features .subtitle {
-            text-align: center;
-            color: #64748b;
-            font-size: 1.05rem;
-            margin-bottom: 44px;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        .card {
-            background: #f8fafc;
-            border-radius: 16px;
-            padding: 28px 22px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid #e2e8f0;
-        }
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
-        }
-        .card i {
-            font-size: 2.2rem;
-            color: #4A6CF7;
-            margin-bottom: 14px;
-        }
-        .card h3 {
-            font-size: 1.15rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: #0f172a;
-        }
-        .card p {
-            color: #475569;
-            font-size: 0.95rem;
-        }
-
-        /* ─── Why SoundScript ─── */
-        .why {
-            padding: 70px 0;
-            background: #f1f5f9;
-        }
-        .why h2 {
-            text-align: center;
-            font-size: 2.4rem;
-            font-weight: 700;
-            margin-bottom: 14px;
-            color: #0f172a;
-        }
-        .why .subtitle {
-            text-align: center;
-            color: #64748b;
-            font-size: 1.05rem;
-            margin-bottom: 44px;
-        }
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-        }
-        .why-card {
-            background: #fff;
-            border-radius: 16px;
-            padding: 32px 24px;
-            border: 1px solid #e2e8f0;
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
-        }
-        .why-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.06);
-        }
-        .why-card i {
-            font-size: 2.6rem;
-            color: #4A6CF7;
-            margin-bottom: 14px;
-        }
-        .why-card h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #0f172a;
-        }
-        .why-card p {
-            color: #475569;
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        /* ─── About / Company ─── */
-        .about {
-            padding: 70px 0;
-            background: #fff;
-        }
-        .about .container {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 60px;
-        }
-        .about-content {
-            flex: 1;
-        }
-        .about-content h2 {
-            font-size: 2.4rem;
-            font-weight: 700;
-            color: #0f172a;
-            margin-bottom: 14px;
-        }
-        .about-content p {
-            color: #334155;
-            font-size: 1.05rem;
+            line-height: 1.08;
             margin-bottom: 20px;
         }
-        .about-content ul {
-            list-style: none;
-            padding: 0;
+
+        .hero-copy h1 .accent {
+            background: linear-gradient(120deg, var(--brand) 0%, var(--brand-dark) 60%, #7d4ff7 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .about-content ul li {
-            margin-bottom: 10px;
+
+        .hero-copy p.lede {
+            font-size: 1.1rem;
+            color: var(--ink-3);
+            max-width: 560px;
+            margin-bottom: 30px;
+        }
+
+        .hero-copy p.lede strong { color: var(--ink); font-weight: 600; }
+
+        .hero-cta {
             display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 1rem;
-            color: #1e293b;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
         }
-        .about-content ul li i {
-            color: #4A6CF7;
-            width: 24px;
-            text-align: center;
-        }
-        .about-image {
-            flex: 1;
+
+        .hero-stats {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            padding-top: 26px;
+            border-top: 1px solid var(--line);
         }
-        .about-image .placeholder {
-            width: 100%;
-            max-width: 380px;
-            height: 260px;
-            background: linear-gradient(145deg, #4A6CF7, #3B5CDB);
-            border-radius: 20px;
+
+        .hero-stat {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 1.4rem;
-            font-weight: 600;
-            box-shadow: 0 20px 40px rgba(74, 108, 247, 0.3);
-            gap: 8px;
-        }
-        .about-image .placeholder i {
-            font-size: 3.6rem;
-        }
-        .about-image .placeholder small {
-            font-weight: 400;
-            opacity: 0.8;
-            font-size: 0.85rem;
+            gap: 2px;
         }
 
-        /* ─── CTA ─── */
-        .cta-section {
-            padding: 70px 0;
-            background: #0f172a;
-            color: #fff;
-            text-align: center;
+        .hero-stat .v {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--ink);
+            letter-spacing: -0.02em;
         }
-        .cta-section h2 {
-            font-size: 2.4rem;
-            font-weight: 700;
-            margin-bottom: 14px;
-        }
-        .cta-section p {
-            font-size: 1.05rem;
-            opacity: 0.85;
-            max-width: 560px;
-            margin: 0 auto 32px;
+        .hero-stat .l {
+            font-size: 0.78rem;
+            color: var(--muted);
+            font-weight: 500;
+            letter-spacing: 0.02em;
         }
 
-        /* ─── Footer ─── */
-        footer {
-            background: #0f172a;
-            padding: 32px 0 16px;
-            border-top: 1px solid #1e293b;
-            color: #94a3b8;
-            font-size: 0.9rem;
+        /* ─── App mockup (CSS-built) ─── */
+        .mockup-wrap {
+            position: relative;
+            perspective: 1400px;
         }
-        footer .container {
+
+        .mockup {
+            position: relative;
+            border-radius: var(--radius-lg);
+            background: #fff;
+            border: 1px solid var(--line);
+            box-shadow:
+                0 30px 60px -12px rgba(15, 23, 42, 0.18),
+                0 12px 24px -8px rgba(74, 108, 247, 0.10);
+            overflow: hidden;
+            transform: rotateY(-6deg) rotateX(3deg);
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .mockup-wrap:hover .mockup {
+            transform: rotateY(-2deg) rotateX(1deg);
+        }
+
+        .mockup-titlebar {
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 16px;
+            background: var(--bg-alt);
+            border-bottom: 1px solid var(--line);
         }
-        footer .footer-left {
+
+        .dot { width: 11px; height: 11px; border-radius: 50%; }
+        .dot.r { background: #ff5f57; }
+        .dot.y { background: #ffbd2e; }
+        .dot.g { background: #28c840; }
+
+        .mockup-title {
+            margin-left: auto;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--muted);
+            letter-spacing: 0.04em;
+        }
+
+        .mockup-body {
+            display: grid;
+            grid-template-columns: 130px 1fr;
+            height: 340px;
+        }
+
+        .mockup-side {
+            background: #0f172a;
+            padding: 16px 12px;
             display: flex;
             flex-direction: column;
             gap: 4px;
         }
-        footer .footer-left .logo {
-            font-size: 1.2rem;
+
+        .mockup-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            font-size: 12px;
             font-weight: 700;
+            padding-bottom: 14px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        /* Smaller brand-mark inside the mockup */
+        .mockup-logo .brand-mark {
+            width: 20px;
+            height: 20px;
+            border-radius: 6px;
+            box-shadow: none;
+        }
+
+        .mockup-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            color: rgba(255,255,255,0.5);
+            font-weight: 500;
+        }
+
+        .mockup-nav-item.active {
+            background: var(--brand);
             color: #fff;
         }
-        footer .footer-left .logo span {
-            color: #4A6CF7;
-        }
-        footer .footer-links {
+
+        .mockup-nav-item i { font-size: 11px; width: 14px; text-align: center; }
+
+        .mockup-main {
+            padding: 16px 18px;
+            background: #f8fafc;
             display: flex;
-            gap: 24px;
+            flex-direction: column;
+            gap: 10px;
+            overflow: hidden;
+        }
+
+        .mockup-bar {
+            display: flex;
+            gap: 8px;
+        }
+
+        .mockup-chip {
+            padding: 5px 12px;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--ink-3);
+        }
+
+        .mockup-chip.accent {
+            background: var(--brand);
+            color: #fff;
+            border-color: var(--brand);
+        }
+
+        .mockup-editor {
+            flex: 1;
+            background: #fff;
+            border-radius: 10px;
+            padding: 14px;
+            border: 1px solid var(--line);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10.5px;
+            line-height: 1.7;
+            color: var(--ink-3);
+            overflow: hidden;
+        }
+
+        .mockup-editor .title-line { color: var(--ink); font-weight: 600; margin-bottom: 6px; }
+        .mockup-editor .scene-h { color: var(--brand); font-weight: 600; margin-top: 6px; }
+        .mockup-editor .cursor {
+            display: inline-block;
+            width: 2px;
+            height: 12px;
+            background: var(--brand);
+            vertical-align: middle;
+            animation: blink 1.1s steps(2) infinite;
+        }
+
+        @keyframes blink { 50% { opacity: 0; } }
+
+        .mockup-audio {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            background: #fff;
+            border-radius: 10px;
+            border: 1px solid var(--line);
+        }
+
+        .mockup-play {
+            width: 26px; height: 26px; border-radius: 50%;
+            background: var(--brand); color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 9px;
+        }
+
+        .mockup-wave {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            height: 22px;
+        }
+
+        .mockup-wave span {
+            flex: 1;
+            background: var(--brand);
+            border-radius: 2px;
+            opacity: 0.55;
+            animation: pulse 1.4s ease-in-out infinite;
+        }
+        .mockup-wave span:nth-child(odd)  { animation-delay: 0.15s; }
+        .mockup-wave span:nth-child(3n)   { animation-delay: 0.3s;  }
+        .mockup-wave span:nth-child(5n)   { animation-delay: 0.45s; }
+
+        @keyframes pulse {
+            0%, 100% { transform: scaleY(0.4); }
+            50%      { transform: scaleY(1); }
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           TRUST STRIP
+           ═══════════════════════════════════════════════════════════ */
+        .trust {
+            padding: 28px 0;
+            background: var(--bg-soft);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .trust .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
             flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--ink-3);
+            font-weight: 500;
+        }
+
+        .trust-item i {
+            color: var(--brand);
+            font-size: 1rem;
+        }
+
+        .trust-sep {
+            width: 1px;
+            height: 20px;
+            background: var(--line-2);
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           FEATURES
+           ═══════════════════════════════════════════════════════════ */
+        section.features {
+            padding: 96px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .feature {
+            padding: 28px;
+            border-radius: var(--radius);
+            background: #fff;
+            border: 1px solid var(--line);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-4px);
+            border-color: var(--brand);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--brand-soft);
+            color: var(--brand);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            margin-bottom: 16px;
+        }
+
+        .feature h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: -0.01em;
+        }
+
+        .feature p {
+            color: var(--muted);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           ENGINES
+           ═══════════════════════════════════════════════════════════ */
+        section.engines {
+            padding: 96px 0;
+            background: var(--bg-alt);
+        }
+
+        .engines-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .engine {
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 26px 22px;
+            border: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .engine-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            align-self: flex-start;
+            padding: 3px 10px;
+            border-radius: var(--radius-pill);
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .engine-tag.cloud { background: #dbeafe; color: #1d4ed8; }
+        .engine-tag.local { background: #dcfce7; color: #15803d; }
+
+        .engine h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .engine p {
+            color: var(--muted);
+            font-size: 0.88rem;
+            line-height: 1.55;
+            flex: 1;
+        }
+
+        .engine-meta {
+            font-size: 0.78rem;
+            color: var(--ink-3);
+            font-weight: 500;
+            padding-top: 12px;
+            border-top: 1px solid var(--line);
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           HOW IT WORKS
+           ═══════════════════════════════════════════════════════════ */
+        section.how {
+            padding: 96px 0;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 32px;
+        }
+
+        .step {
+            position: relative;
+        }
+
+        .step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--brand-soft);
+            color: var(--brand);
+            font-weight: 800;
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+
+        .step h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .step p {
+            color: var(--muted);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           WHY
+           ═══════════════════════════════════════════════════════════ */
+        section.why {
+            padding: 96px 0;
+            background: var(--bg-alt);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .why-card {
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 32px 26px;
+            border: 1px solid var(--line);
+        }
+
+        .why-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 18px;
+            box-shadow: 0 8px 20px rgba(74, 108, 247, 0.25);
+        }
+
+        .why-card h3 {
+            font-size: 1.12rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .why-card p {
+            color: var(--muted);
+            font-size: 0.94rem;
+            line-height: 1.65;
+        }
+
+        .why-card p strong { color: var(--ink-3); }
+
+        /* ═══════════════════════════════════════════════════════════
+           ABOUT
+           ═══════════════════════════════════════════════════════════ */
+        section.about {
+            padding: 96px 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
             align-items: center;
         }
-        footer .footer-links a {
-            color: #94a3b8;
+
+        .about-copy h2 {
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 800;
+            margin-bottom: 18px;
+        }
+
+        .about-copy h2 span { color: var(--brand); }
+
+        .about-copy > p {
+            color: var(--ink-3);
+            font-size: 1rem;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .about-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .about-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.95rem;
+            color: var(--ink-2);
+        }
+
+        .about-list li i {
+            color: var(--brand);
+            font-size: 0.95rem;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+
+        .about-visual {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: linear-gradient(150deg, #0f172a 0%, #1a2560 55%, var(--brand) 100%);
+            padding: 40px 32px;
+            color: #fff;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-visual::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(400px 240px at 80% 20%, rgba(120, 160, 255, 0.35), transparent 70%);
+            pointer-events: none;
+        }
+
+        .about-visual > * { position: relative; }
+
+        .about-visual .av-head {
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            font-weight: 700;
+            opacity: 0.7;
+            margin-bottom: 22px;
+        }
+
+        .about-visual .av-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 8px;
+        }
+
+        .about-visual .av-sub {
+            font-size: 0.88rem;
+            opacity: 0.7;
+            margin-bottom: 32px;
+        }
+
+        .about-spec {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px 22px;
+        }
+
+        .about-spec-item {
+            border-top: 1px solid rgba(255,255,255,0.15);
+            padding-top: 12px;
+        }
+
+        .about-spec-item .k {
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            opacity: 0.6;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .about-spec-item .v {
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           FAQ
+           ═══════════════════════════════════════════════════════════ */
+        section.faq {
+            padding: 96px 0;
+            background: var(--bg-alt);
+        }
+
+        .faq-list {
+            max-width: 780px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .faq-item {
+            background: #fff;
+            border-radius: var(--radius);
+            border: 1px solid var(--line);
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+
+        .faq-item[open] {
+            border-color: var(--brand);
+        }
+
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+            padding: 20px 24px;
+            font-weight: 600;
+            color: var(--ink);
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .faq-item summary::-webkit-details-marker { display: none; }
+
+        .faq-item summary::after {
+            content: "\f067";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--brand);
+            font-size: 0.85rem;
+            transition: transform 0.25s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-item[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-body {
+            padding: 0 24px 22px;
+            color: var(--muted);
+            font-size: 0.94rem;
+            line-height: 1.7;
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           CTA
+           ═══════════════════════════════════════════════════════════ */
+        section.cta {
+            padding: 96px 0;
+            background:
+                radial-gradient(700px 400px at 20% 20%, rgba(74, 108, 247, 0.35), transparent 60%),
+                radial-gradient(600px 360px at 80% 80%, rgba(125, 79, 247, 0.28), transparent 60%),
+                #0a0f24;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta h2 {
+            color: #fff;
+            font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .cta p {
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 1.05rem;
+            max-width: 560px;
+            margin: 0 auto 36px;
+        }
+
+        .cta p strong { color: #fff; font-weight: 600; }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+        }
+
+        .cta-meta {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .cta-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .cta-meta i { color: var(--success); font-size: 0.75rem; }
+
+        /* ═══════════════════════════════════════════════════════════
+           FOOTER
+           ═══════════════════════════════════════════════════════════ */
+        footer.site {
+            background: #0a0f24;
+            color: var(--muted-2);
+            padding: 56px 0 24px;
+            font-size: 0.88rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-brand .brand { color: #fff; }
+
+        .footer-brand p {
+            color: var(--muted-2);
+            font-size: 0.86rem;
+            line-height: 1.6;
+            max-width: 260px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-col a {
+            color: var(--muted-2);
+            font-size: 0.88rem;
             transition: color 0.2s;
         }
-        footer .footer-links a:hover {
-            color: #fff;
-        }
-        footer .copyright {
-            text-align: center;
-            width: 100%;
-            margin-top: 18px;
-            border-top: 1px solid #1e293b;
-            padding-top: 16px;
-            font-size: 0.8rem;
+
+        .footer-col a:hover { color: #fff; }
+
+        .footer-bottom {
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.78rem;
             color: #64748b;
         }
 
-        /* ─── Responsive ─── */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            .about .container {
-                flex-direction: column;
-                gap: 40px;
-            }
-            .about-image {
-                order: -1;
-            }
-            .about-image .placeholder {
-                max-width: 100%;
-                height: 180px;
-                font-size: 1.2rem;
-            }
-            .about-image .placeholder i {
-                font-size: 3rem;
-            }
-            .nav-links {
-                display: none;
-            }
-            header .container {
-                justify-content: center;
-            }
-            .hero .badge {
-                gap: 14px;
-                font-size: 0.85rem;
-            }
-            .platform-badges span {
-                font-size: 0.75rem;
-                padding: 4px 14px;
-            }
-            .grid {
-                grid-template-columns: 1fr;
-            }
-            .why-grid {
-                grid-template-columns: 1fr;
-            }
-            footer .container {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            footer .footer-links {
-                justify-content: center;
+        .footer-bottom .legal-note {
+            max-width: 620px;
+            line-height: 1.6;
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           REVEAL ANIMATIONS
+           ═══════════════════════════════════════════════════════════ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+                scroll-behavior: auto !important;
             }
         }
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero .cta-group {
+
+        /* ═══════════════════════════════════════════════════════════
+           RESPONSIVE
+           ═══════════════════════════════════════════════════════════ */
+        @media (max-width: 1024px) {
+            .hero .container { grid-template-columns: 1fr; gap: 48px; }
+            .mockup { transform: none !important; }
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 720px) {
+            .nav-link { display: none; }
+            .nav-toggle { display: inline-flex; }
+
+            .nav.open {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                padding: 16px 24px 24px;
+                background: #fff;
+                border-bottom: 1px solid var(--line);
+                box-shadow: var(--shadow-lg);
                 flex-direction: column;
-                align-items: center;
+                align-items: stretch;
+                gap: 8px;
             }
-            .btn-primary, .btn-secondary {
-                width: 100%;
-                justify-content: center;
+
+            .nav.open a.nav-link {
+                display: block;
+                padding: 12px 4px;
+                border-bottom: 1px solid var(--line);
             }
+
+            .nav.open a.nav-link:last-of-type { border-bottom: none; }
+
+            .hero { padding: 60px 0 52px; }
+            .hero-stats { gap: 22px; }
+            .hero-stat .v { font-size: 1.15rem; }
+
+            section { padding: 72px 0 !important; }
+
+            .trust .container { gap: 18px; }
+            .trust-sep { display: none; }
+
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+
+            .cta-meta { flex-direction: column; gap: 10px; }
+            .about-spec { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-cta { flex-direction: column; align-items: stretch; }
+            .hero-cta .btn { justify-content: center; }
+            .cta-buttons { flex-direction: column; align-items: stretch; }
+            .cta-buttons .btn { justify-content: center; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ─── HEADER ─── -->
-    <header>
+    <!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
+    <header class="site" id="top">
         <div class="container">
-            <a href="#" class="logo">Sound<span>Script</span></a>
-            <nav class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#why">Why SoundScript</a>
-                <a href="#about">About</a>
-                <a href="https://bitprogrammer.gumroad.com/l/soundscript" class="btn-primary">
+            <a href="#top" class="brand">
+                <span class="brand-mark"><img src="assets/app_icon.png" alt="SoundScript" /></span>
+                Sound<span>Script</span>
+            </a>
+
+            <nav class="nav" id="mainNav">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#engines" class="nav-link">Engines</a>
+                <a href="#how" class="nav-link">How It Works</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="https://bitprogrammer.gumroad.com/l/soundscript"
+                   class="btn btn-primary"
+                   target="_blank" rel="noopener">
                     <i class="fas fa-shopping-cart"></i> Buy Now
                 </a>
             </nav>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
-    <!-- ─── HERO ─── -->
+    <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
     <section class="hero">
         <div class="container">
-            <h1>
-                Transform Text into<br />
-                <span>Natural, Expressive Audio</span>
-            </h1>
-            <p>
-                SoundScript is a desktop text‑to‑speech studio with <strong>four AI engines</strong> —
-                use <strong>ElevenLabs</strong> and <strong>Gemini</strong> in the cloud, or run everything
-                <strong>fully offline</strong> with <strong>Anhad</strong> and <strong>Nuqta</strong>.
-                No subscriptions. No telemetry. Your data stays on your machine.
-            </p>
-            <div class="cta-group">
-                <a href="https://bitprogrammer.gumroad.com/l/soundscript" class="btn-primary">
-                    <i class="fas fa-shopping-cart"></i> Buy Now
-                </a>
-                <a href="#features" class="btn-secondary">
-                    <i class="fas fa-rocket"></i> See Features
-                </a>
+            <div class="hero-copy reveal">
+                <span class="eyebrow">Desktop TTS Studio</span>
+                <h1>
+                    Transform text into<br />
+                    <span class="accent">natural, expressive audio.</span>
+                </h1>
+                <p class="lede">
+                    SoundScript is a professional text-to-speech studio with
+                    <strong>four AI engines</strong> — <strong>ElevenLabs</strong> and
+                    <strong>Gemini</strong> in the cloud, or <strong>Anhad</strong> and
+                    <strong>Nuqta</strong> running fully offline.
+                    No subscriptions. No telemetry. Your data stays on your machine.
+                </p>
+
+                <div class="hero-cta">
+                    <a href="https://bitprogrammer.gumroad.com/l/soundscript"
+                       class="btn btn-primary btn-lg"
+                       target="_blank" rel="noopener">
+                        <i class="fas fa-shopping-cart"></i> Buy Now
+                    </a>
+                    <a href="#features" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-rocket"></i> See Features
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="v">29</span>
+                        <span class="l">Curated voices</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="v">4</span>
+                        <span class="l">AI engines</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="v">100%</span>
+                        <span class="l">Local-first</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="v">0</span>
+                        <span class="l">Subscriptions</span>
+                    </div>
+                </div>
             </div>
-            <div class="badge">
-                <span><i class="fas fa-check-circle"></i> 25+ Curated Voices</span>
-                <span><i class="fas fa-check-circle"></i> Works Offline</span>
-                <span><i class="fas fa-check-circle"></i> Batch Processing</span>
-                <span><i class="fas fa-check-circle"></i> Smart Caching</span>
-            </div>
-            <div class="platform-badges">
-                <span><i class="fab fa-windows"></i> Windows 10 / 11</span>
-                <span><i class="fab fa-linux"></i> Linux</span>
-                <span style="opacity:0.5;"><i class="fab fa-apple"></i> macOS (Coming Soon)</span>
+
+            <!-- CSS-built app mockup -->
+            <div class="mockup-wrap reveal">
+                <div class="mockup" aria-hidden="true">
+                    <div class="mockup-titlebar">
+                        <span class="dot r"></span>
+                        <span class="dot y"></span>
+                        <span class="dot g"></span>
+                        <span class="mockup-title">SOUNDSCRIPT</span>
+                    </div>
+                    <div class="mockup-body">
+                        <div class="mockup-side">
+                            <div class="mockup-logo">
+                                <span class="brand-mark"><img src="assets/app_icon.png" alt="" /></span>
+                                SoundScript
+                            </div>
+                            <div class="mockup-nav-item active"><i class="fas fa-pen-nib"></i> Studio</div>
+                            <div class="mockup-nav-item"><i class="fas fa-comments"></i> Assistant</div>
+                            <div class="mockup-nav-item"><i class="fas fa-folder"></i> Library</div>
+                            <div class="mockup-nav-item"><i class="fas fa-cog"></i> Settings</div>
+                            <div class="mockup-nav-item"><i class="fas fa-info-circle"></i> About</div>
+                        </div>
+                        <div class="mockup-main">
+                            <div class="mockup-bar">
+                                <span class="mockup-chip accent">Eleven Flash v2</span>
+                                <span class="mockup-chip">Adam</span>
+                                <span class="mockup-chip">Narrator</span>
+                            </div>
+                            <div class="mockup-editor">
+                                <div class="title-line">Title: The Lost Key</div>
+                                <div class="scene-h">Scene 1</div>
+                                A man tore his apartment apart looking for his only key.<br>
+                                <div class="scene-h">Scene 2</div>
+                                He retraced the night before and drove away.<span class="cursor"></span>
+                            </div>
+                            <div class="mockup-audio">
+                                <div class="mockup-play"><i class="fas fa-play"></i></div>
+                                <div class="mockup-wave">
+                                    <span style="height:30%"></span><span style="height:70%"></span>
+                                    <span style="height:50%"></span><span style="height:90%"></span>
+                                    <span style="height:40%"></span><span style="height:65%"></span>
+                                    <span style="height:85%"></span><span style="height:35%"></span>
+                                    <span style="height:75%"></span><span style="height:55%"></span>
+                                    <span style="height:80%"></span><span style="height:45%"></span>
+                                    <span style="height:60%"></span><span style="height:90%"></span>
+                                    <span style="height:40%"></span><span style="height:70%"></span>
+                                    <span style="height:55%"></span><span style="height:85%"></span>
+                                    <span style="height:35%"></span><span style="height:65%"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ─── FEATURES ─── -->
+    <!-- ═══════════════════════════ TRUST STRIP ═══════════════════════════ -->
+    <div class="trust">
+        <div class="container">
+            <div class="trust-item"><i class="fas fa-shield-alt"></i> Zero telemetry</div>
+            <div class="trust-sep"></div>
+            <div class="trust-item"><i class="fas fa-wifi"></i> Works fully offline</div>
+            <div class="trust-sep"></div>
+            <div class="trust-item"><i class="fas fa-lock"></i> Your data stays local</div>
+            <div class="trust-sep"></div>
+            <div class="trust-item"><i class="fas fa-undo"></i> Gumroad refund policy</div>
+            <div class="trust-sep"></div>
+            <div class="trust-item"><i class="fab fa-windows"></i> Windows & Linux</div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════ FEATURES ═══════════════════════════ -->
     <section class="features" id="features">
         <div class="container">
-            <h2>Built for Professional Audio Production</h2>
-            <p class="subtitle">Everything you need to create studio‑quality voice‑overs in minutes.</p>
-            <div class="grid">
-                <div class="card">
-                    <i class="fas fa-microphone-alt"></i>
-                    <h3>25+ Curated Voices</h3>
-                    <p>Hand‑picked voices from ElevenLabs and Anhad, covering multiple languages and accents.</p>
+            <div class="reveal">
+                <span class="eyebrow" style="display:block; text-align:center;">Features</span>
+                <h2 class="section-title">Built for professional audio production</h2>
+                <p class="section-sub">
+                    Everything you need to create studio-quality voice-overs in minutes —
+                    without a subscription, and without your data leaving your machine.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature reveal">
+                    <div class="feature-icon"><i class="fas fa-microphone-alt"></i></div>
+                    <h3>29 Curated Voices</h3>
+                    <p>Hand-picked voices from ElevenLabs and Anhad, with American and British English accents.</p>
                 </div>
-                <div class="card">
-                    <i class="fas fa-sliders-h"></i>
-                    <h3>Emotion &amp; Pacing Control</h3>
-                    <p>Fine‑tune stability, similarity, speed, and tone to match your creative vision.</p>
+                <div class="feature reveal">
+                    <div class="feature-icon"><i class="fas fa-sliders-h"></i></div>
+                    <h3>Emotion &amp; pacing control</h3>
+                    <p>Fine-tune stability, similarity, speed, and tone to match your creative vision.</p>
                 </div>
-                <div class="card">
-                    <i class="fas fa-wifi"></i>
-                    <h3>Runs Fully Offline</h3>
-                    <p>Download the Anhad and Nuqta models once and generate speech and scripts with no internet connection.</p>
+                <div class="feature reveal">
+                    <div class="feature-icon"><i class="fas fa-wifi"></i></div>
+                    <h3>Runs fully offline</h3>
+                    <p>Download Anhad and Nuqta once, then generate speech and scripts with no internet connection.</p>
                 </div>
-                <div class="card">
-                    <i class="fas fa-layer-group"></i>
-                    <h3>Batch Processing</h3>
-                    <p>Generate audio for multiple text files at once — perfect for large projects.</p>
+                <div class="feature reveal">
+                    <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3>Batch processing</h3>
+                    <p>Generate audio for multiple text files at once — perfect for long-form projects.</p>
                 </div>
-                <div class="card">
-                    <i class="fas fa-database"></i>
-                    <h3>Intelligent Caching</h3>
-                    <p>Regenerate previously generated audio instantly with our smart cache system.</p>
+                <div class="feature reveal">
+                    <div class="feature-icon"><i class="fas fa-database"></i></div>
+                    <h3>Intelligent caching</h3>
+                    <p>Regenerate previously generated audio instantly with a smart content-addressed cache.</p>
                 </div>
-                <div class="card">
-                    <i class="fas fa-robot"></i>
-                    <h3>AI Script Copilot</h3>
-                    <p>Write, rewrite, and brainstorm scripts with Gemini (cloud) or Nuqta (offline).</p>
+                <div class="feature reveal">
+                    <div class="feature-icon"><i class="fas fa-robot"></i></div>
+                    <h3>AI script copilot</h3>
+                    <p>Write, rewrite, and brainstorm scripts with Gemini in the cloud or Nuqta running locally.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ─── WHY SOUNDSCRIPT ─── -->
+    <!-- ═══════════════════════════ ENGINES ═══════════════════════════ -->
+    <section class="engines" id="engines">
+        <div class="container">
+            <div class="reveal">
+                <span class="eyebrow" style="display:block; text-align:center;">Engines</span>
+                <h2 class="section-title">Four engines. One workflow.</h2>
+                <p class="section-sub">
+                    Mix and match cloud and local engines depending on your task, budget,
+                    and privacy needs.
+                </p>
+            </div>
+
+            <div class="engines-grid">
+                <div class="engine reveal">
+                    <span class="engine-tag cloud"><i class="fas fa-cloud"></i> Cloud TTS</span>
+                    <h3>ElevenLabs</h3>
+                    <p>State-of-the-art cloud voices. Bring your own API key — you pay ElevenLabs directly, no markup.</p>
+                    <div class="engine-meta">Your API key · Billed per character</div>
+                </div>
+                <div class="engine reveal">
+                    <span class="engine-tag cloud"><i class="fas fa-cloud"></i> Cloud LLM</span>
+                    <h3>Gemini</h3>
+                    <p>Google's Gemini models for scriptwriting, rewriting, and brainstorming. Free tier available.</p>
+                    <div class="engine-meta">Your API key · Free tier supported</div>
+                </div>
+                <div class="engine reveal">
+                    <span class="engine-tag local"><i class="fas fa-microchip"></i> Local TTS</span>
+                    <h3>Anhad</h3>
+                    <p>Lightweight local text-to-speech. Runs on CPU, no GPU required. ~340 MB model.</p>
+                    <div class="engine-meta">Fully offline · Runs on CPU</div>
+                </div>
+                <div class="engine reveal">
+                    <span class="engine-tag local"><i class="fas fa-microchip"></i> Local LLM</span>
+                    <h3>Nuqta</h3>
+                    <p>Local scriptwriting assistant. Choose from three model sizes — Editor, Writer, or Pro.</p>
+                    <div class="engine-meta">Fully offline · 0.5B – 4B models</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════ HOW IT WORKS ═══════════════════════════ -->
+    <section class="how" id="how">
+        <div class="container">
+            <div class="reveal">
+                <span class="eyebrow" style="display:block; text-align:center;">How it works</span>
+                <h2 class="section-title">From blank page to finished audio in four steps</h2>
+                <p class="section-sub">
+                    SoundScript keeps the workflow simple. Write, refine, generate, done.
+                </p>
+            </div>
+
+            <div class="steps">
+                <div class="step reveal">
+                    <span class="step-num">1</span>
+                    <h3>Write or paste your script</h3>
+                    <p>Use the built-in editor, load a <code>.txt</code> file, or ask the AI copilot to draft something for you.</p>
+                </div>
+                <div class="step reveal">
+                    <span class="step-num">2</span>
+                    <h3>Choose your voice &amp; tone</h3>
+                    <p>Pick from 29 curated voices, then fine-tune tone, stability, and speed to match your project.</p>
+                </div>
+                <div class="step reveal">
+                    <span class="step-num">3</span>
+                    <h3>Generate the audio</h3>
+                    <p>One click. Cloud engines stream via your API key, local engines run entirely on your machine.</p>
+                </div>
+                <div class="step reveal">
+                    <span class="step-num">4</span>
+                    <h3>Play, save, or batch</h3>
+                    <p>Play in-app, export to MP3, or process an entire folder with Batch Generate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════ WHY ═══════════════════════════ -->
     <section class="why" id="why">
         <div class="container">
-            <h2>Why Choose SoundScript?</h2>
-            <p class="subtitle">Professional TTS that puts you in control — of your budget, your data, and your workflow.</p>
+            <div class="reveal">
+                <span class="eyebrow" style="display:block; text-align:center;">Why SoundScript</span>
+                <h2 class="section-title">Professional TTS that puts you in control</h2>
+                <p class="section-sub">
+                    Of your budget, your data, and your workflow.
+                </p>
+            </div>
+
             <div class="why-grid">
-                <div class="why-card">
-                    <i class="fas fa-coins"></i>
-                    <h3>No Subscriptions, Ever</h3>
+                <div class="why-card reveal">
+                    <div class="why-icon"><i class="fas fa-coins"></i></div>
+                    <h3>No subscriptions, ever</h3>
                     <p>
-                        SoundScript is a <strong>one‑time purchase</strong>. Use your own ElevenLabs and Gemini
-                        API keys for cloud generation, or run the built‑in local engines for free.
-                        No monthly fees, no hidden costs, no lock‑in.
+                        SoundScript is a <strong>one-time purchase</strong>. Use your own
+                        ElevenLabs and Gemini API keys for cloud generation, or run the
+                        local engines for free. No monthly fees, no hidden costs, no lock-in.
                     </p>
                 </div>
-                <div class="why-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Your Data Stays on Your Machine</h3>
+                <div class="why-card reveal">
+                    <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Your data stays on your machine</h3>
                     <p>
-                        <strong>Zero cloud storage. Zero telemetry.</strong> All your scripts, voice settings,
-                        and audio files remain <strong>100% local</strong>. SoundScript does not upload, store,
-                        or share your content.
+                        <strong>Zero cloud storage. Zero telemetry.</strong> All your scripts,
+                        voice settings, and audio files remain <strong>100% local</strong>.
+                        SoundScript does not upload, store, or share your content.
                     </p>
                 </div>
-                <div class="why-card">
-                    <i class="fas fa-laptop-code"></i>
+                <div class="why-card reveal">
+                    <div class="why-icon"><i class="fas fa-laptop-code"></i></div>
                     <h3>Native on Windows &amp; Linux</h3>
                     <p>
-                        Built as a true desktop application — <strong>no browser, no cloud dependency</strong>.
-                        Available for <strong>Windows 10/11</strong> and <strong>Linux</strong> (Ubuntu, Fedora,
-                        Kali, and most modern distros). macOS support is on the roadmap.
+                        Built as a true desktop application — <strong>no browser, no cloud
+                        dependency</strong>. Available for <strong>Windows 10/11</strong> and
+                        <strong>Linux</strong> (Ubuntu, Fedora, Kali, and most modern distros).
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ─── ABOUT ─── -->
+    <!-- ═══════════════════════════ ABOUT ═══════════════════════════ -->
     <section class="about" id="about">
         <div class="container">
-            <div class="about-content">
-                <h2>Professional TTS Studio<br /> by <span style="color:#4A6CF7;">BitProgram</span></h2>
-                <p>
-                    SoundScript combines cutting‑edge AI voice synthesis with an intuitive workflow,
-                    giving you the power to produce natural, expressive audio for podcasts, e‑learning,
-                    marketing, audiobooks, and more.
-                </p>
-                <ul>
-                    <li><i class="fas fa-check-circle"></i> One‑time purchase — no subscription</li>
-                    <li><i class="fas fa-check-circle"></i> Cloud (ElevenLabs, Gemini) and local (Anhad, Nuqta) engines</li>
-                    <li><i class="fas fa-check-circle"></i> Works offline with downloaded models</li>
-                    <li><i class="fas fa-check-circle"></i> Windows &amp; Linux native apps</li>
-                    <li><i class="fas fa-check-circle"></i> Completely private — your data stays on your machine</li>
-                </ul>
-            </div>
-            <div class="about-image">
-                <div class="placeholder">
-                    <i class="fas fa-headphones"></i>
-                    SoundScript
-                    <small>Professional TTS Studio</small>
+            <div class="about-grid">
+                <div class="about-copy reveal">
+                    <span class="eyebrow">About</span>
+                    <h2>Professional TTS studio<br />by <span>BitProgram</span></h2>
+                    <p>
+                        SoundScript combines cutting-edge AI voice synthesis with an intuitive
+                        workflow, giving you the power to produce natural, expressive audio
+                        for podcasts, e-learning, marketing, audiobooks, and more.
+                    </p>
+                    <ul class="about-list">
+                        <li><i class="fas fa-check-circle"></i> One-time purchase — no subscription</li>
+                        <li><i class="fas fa-check-circle"></i> Cloud (ElevenLabs, Gemini) and local (Anhad, Nuqta) engines</li>
+                        <li><i class="fas fa-check-circle"></i> Works offline with downloaded models</li>
+                        <li><i class="fas fa-check-circle"></i> Windows &amp; Linux native apps</li>
+                        <li><i class="fas fa-check-circle"></i> Completely private — your data stays on your machine</li>
+                        <li><i class="fas fa-check-circle"></i> Free updates for bug fixes and improvements</li>
+                    </ul>
+                </div>
+
+                <div class="about-visual reveal">
+                    <div class="av-head">AT A GLANCE</div>
+                    <div class="av-title">Everything you need.<br>Nothing you don't.</div>
+                    <div class="av-sub">Version 1.0.0 · Windows &amp; Linux</div>
+                    <div class="about-spec">
+                        <div class="about-spec-item">
+                            <div class="k">ENGINES</div>
+                            <div class="v">4 (2 cloud, 2 local)</div>
+                        </div>
+                        <div class="about-spec-item">
+                            <div class="k">VOICES</div>
+                            <div class="v">29 curated</div>
+                        </div>
+                        <div class="about-spec-item">
+                            <div class="k">OFFLINE</div>
+                            <div class="v">Yes — full support</div>
+                        </div>
+                        <div class="about-spec-item">
+                            <div class="k">TELEMETRY</div>
+                            <div class="v">None</div>
+                        </div>
+                        <div class="about-spec-item">
+                            <div class="k">BATCH</div>
+                            <div class="v">Folder-wide generation</div>
+                        </div>
+                        <div class="about-spec-item">
+                            <div class="k">LICENSE</div>
+                            <div class="v">Perpetual, 3 devices</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ─── CALL TO ACTION ─── -->
-    <section class="cta-section" id="download">
+    <!-- ═══════════════════════════ FAQ ═══════════════════════════ -->
+    <section class="faq" id="faq">
         <div class="container">
-            <h2>Ready to Bring Your Scripts to Life?</h2>
-            <p>
-                Get SoundScript today and start creating professional voice‑overs.
-                <strong>One purchase, lifetime access</strong> — no subscriptions, no surprises.
-            </p>
-            <a href="https://bitprogrammer.gumroad.com/l/soundscript" class="btn-primary">
-                <i class="fas fa-shopping-cart"></i> Buy on Gumroad
-            </a>
-            <p style="margin-top:20px; font-size:0.85rem; opacity:0.6;">
-                Windows 10/11 • Linux (Ubuntu / Fedora / Kali)
-            </p>
-            <p style="margin-top:4px; font-size:0.75rem; opacity:0.4;">
-                v1.0.0 • Bring your own API keys for cloud engines. Local engines run free.
-            </p>
+            <div class="reveal">
+                <span class="eyebrow" style="display:block; text-align:center;">FAQ</span>
+                <h2 class="section-title">Frequently asked questions</h2>
+                <p class="section-sub">
+                    Still have questions? Email <a href="mailto:bitprogram0@gmail.com" style="color:var(--brand); font-weight:600;">bitprogram0@gmail.com</a>.
+                </p>
+            </div>
+
+            <div class="faq-list reveal">
+                <details class="faq-item">
+                    <summary>Is this a one-time purchase or a subscription?</summary>
+                    <div class="faq-body">
+                        One-time purchase. No subscription, no recurring fees. You get the
+                        app, all future bug fixes, and free updates — forever. Cloud engine
+                        usage is billed separately by ElevenLabs and Google, on your own
+                        accounts. We never touch your API keys.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Do I need an ElevenLabs subscription?</summary>
+                    <div class="faq-body">
+                        Not necessarily. ElevenLabs is optional — you can use the fully
+                        offline Anhad engine with no accounts at all. If you do want
+                        ElevenLabs voices, you bring your own API key. ElevenLabs has a
+                        free tier that's a good starting point.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Does it really work offline?</summary>
+                    <div class="faq-body">
+                        Yes. After downloading the Anhad (TTS) and Nuqta (LLM) models
+                        once, everything runs on your machine. No internet connection is
+                        required to generate audio or write scripts with local engines.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>What are the system requirements?</summary>
+                    <div class="faq-body">
+                        <strong>OS:</strong> Windows 10/11 or Linux (Ubuntu, Fedora, Kali, most modern distros).<br>
+                        <strong>RAM:</strong> 4 GB minimum. 8 GB recommended for local models.<br>
+                        <strong>Disk:</strong> ~500 MB for the app, plus ~340 MB for Anhad and up to ~2.5 GB per Nuqta model.<br>
+                        <strong>Internet:</strong> Only needed for cloud engines and initial model downloads.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>How many devices can I install it on?</summary>
+                    <div class="faq-body">
+                        Each license activates on up to <strong>three devices</strong> that
+                        you own or control. That covers the common "desktop + laptop"
+                        case with one spare. Need more? Contact support.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Can I get a refund?</summary>
+                    <div class="faq-body">
+                        Refunds are handled through Gumroad's standard policy. If you
+                        run into a problem that we can't fix, reach out first —
+                        <a href="mailto:bitprogram0@gmail.com" style="color:var(--brand); font-weight:600;">bitprogram0@gmail.com</a> —
+                        and we'll work it out.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Is macOS supported?</summary>
+                    <div class="faq-body">
+                        Not yet. macOS support is on the roadmap but there's no firm
+                        timeline. If macOS is a hard requirement for you, hold off for now.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Will it work on my GPU-less machine?</summary>
+                    <div class="faq-body">
+                        Yes. All local models (Anhad and Nuqta) run on CPU. No GPU
+                        required. A faster CPU means faster generation, but any modern
+                        x86-64 processor will work.
+                    </div>
+                </details>
+            </div>
         </div>
     </section>
 
-    <!-- ─── FOOTER ─── -->
-    <footer>
+    <!-- ═══════════════════════════ CTA ═══════════════════════════ -->
+    <section class="cta">
         <div class="container">
-            <div class="footer-left">
-                <div class="logo">Sound<span>Script</span></div>
-                <span>by BitProgram</span>
-                <span style="font-size:0.8rem; color:#64748b;">
-                    &copy; 2026 BitProgram. All rights reserved.
-                </span>
+            <h2>Ready to bring your scripts to life?</h2>
+            <p>
+                Get SoundScript today and start creating professional voice-overs.
+                <strong>One purchase, lifetime access</strong> — no subscriptions, no surprises.
+            </p>
+            <div class="cta-buttons">
+                <a href="https://bitprogrammer.gumroad.com/l/soundscript"
+                   class="btn btn-primary btn-lg"
+                   target="_blank" rel="noopener">
+                    <i class="fas fa-shopping-cart"></i> Buy on Gumroad
+                </a>
+                <a href="#features" class="btn btn-ghost btn-lg">
+                    <i class="fas fa-rocket"></i> Explore features
+                </a>
             </div>
-            <div class="footer-links">
-                <a href="#features">Features</a>
-                <a href="#why">Why SoundScript</a>
-                <a href="#about">About</a>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
-                <a href="https://bitprogrammer.gumroad.com/l/soundscript" target="_blank" rel="noopener">Buy on Gumroad</a>
+            <div class="cta-meta">
+                <span><i class="fas fa-check"></i> Windows 10/11 · Linux</span>
+                <span><i class="fas fa-check"></i> Offline capable</span>
+                <span><i class="fas fa-check"></i> No telemetry</span>
+                <span><i class="fas fa-check"></i> v1.0.0</span>
             </div>
-            <div class="copyright">
-                SoundScript is a proprietary product of BitProgram. All trademarks are the property of their respective owners.
-                <br />
-                <span style="font-size:0.7rem;">
-                    ElevenLabs and Gemini are trademarks of their respective companies.
-                    Anhad and Nuqta are locally‑run engines included with SoundScript.
-                </span>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+    <footer class="site">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#top" class="brand">
+                        <span class="brand-mark"><img src="assets/app_icon.png" alt="SoundScript" /></span>
+                        Sound<span>Script</span>
+                    </a>
+                    <p>
+                        A desktop TTS studio by BitProgram. Professional voice
+                        synthesis without subscriptions or telemetry.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#engines">Engines</a></li>
+                        <li><a href="#how">How It Works</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Get the app</h4>
+                    <ul>
+                        <li><a href="https://bitprogrammer.gumroad.com/l/soundscript" target="_blank" rel="noopener">Buy on Gumroad</a></li>
+                        <li><a href="mailto:bitprogram0@gmail.com">bitprogram0@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 BitProgram. All rights reserved.</div>
+                <div class="legal-note">
+                    SoundScript is a proprietary product of BitProgram. All trademarks are the property of their respective owners.
+                    ElevenLabs and Gemini are trademarks of their respective companies. Anhad and Nuqta are locally-run engines included with SoundScript.
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- ─── Smooth scroll ─── -->
+    <!-- ═══════════════════════════ SCRIPTS ═══════════════════════════ -->
     <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+        // ─── Header shadow on scroll ───
+        const header = document.querySelector('header.site');
+        const onScroll = () => {
+            header.classList.toggle('scrolled', window.scrollY > 8);
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        // ─── Mobile nav toggle ───
+        const navToggle = document.getElementById('navToggle');
+        const nav = document.getElementById('mainNav');
+        navToggle?.addEventListener('click', () => {
+            nav.classList.toggle('open');
+            const icon = navToggle.querySelector('i');
+            icon.className = nav.classList.contains('open')
+                ? 'fas fa-times'
+                : 'fas fa-bars';
+        });
+
+        // Close nav on link click (mobile)
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('open');
+                const icon = navToggle?.querySelector('i');
+                if (icon) icon.className = 'fas fa-bars';
             });
         });
+
+        // ─── Smooth-scroll for same-page anchors ───
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                const href = anchor.getAttribute('href');
+                if (href === '#' || href.length < 2) return;
+                const target = document.querySelector(href);
+                if (!target) return;
+                e.preventDefault();
+                const headerOffset = header.offsetHeight + 12;
+                const targetY = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+                window.scrollTo({ top: targetY, behavior: 'smooth' });
+            });
+        });
+
+        // ─── Reveal-on-scroll ───
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!prefersReduced && 'IntersectionObserver' in window) {
+            const io = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('in');
+                            io.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+            );
+            document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+        } else {
+            document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+        }
     </script>
 
 </body>

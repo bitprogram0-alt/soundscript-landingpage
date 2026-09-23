@@ -1,486 +1,1320 @@
-<style>
-  [data-custom-class='body'], [data-custom-class='body'] * {
-          background: transparent !important;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy — SoundScript</title>
+    <meta name="description" content="SoundScript Privacy Policy. How BitProgram handles your data — local-first, zero telemetry." />
+    <meta name="theme-color" content="#4A6CF7" />
+    <link rel="canonical" href="https://bitprogram0-alt.github.io/soundscript-landingpage/privacy.html" />
+    <link rel="icon" type="image/png" href="assets/app_icon.png" />
+    <link rel="apple-touch-icon" href="assets/app_icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <style>
+        /* ═══════════════════════════════════════════════════════════
+           DESIGN TOKENS
+           ═══════════════════════════════════════════════════════════ */
+        :root {
+            --brand:        #4A6CF7;
+            --brand-dark:   #3B5CDB;
+            --brand-soft:   #eef2ff;
+            --ink:          #0f172a;
+            --ink-2:        #1e293b;
+            --ink-3:        #334155;
+            --muted:        #64748b;
+            --muted-2:      #94a3b8;
+            --line:         #e2e8f0;
+            --line-2:       #cbd5e1;
+            --bg:           #ffffff;
+            --bg-soft:      #f8fafc;
+            --bg-alt:       #f1f5f9;
+            --success:      #16a34a;
+            --success-bg:   #dcfce7;
+            --warn-bg:      #fef3c7;
+            --warn-border:  #f59e0b;
+            --warn-text:    #78350f;
+            --info-bg:      #dbeafe;
+            --info-text:    #1e40af;
+
+            --radius:     12px;
+            --radius-sm:  8px;
+            --max-w:      1160px;
+            --toc-w:      260px;
+
+            --shadow-sm:  0 1px 3px rgba(15, 23, 42, 0.06);
+            --shadow:     0 4px 16px rgba(15, 23, 42, 0.06);
         }
-[data-custom-class='title'], [data-custom-class='title'] * {
-          font-family: Arial !important;
-font-size: 26px !important;
-color: #000000 !important;
+
+        /* ═══════════════════════════════════════════════════════════
+           RESET
+           ═══════════════════════════════════════════════════════════ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-[data-custom-class='subtitle'], [data-custom-class='subtitle'] * {
-          font-family: Arial !important;
-color: #595959 !important;
-font-size: 14px !important;
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+            -webkit-text-size-adjust: 100%;
         }
-[data-custom-class='heading_1'], [data-custom-class='heading_1'] * {
-          font-family: Arial !important;
-font-size: 19px !important;
-color: #000000 !important;
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--ink-2);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-[data-custom-class='heading_2'], [data-custom-class='heading_2'] * {
-          font-family: Arial !important;
-font-size: 17px !important;
-color: #000000 !important;
+
+        a {
+            color: var(--brand);
+            text-decoration: none;
+            transition: color 0.15s ease;
         }
-[data-custom-class='body_text'], [data-custom-class='body_text'] * {
-          color: #595959 !important;
-font-size: 14px !important;
-font-family: Arial !important;
+        a:hover { color: var(--brand-dark); text-decoration: underline; }
+
+        /* ═══════════════════════════════════════════════════════════
+           HEADER
+           ═══════════════════════════════════════════════════════════ */
+        header.site {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 14px 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: saturate(180%) blur(14px);
+            -webkit-backdrop-filter: saturate(180%) blur(14px);
+            border-bottom: 1px solid var(--line);
         }
-[data-custom-class='link'], [data-custom-class='link'] * {
-          color: #3030F1 !important;
-font-size: 14px !important;
-font-family: Arial !important;
-word-break: break-word !important;
+
+        header.site .container {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
         }
-</style>
-      <div data-custom-class="body">
-      <div><strong><span style="font-size: 26px;"><span data-custom-class="title"><h1>PRIVACY POLICY</h1></span></span></strong></div>
-      <div><span style="color: rgb(127, 127, 127);"><strong><span style="font-size: 15px;"><span data-custom-class="subtitle">Last updated September 20, 2026</span></span></strong></span></div>
-      <div><br></div>
-      <div style="line-height: 1.5;"><span style="color: rgb(89, 89, 89); font-size: 15px;"><span data-custom-class="body_text">This Privacy Notice for BitProgram ("<strong>we</strong>," "<strong>us</strong>," or "<strong>our</strong>"), describes how and why we might access, collect, store, use, and/or share ("<strong>process</strong>") your personal information when you use our services ("<strong>Services</strong>"), including when you:</span></span></div>
-      <ul>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);"><span data-custom-class="body_text">Visit our website at <a target="_blank" data-custom-class="link" href="https://bitprogram0-alt.github.io/soundscript-landingpage/">https://bitprogram0-alt.github.io/soundscript-landingpage/</a> or any website of ours that links to this Privacy Notice</span></span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);"><span data-custom-class="body_text">Download and use our desktop application, SoundScript</span></span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);"><span data-custom-class="body_text">Engage with us in other related ways, including any marketing or events</span></span></li>
-      </ul>
-      <div style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);"><span data-custom-class="body_text"><strong>Questions or concerns?</strong> Reading this Privacy Notice will help you understand your privacy rights and choices. We are responsible for making decisions about how your personal information is processed. If you do not agree with our policies and practices, please do not use our Services.</span></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><strong><span style="font-size: 15px;"><span data-custom-class="heading_1"><h2>SUMMARY OF KEY POINTS</h2></span></span></strong></div>
-      <div style="line-height: 1.5;"><span style="font-size: 15px;"><span data-custom-class="body_text"><strong><em>This summary provides key points from our Privacy Notice, but you can find out more details about any of these topics by clicking the link following each key point or by using our <a data-custom-class="link" href="#toc">table of contents</a> below to find the section you are looking for.</em></strong></span></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span style="font-size: 15px;"><span data-custom-class="body_text"><strong>What personal information do we process?</strong> When you visit, use, or navigate our Services, we may process personal information depending on how you interact with us and the Services, the choices you make, and the products and features you use. Learn more about <a data-custom-class="link" href="#personalinfo">personal information you disclose to us</a>.</span></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span style="font-size: 15px;"><span data-custom-class="body_text"><strong>Do we process any sensitive personal information?</strong> We do not process sensitive personal information.</span></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span style="font-size: 15px;"><span data-custom-class="body_text"><strong>Do we collect any information from third parties?</strong> We do not collect any information from third parties.</span></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span style="font-size: 15px;"><span data-custom-class="body_text"><strong>How do we process your information?</strong> We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent. We process your information only when we have a valid legal reason to do so. Learn more about <a data-custom-class="link" href="#infouse">how we process your information</a>.</span></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span style="font-size: 15px;"><span data-custom-class="body_text"><strong>In what situations and with which parties do we share personal information?</strong> We may share information in specific situations and with specific third parties. Learn more about <a data-custom-class="link" href="#whoshare">when and with whom we share your personal information</a>.</span></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span style="font-size: 15px;"><span data-custom-class="body_text"><strong>What are your rights?</strong> Depending on where you are located geographically, the applicable privacy law may mean you have certain rights regarding your personal information. Learn more about <a data-custom-class="link" href="#privacyrights">your privacy rights</a>.</span></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span style="font-size: 15px;"><span data-custom-class="body_text"><strong>How do you exercise your rights?</strong> The easiest way to exercise your rights is by visiting <a target="_blank" data-custom-class="link" href="YOUR-CONTACT-FORM-URL">YOUR-CONTACT-FORM-URL</a>, or by emailing us at <a href="mailto:bitprogram0@gmail.com">bitprogram0@gmail.com</a>. We will consider and act upon any request in accordance with applicable data protection laws.</span></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span style="font-size: 15px;"><span data-custom-class="body_text">Want to learn more about what we do with any information we collect? <a data-custom-class="link" href="#toc">Review the Privacy Notice in full</a>.</span></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div id="toc" style="line-height: 1.5;"><span style="font-size: 15px;"><strong><span data-custom-class="heading_1"><h2>TABLE OF CONTENTS</h2></span></strong></span></div>
-      <div style="line-height: 1.5;"><span style="font-size: 15px;"><a data-custom-class="link" href="#infocollect"><span style="color: rgb(0, 58, 250);">1. WHAT INFORMATION DO WE COLLECT?</span></a></span></div>
-      <div style="line-height: 1.5;"><span style="font-size: 15px;"><a data-custom-class="link" href="#infouse"><span style="color: rgb(0, 58, 250);">2. HOW DO WE PROCESS YOUR INFORMATION?</span></a></span></div>
-      <div style="line-height: 1.5;"><span style="font-size: 15px;"><a data-custom-class="link" href="#legalbases"><span style="color: rgb(0, 58, 250);">3. WHAT LEGAL BASES DO WE RELY ON TO PROCESS YOUR PERSONAL INFORMATION?</span></a></span></div>
-      <div style="line-height: 1.5;"><span style="font-size: 15px;"><a data-custom-class="link" href="#whoshare"><span style="color: rgb(0, 58, 250);">4. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?</span></a></span></div>
-      <div style="line-height: 1.5;"><span style="font-size: 15px;"><a data-custom-class="link" href="#ai"><span style="color: rgb(0, 58, 250);">5. DO WE OFFER ARTIFICIAL INTELLIGENCE-BASED PRODUCTS?</span></a></span></div>
-      <div style="line-height: 1.5;"><span style="font-size: 15px;"><a data-custom-class="link" href="#intltransfers"><span style="color: rgb(0, 58, 250);">6. IS YOUR INFORMATION TRANSFERRED INTERNATIONALLY?</span></a></span></div>
-      <div style="line-height: 1.5;"><span style="font-size: 15px;"><a data-custom-class="link" href="#inforetain"><span style="color: rgb(0, 58, 250);">7. HOW LONG DO WE KEEP YOUR INFORMATION?</span></a></span></div>
-      <div style="line-height: 1.5;"><span style="font-size: 15px;"><a data-custom-class="link" href="#infominors"><span style="color: rgb(0, 58, 250);">8. DO WE COLLECT INFORMATION FROM MINORS?</span></a></span></div>
-      <div style="line-height: 1.5;"><span style="font-size: 15px;"><a data-custom-class="link" href="#privacyrights"><span style="color: rgb(0, 58, 250);">9. WHAT ARE YOUR PRIVACY RIGHTS?</span></a></span></div>
-      <div style="line-height: 1.5;"><span style="font-size: 15px;"><a data-custom-class="link" href="#DNT"><span style="color: rgb(0, 58, 250);">10. CONTROLS FOR DO-NOT-TRACK FEATURES</span></a></span></div>
-      <div style="line-height: 1.5;"><span style="font-size: 15px;"><a data-custom-class="link" href="#uslaws"><span style="color: rgb(0, 58, 250);">11. DO UNITED STATES RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?</span></a></span></div>
-      <div style="line-height: 1.5;"><a data-custom-class="link" href="#otherlaws"><span style="color: rgb(0, 58, 250); font-size: 15px;">12. DO OTHER REGIONS HAVE SPECIFIC PRIVACY RIGHTS?</span></a></div>
-      <div style="line-height: 1.5;"><a data-custom-class="link" href="#clausea"><span style="color: rgb(0, 58, 250); font-size: 15px;">13. LOCAL-FIRST ARCHITECTURE</span></a></div>
-      <div style="line-height: 1.5;"><a data-custom-class="link" href="#policyupdates"><span style="color: rgb(0, 58, 250); font-size: 15px;">14. DO WE MAKE UPDATES TO THIS NOTICE?</span></a></div>
-      <div style="line-height: 1.5;"><a data-custom-class="link" href="#contact"><span style="color: rgb(0, 58, 250); font-size: 15px;">15. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</span></a></div>
-      <div style="line-height: 1.5;"><a data-custom-class="link" href="#request"><span style="color: rgb(0, 58, 250); font-size: 15px;">16. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?</span></a></div>
-      <div style="line-height: 1.5;"><br></div>
 
-      <!-- SECTION 1 -->
-      <div id="infocollect" style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>1. WHAT INFORMATION DO WE COLLECT?</h2></span></strong>
-      <span data-custom-class="heading_2" id="personalinfo"><strong><h3>Personal information you disclose to us</h3></strong></span>
-      <span data-custom-class="body_text"><strong><em>In Short:</em></strong> <em>We collect personal information that you provide to us.</em></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">We collect personal information that you voluntarily provide to us when you express an interest in obtaining information about us or our products and Services, when you participate in activities on the Services, or otherwise when you contact us.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Personal Information Provided by You.</strong> The personal information that we collect depends on the context of your interactions with us and the Services, the choices you make, and the products and features you use. The personal information we collect may include the following:</span></div>
-      <ul>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">email addresses</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">contact or authentication data</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">license keys</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">api keys (elevenlabs, gemini)</span></li>
-      </ul>
-      <div id="sensitiveinfo" style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Sensitive Information.</strong> We do not process sensitive information.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">All personal information that you provide to us must be true, complete, and accurate, and you must notify us of any changes to such personal information.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <span data-custom-class="heading_2"><strong><h3>Information automatically collected</h3></strong></span>
-      <span data-custom-class="body_text"><strong><em>In Short:</em></strong> <em>We do not collect IP addresses, browser information, cookies, analytics, usage logs, or crash reports. The only information generated automatically by the app is a hashed machine identifier used for license enforcement.</em></span>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">SoundScript generates a cryptographically hashed machine identifier on your device to support license activation and anti-piracy enforcement. This identifier is derived from the device's network adapter address and operating system name, then hashed (SHA-256) so it cannot be reversed to identify you or your physical device. This hashed identifier is transmitted to Gumroad's verification API only during license activation.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">We do not collect IP addresses, browser type, operating system details beyond what is used to generate the hash, device model, location, or any usage analytics.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Google API.</strong> Our use of information received from Google APIs will adhere to <a data-custom-class="link" href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener noreferrer" target="_blank">Google API Services User Data Policy</a>, including the <a data-custom-class="link" href="https://developers.google.com/terms/api-services-user-data-policy#limited-use" rel="noopener noreferrer" target="_blank">Limited Use requirements</a>.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      </div>
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--ink);
+            letter-spacing: -0.02em;
+            text-decoration: none;
+        }
+        .brand:hover { text-decoration: none; }
 
-      <!-- SECTION 2 -->
-      <div id="infouse" style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>2. HOW DO WE PROCESS YOUR INFORMATION?</h2></span></strong>
-      <span data-custom-class="body_text"><strong><em>In Short:</em></strong> <em>We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We process the personal information for the following purposes listed below.</em></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>We process your personal information for a variety of reasons, depending on how you interact with our Services, including:</strong></span></div>
-      <ul>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text"><strong>To deliver and facilitate delivery of services to the user.</strong> We may process your information to provide you with the requested service. (Retention period: Duration of the license, plus 12 months for dispute resolution)</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text"><strong>To respond to user inquiries/offer support to users.</strong> We may process your information to respond to your inquiries and solve any potential issues you might have with the requested service. (Retention period: 12 months from the date of last contact)</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text"><strong>To send administrative information to you.</strong> We may process your information to send you details about our products and services, changes to our terms and policies, and other similar information. (Retention period: Duration of the license, plus 12 months for dispute resolution)</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text"><strong>To fulfill and manage your orders.</strong> We may process your information to fulfill and manage your orders, payments, returns, and exchanges made through the Services. (Retention period: Duration of the license, plus 12 months for dispute resolution)</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text"><strong>To protect our Services.</strong> We may process your information as part of our efforts to keep our Services safe and secure, including fraud monitoring and prevention. (Retention period: Duration of the license, plus 12 months for dispute resolution)</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text"><strong>To save or protect an individual's vital interest.</strong> We may process your information when necessary to save or protect an individual's vital interest, such as to prevent harm.</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text"><strong>License enforcement and anti-piracy.</strong> To verify software licenses, enforce the per-license activation limit, and prevent unauthorized sharing of paid licenses. (Retention period: Duration of the license plus 12 months for dispute resolution.)</span></li>
-      </ul>
-      <div style="line-height: 1.5;"><br></div>
-      </div>
+        /* ─── Brand mark: now an image container ─── */
+        .brand-mark {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(74, 108, 247, 0.3);
+            flex-shrink: 0;
+        }
 
-      <!-- SECTION 3 -->
-      <div id="legalbases" style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>3. WHAT LEGAL BASES DO WE RELY ON TO PROCESS YOUR INFORMATION?</h2></span></strong>
-      <em><span data-custom-class="body_text"><strong>In Short:</strong> We only process your personal information when we believe it is necessary and we have a valid legal reason (i.e., legal basis) to do so under applicable law, like with your consent, to comply with laws, to provide you with services to enter into or fulfill our contractual obligations, to protect your rights, or to fulfill our legitimate business interests.</em></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><em><span data-custom-class="body_text"><strong><u>If you are located in the EU or UK, this section applies to you.</u></strong></span></em></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">The General Data Protection Regulation (GDPR) and UK GDPR require us to explain the valid legal bases we rely on in order to process your personal information. As such, we may rely on the following legal bases to process your personal information:</span></div>
-      <ul>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Consent.</strong> We may process your information if you have given us permission (i.e., consent) to use your personal information for a specific purpose. You can withdraw your consent at any time. Learn more about <a data-custom-class="link" href="#withdrawconsent">withdrawing your consent</a>.</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Performance of a Contract.</strong> We may process your personal information when we believe it is necessary to fulfill our contractual obligations to you, including providing our Services or at your request prior to entering into a contract with you.</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Legitimate Interests.</strong> We may process your information when we believe it is reasonably necessary to achieve our legitimate business interests and those interests do not outweigh your interests and fundamental rights and freedoms. For example, we may process your personal information for some of the purposes described in order to:</span></li>
-        <ul style="margin-left: 40px;">
-          <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">Diagnose problems and/or prevent fraudulent activities</span></li>
-          <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">In order to protect the commercial viability of the software and ensure licenses are used as agreed in the license terms accepted at purchase.</span></li>
-        </ul>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Legal Obligations.</strong> We may process your information where we believe it is necessary for compliance with our legal obligations, such as to cooperate with a law enforcement body or regulatory agency, exercise or defend our legal rights, or disclose your information as evidence in litigation in which we are involved.</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Vital Interests.</strong> We may process your information where we believe it is necessary to protect your vital interests or the vital interests of a third party, such as situations involving potential threats to the safety of any person.</span></li>
-      </ul>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong><u><em>If you are located in Canada, this section applies to you.</em></u></strong></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">We may process your information if you have given us specific permission (i.e., express consent) to use your personal information for a specific purpose, or in situations where your permission can be inferred (i.e., implied consent). You can <a data-custom-class="link" href="#withdrawconsent">withdraw your consent</a> at any time.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">In some exceptional cases, we may be legally permitted under applicable law to process your information without your consent, including, for example:</span></div>
-      <ul>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">If collection is clearly in the interests of an individual and consent cannot be obtained in a timely way</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">For investigations and fraud detection and prevention</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">For business transactions provided certain conditions are met</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">If it is contained in a witness statement and the collection is necessary to assess, process, or settle an insurance claim</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">For identifying injured, ill, or deceased persons and communicating with next of kin</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">If we have reasonable grounds to believe an individual has been, is, or may be victim of financial abuse</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">If it is reasonable to expect collection and use with consent would compromise the availability or the accuracy of the information and the collection is reasonable for purposes related to investigating a breach of an agreement or a contravention of the laws of Canada or a province</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">If disclosure is required to comply with a subpoena, warrant, court order, or rules of the court relating to the production of records</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">If it was produced by an individual in the course of their employment, business, or profession and the collection is consistent with the purposes for which the information was produced</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">If the collection is solely for journalistic, artistic, or literary purposes</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">If the information is publicly available and is specified by the regulations</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">We may disclose de-identified information for approved research or statistics projects, subject to ethics oversight and confidentiality commitments</span></li>
-      </ul>
-      <div style="line-height: 1.5;"><br></div>
-      </div>
+        .brand-mark img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
 
-      <!-- SECTION 4 -->
-      <div id="whoshare" style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>4. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?</h2></span></strong>
-      <span data-custom-class="body_text"><strong><em>In Short:</em></strong> <em>We may share information in specific situations described in this section and/or with the following third parties.</em></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Vendors, Consultants, and Other Third-Party Service Providers.</strong> We may share your data with third-party vendors, service providers, contractors, or agents ("<strong>third parties</strong>") who perform services for us or on our behalf and require access to such information to do that work. We have contracts in place with our third parties, which are designed to help safeguard your personal information. The third parties we may share personal information with are as follows:</span></div>
-      <ul>
-        <li data-custom-class="body_text"><strong>AI Service Providers</strong>
-          <div style="margin-left: 40px;">
-            <span data-custom-class="body_text">Google Cloud AI</span><br>
-            <span data-custom-class="body_text">ElevenLabs</span>
-          </div>
-        </li>
-        <li data-custom-class="body_text"><strong>Invoicing & Billing</strong>
-          <div style="margin-left: 40px;">
-            <span data-custom-class="body_text">Gumroad</span>
-          </div>
-        </li>
-      </ul>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">We may also need to share your personal information in the following situations:</span></div>
-      <ul>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Business Transfers.</strong> We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.</span></li>
-      </ul>
-      <div style="line-height: 1.5;"><br></div>
-      </div>
+        .brand span { color: var(--brand); }
 
-      <!-- SECTION 5 - AI -->
-      <div id="ai" style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>5. DO WE OFFER ARTIFICIAL INTELLIGENCE-BASED PRODUCTS?</h2></span></strong>
-      <span data-custom-class="body_text"><strong><em>In Short:</em></strong> <em>We offer products, features, or tools powered by artificial intelligence, machine learning, or similar technologies.</em></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">As part of our Services, we offer products, features, or tools powered by artificial intelligence, machine learning, or similar technologies (collectively, "AI Products"). These tools are designed to enhance your experience and provide you with innovative solutions. The terms in this Privacy Notice govern your use of the AI Products within our Services.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Use of AI Technologies</strong></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">We provide the AI Products through third-party service providers ("AI Service Providers"), including ElevenLabs and Google Cloud AI. As outlined in this Privacy Notice, your input, output, and personal information will be shared with and processed by these AI Service Providers to enable your use of our AI Products for purposes outlined in <a data-custom-class="link" href="#legalbases">"WHAT LEGAL BASES DO WE RELY ON TO PROCESS YOUR PERSONAL INFORMATION?"</a>. You must not use the AI Products in any way that violates the terms or policies of any AI Service Provider.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Our AI Products</strong></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">Our AI Products are designed for the following functions:</span></div>
-      <ul>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">Text generation</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">Text-to-speech synthesis</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">Conversational AI chat</span></li>
-      </ul>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>How We Process Your Data Using AI</strong></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">All personal information processed using our AI Products is handled in line with our Privacy Notice and our agreement with third parties. This ensures high security and safeguards your personal information throughout the process, giving you peace of mind about your data's safety. SoundScript does not use your data to train AI models, does not use AI for automated decision-making, and does not use AI for profiling.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>How to Opt Out</strong></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">You can opt out of cloud AI processing entirely by switching to a local engine. In the Assistant, select <strong>"Nuqta (Local)"</strong> as your engine. In Settings → TTS, select <strong>"Anhad (Local)"</strong> as your engine. You may also delete your ElevenLabs and Gemini API keys in Settings → API Keys, which disables the corresponding cloud engines. When a local engine is active, no text or audio data leaves your device.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      </div>
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
 
-      <!-- SECTION 6 -->
-      <div id="intltransfers" style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>6. IS YOUR INFORMATION TRANSFERRED INTERNATIONALLY?</h2></span></strong>
-      <span data-custom-class="body_text"><strong><em>In Short:</em></strong> <em>We may transfer, store, and process your information in countries other than your own.</em></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">Our third-party service providers operate servers located in the United States. Regardless of your location, please be aware that your information may be transferred to, stored by, and processed by us in our facilities and in the facilities of the third parties with whom we may share your personal information (see <a data-custom-class="link" href="#whoshare">"WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?"</a>), including facilities in the United States and other countries.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">If you are a resident in the European Economic Area (EEA), United Kingdom (UK), or Switzerland, then these countries may not necessarily have data protection laws or other similar laws as comprehensive as those in your country. However, we will take all necessary measures to protect your personal information in accordance with this Privacy Notice and applicable law.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>European Commission's Standard Contractual Clauses:</strong></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">We have implemented measures to protect your personal information, including by using the European Commission's Standard Contractual Clauses for transfers of personal information between us and our third-party providers. These clauses require all recipients to protect all personal information that they process originating from the EEA or UK in accordance with European data protection laws and regulations. We have implemented similar appropriate safeguards with our third-party service providers and partners and further details can be provided upon request.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      </div>
+        .header-link {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--ink-3);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+        }
+        .header-link:hover { color: var(--brand); text-decoration: none; }
 
-      <!-- SECTION 7 -->
-      <div id="inforetain" style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>7. HOW LONG DO WE KEEP YOUR INFORMATION?</h2></span></strong>
-      <span data-custom-class="body_text"><strong><em>In Short:</em></strong> <em>We keep your information for as long as necessary to fulfill the purposes outlined in this Privacy Notice unless otherwise required by law.</em></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">We will only keep your personal information for as long as it is necessary for the purposes set out in this Privacy Notice, unless a longer retention period is required or permitted by law (such as tax, accounting, or other legal requirements). If you are located in the EU or UK, see section <a data-custom-class="link" href="#infouse">"HOW DO WE PROCESS YOUR INFORMATION?"</a> for our retention periods by purpose.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">When we have no ongoing legitimate business need to process your personal information, we will either delete or anonymize such information, or, if this is not possible, then we will securely store your personal information and isolate it from any further processing until deletion is possible.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      </div>
+        /* ═══════════════════════════════════════════════════════════
+           PAGE HERO
+           ═══════════════════════════════════════════════════════════ */
+        .page-hero {
+            padding: 56px 0 40px;
+            background:
+                radial-gradient(600px 300px at 20% 0%, rgba(74, 108, 247, 0.08), transparent 60%),
+                var(--bg-soft);
+            border-bottom: 1px solid var(--line);
+        }
 
-      <!-- SECTION 8 -->
-      <div id="infominors" style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>8. DO WE COLLECT INFORMATION FROM MINORS?</h2></span></strong>
-      <span data-custom-class="body_text"><strong><em>In Short:</em></strong> <em>We do not knowingly collect data from or market to children under 18 years of age or the equivalent age as specified by law in your jurisdiction.</em></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">We do not knowingly collect, solicit data from, or market to children under 18 years of age or the equivalent age as specified by law in your jurisdiction, nor do we knowingly sell such personal information. By using the Services, you represent that you are at least 18 or the equivalent age as specified by law in your jurisdiction or that you are the parent or guardian of such a minor and consent to such minor dependent's use of the Services. If we learn that personal information from users less than 18 years of age has been collected, we will deactivate the account and take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from children under age 18, please contact us at <a href="mailto:bitprogram0@gmail.com">bitprogram0@gmail.com</a>.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      </div>
+        .page-hero .container {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
-      <!-- SECTION 9 -->
-      <div id="privacyrights" style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>9. WHAT ARE YOUR PRIVACY RIGHTS?</h2></span></strong>
-      <span data-custom-class="body_text"><strong><em>In Short:</em></strong> <em>Depending on your state of residence in the US or in some regions, such as the European Economic Area (EEA), United Kingdom (UK), Switzerland, and Canada, you have rights that allow you greater access to and control over your personal information. You may review, change, or terminate your account at any time, depending on your country, province, or state of residence.</em></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">In some regions (like the EEA, UK, Switzerland, and Canada), you have certain rights under applicable data protection laws. These may include the right (i) to request access and obtain a copy of your personal information, (ii) to request rectification or erasure; (iii) to restrict the processing of your personal information; (iv) if applicable, to data portability; and (v) not to be subject to automated decision-making. In certain circumstances, you may also have the right to object to the processing of your personal information. You can make such a request by contacting us by using the contact details provided in the section <a data-custom-class="link" href="#contact">"HOW CAN YOU CONTACT US ABOUT THIS NOTICE?"</a> below.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">We will consider and act upon any request in accordance with applicable data protection laws.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">If you are located in the UK and are unhappy with how we have handled your personal information, you can make a complaint directly to us. This is in addition to the rights you have under the UK General Data Protection Regulation and the Data Protection Act 2018.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">If you are located in the EEA or UK and you believe we are unlawfully processing your personal information, you also have the right to complain to your <a data-custom-class="link" href="https://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm" rel="noopener noreferrer" target="_blank">Member State data protection authority</a> or <a data-custom-class="link" href="https://ico.org.uk/make-a-complaint/" rel="noopener noreferrer" target="_blank">UK data protection authority</a>.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">If you are located in Switzerland, you may contact the <a data-custom-class="link" href="https://www.edoeb.admin.ch/edoeb/en/home.html" rel="noopener noreferrer" target="_blank">Federal Data Protection and Information Commissioner</a>.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div id="withdrawconsent" style="line-height: 1.5;"><span data-custom-class="body_text"><strong><u>Withdrawing your consent:</u></strong> If we are relying on your consent to process your personal information, you have the right to withdraw your consent at any time. You can withdraw your consent at any time by contacting us by using the contact details provided in the section <a data-custom-class="link" href="#contact">"HOW CAN YOU CONTACT US ABOUT THIS NOTICE?"</a> below.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">However, please note that this will not affect the lawfulness of the processing before its withdrawal nor, when applicable law allows, will it affect the processing of your personal information conducted in reliance on lawful processing grounds other than consent.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      </div>
+        .breadcrumb {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.82rem;
+            color: var(--muted);
+            margin-bottom: 16px;
+            text-decoration: none;
+        }
 
-      <!-- SECTION 10 -->
-      <div id="DNT" style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>10. CONTROLS FOR DO-NOT-TRACK FEATURES</h2></span></strong>
-      <span data-custom-class="body_text">Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track ("DNT") feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage, no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. SoundScript is a desktop application and does not perform online tracking of any kind.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      </div>
+        .breadcrumb:hover { color: var(--brand); text-decoration: none; }
 
-      <!-- SECTION 11 -->
-      <div id="uslaws" style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>11. DO UNITED STATES RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?</h2></span></strong>
-      <span data-custom-class="body_text"><strong><em>In Short:</em></strong> <em>If you are a resident of California, Colorado, Connecticut, Delaware, Florida, Indiana, Iowa, Kentucky, Maryland, Minnesota, Montana, Nebraska, New Hampshire, New Jersey, Oregon, Rhode Island, Tennessee, Texas, Utah, or Virginia, you may have the right to request access to and receive details about the personal information we maintain about you and how we have processed it, correct inaccuracies, get a copy of, or delete your personal information. You may also have the right to withdraw your consent to our processing of your personal information. These rights may be limited in some circumstances by applicable law. More information is provided below.</em></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <span data-custom-class="heading_2"><strong><h3>Categories of Personal Information We Collect</h3></strong></span>
-      <span data-custom-class="body_text">The table below shows the categories of personal information we have collected in the past twelve (12) months.</span>
-      <div style="line-height: 1.5;"><br></div>
-      <table style="width: 100%; border-collapse: collapse;">
-        <thead>
-          <tr>
-            <th style="width: 33%; border: 1px solid black; text-align: left; padding: 6px;"><strong>Category</strong></th>
-            <th style="width: 52%; border: 1px solid black; text-align: left; padding: 6px;"><strong>Examples</strong></th>
-            <th style="width: 15%; border: 1px solid black; text-align: center; padding: 6px;"><strong>Collected</strong></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="border: 1px solid black; padding: 6px;">A. Identifiers</td>
-            <td style="border: 1px solid black; padding: 6px;">Contact details, such as email address, unique personal identifier, online identifier</td>
-            <td style="border: 1px solid black; padding: 6px; text-align: center;">YES</td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid black; padding: 6px;">B. Personal information as defined in the California Customer Records statute</td>
-            <td style="border: 1px solid black; padding: 6px;">Name, contact information, education, employment, employment history, and financial information</td>
-            <td style="border: 1px solid black; padding: 6px; text-align: center;">NO</td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid black; padding: 6px;">C. Protected classification characteristics under state or federal law</td>
-            <td style="border: 1px solid black; padding: 6px;">Gender, age, date of birth, race and ethnicity, national origin, marital status</td>
-            <td style="border: 1px solid black; padding: 6px; text-align: center;">NO</td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid black; padding: 6px;">D. Commercial information</td>
-            <td style="border: 1px solid black; padding: 6px;">Transaction information, purchase history, financial details, and payment information</td>
-            <td style="border: 1px solid black; padding: 6px; text-align: center;">YES</td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid black; padding: 6px;">E. Biometric information</td>
-            <td style="border: 1px solid black; padding: 6px;">Fingerprints and voiceprints</td>
-            <td style="border: 1px solid black; padding: 6px; text-align: center;">NO</td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid black; padding: 6px;">F. Internet or other similar network activity</td>
-            <td style="border: 1px solid black; padding: 6px;">Browsing history, search history, online behavior, interest data</td>
-            <td style="border: 1px solid black; padding: 6px; text-align: center;">NO</td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid black; padding: 6px;">G. Geolocation data</td>
-            <td style="border: 1px solid black; padding: 6px;">Device location</td>
-            <td style="border: 1px solid black; padding: 6px; text-align: center;">NO</td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid black; padding: 6px;">H. Audio, electronic, sensory, or similar information</td>
-            <td style="border: 1px solid black; padding: 6px;">Images and audio, video or call recordings created in connection with our business activities</td>
-            <td style="border: 1px solid black; padding: 6px; text-align: center;">NO</td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid black; padding: 6px;">I. Professional or employment-related information</td>
-            <td style="border: 1px solid black; padding: 6px;">Business contact details in order to provide you our Services at a business level or job title, work history, and professional qualifications</td>
-            <td style="border: 1px solid black; padding: 6px; text-align: center;">NO</td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid black; padding: 6px;">J. Education Information</td>
-            <td style="border: 1px solid black; padding: 6px;">Student records and directory information</td>
-            <td style="border: 1px solid black; padding: 6px; text-align: center;">NO</td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid black; padding: 6px;">K. Inferences drawn from collected personal information</td>
-            <td style="border: 1px solid black; padding: 6px;">Inferences drawn from any of the collected personal information listed above to create a profile</td>
-            <td style="border: 1px solid black; padding: 6px; text-align: center;">NO</td>
-          </tr>
-          <tr>
-            <td style="border: 1px solid black; padding: 6px;">L. Sensitive personal Information</td>
-            <td style="border: 1px solid black; padding: 6px;"></td>
-            <td style="border: 1px solid black; padding: 6px; text-align: center;">NO</td>
-          </tr>
-        </tbody>
-      </table>
-      <div style="line-height: 1.5;"><br></div>
-      <span data-custom-class="body_text">We will use and retain the collected personal information as needed to provide the Services or for:</span>
-      <ul>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">Category A - As long as the user holds a valid license, plus 12 months for dispute resolution</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">Category D - As long as the user holds a valid license, plus 12 months for dispute resolution</span></li>
-      </ul>
-      <div style="line-height: 1.5;"><br></div>
-      <span data-custom-class="heading_2"><strong><h3>Sources of Personal Information</h3></strong></span>
-      <span data-custom-class="body_text">Learn more about the sources of personal information we collect in <a data-custom-class="link" href="#infocollect">"WHAT INFORMATION DO WE COLLECT?"</a></span>
-      <div style="line-height: 1.5;"><br></div>
-      <span data-custom-class="heading_2"><strong><h3>How We Use and Share Personal Information</h3></strong></span>
-      <span data-custom-class="body_text">Learn more about how we use your personal information in the section <a data-custom-class="link" href="#infouse">"HOW DO WE PROCESS YOUR INFORMATION?"</a></span>
-      <div style="line-height: 1.5;"><br></div>
-      <span data-custom-class="body_text"><strong>Will your information be shared with anyone else?</strong></span>
-      <div style="line-height: 1.5;"><br></div>
-      <span data-custom-class="body_text">We may disclose your personal information with our service providers pursuant to a written contract between us and each service provider. Learn more about how we disclose personal information in the section <a data-custom-class="link" href="#whoshare">"WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?"</a></span>
-      <div style="line-height: 1.5;"><br></div>
-      <span data-custom-class="body_text">We have not sold or shared any personal information to third parties for a business or commercial purpose in the preceding twelve (12) months. We have disclosed the following categories of personal information to third parties for a business or commercial purpose in the preceding twelve (12) months:</span>
-      <ul>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">Category A. Identifiers</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">Category D. Commercial information</span></li>
-      </ul>
-      <div style="line-height: 1.5;"><br></div>
-      <span data-custom-class="body_text">The categories of third parties to whom we disclosed personal information for a business or commercial purpose can be found under <a data-custom-class="link" href="#whoshare">"WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?"</a>.</span>
-      <div style="line-height: 1.5;"><br></div>
-      <span data-custom-class="heading_2"><strong><h3>Your Rights</h3></strong></span>
-      <span data-custom-class="body_text">You have rights under certain US state data protection laws. However, these rights are not absolute, and in certain cases, we may decline your request as permitted by law. These rights include:</span>
-      <ul>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Right to know</strong> whether or not we are processing your personal data</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Right to access</strong> your personal data</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Right to correct</strong> inaccuracies in your personal data</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Right to request</strong> the deletion of your personal data</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Right to obtain a copy</strong> of the personal data you previously shared with us</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Right to non-discrimination</strong> for exercising your rights</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text"><strong>Right to opt out</strong> of the processing of your personal data if it is used for targeted advertising (or sharing as defined under California's privacy law), the sale of personal data, or profiling in furtherance of decisions that produce legal or similarly significant effects ("profiling")</span></li>
-      </ul>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">Depending upon the state where you live, you may also have the following rights:</span></div>
-      <ul>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">Right to access the categories of personal data being processed (as permitted by applicable law, including the privacy law in Minnesota)</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">Right to obtain a list of the categories of third parties to which we have disclosed personal data (as permitted by applicable law, including the privacy law in California, Delaware, and Maryland)</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">Right to obtain a list of specific third parties to which we have disclosed personal data (as permitted by applicable law, including the privacy law in Minnesota and Oregon)</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">Right to obtain a list of third parties to which we have sold personal data (as permitted by applicable law, including the privacy law in Connecticut)</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">Right to review, understand, question, and depending on where you live, correct how personal data has been profiled (as permitted by applicable law, including the privacy law in Connecticut and Minnesota)</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">Right to limit use and disclosure of sensitive personal data (as permitted by applicable law, including the privacy law in California)</span></li>
-        <li data-custom-class="body_text" style="line-height: 1.5;"><span data-custom-class="body_text">Right to opt out of the collection of sensitive data and personal data collected through the operation of a voice or facial recognition feature (as permitted by applicable law, including the privacy law in Florida)</span></li>
-      </ul>
-      <span data-custom-class="heading_2"><strong><h3>How to Exercise Your Rights</h3></strong></span>
-      <span data-custom-class="body_text">To exercise these rights, you can contact us by visiting <a target="_blank" data-custom-class="link" href="YOUR-CONTACT-FORM-URL">YOUR-CONTACT-FORM-URL</a>, by emailing us at <a href="mailto:bitprogram0@gmail.com">bitprogram0@gmail.com</a>, or by referring to the contact details at the bottom of this document.</span>
-      <div style="line-height: 1.5;"><br></div>
-      <span data-custom-class="body_text">Under certain US state data protection laws, you can designate an authorized agent to make a request on your behalf. We may deny a request from an authorized agent that does not submit proof that they have been validly authorized to act on your behalf in accordance with applicable laws.</span>
-      <div style="line-height: 1.5;"><br></div>
-      <span data-custom-class="heading_2"><strong><h3>Request Verification</h3></strong></span>
-      <span data-custom-class="body_text">Upon receiving your request, we will need to verify your identity to determine you are the same person about whom we have the information in our system. We will only use personal information provided in your request to verify your identity or authority to make the request.</span>
-      <div style="line-height: 1.5;"><br></div>
-      <span data-custom-class="heading_2"><strong><h3>Appeals</h3></strong></span>
-      <span data-custom-class="body_text">Under certain US state data protection laws, if we decline to take action regarding your request, you may appeal our decision by emailing us at <a href="mailto:bitprogram0@gmail.com">bitprogram0@gmail.com</a>. We will inform you in writing of any action taken or not taken in response to the appeal, including a written explanation of the reasons for the decisions. If your appeal is denied, you may submit a complaint to your state attorney general.</span>
-      <div style="line-height: 1.5;"><br></div>
-      </div>
+        .breadcrumb i { font-size: 0.7rem; }
 
-      <!-- SECTION 12 -->
-      <div id="otherlaws" style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>12. DO OTHER REGIONS HAVE SPECIFIC PRIVACY RIGHTS?</h2></span></strong>
-      <span data-custom-class="body_text"><em><strong>In Short:</strong> You may have additional rights based on the country you reside in.</em></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <span data-custom-class="heading_2"><h3><strong>Australia and New Zealand</strong></h3></span>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">We collect and process your personal information under the obligations and conditions set by Australia's Privacy Act 1988 and New Zealand's Privacy Act 2020 (Privacy Act).</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">This Privacy Notice satisfies the notice requirements defined in both Privacy Acts, in particular: what personal information we collect from you, from which sources, for which purposes, and other recipients of your personal information.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">At any time, you have the right to request access to or correction of your personal information. You can make such a request by contacting us by using the contact details provided in the section <a data-custom-class="link" href="#request">"HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?"</a></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">If you believe we are unlawfully processing your personal information, you have the right to submit a complaint about a breach of the Australian Privacy Principles to the <a data-custom-class="link" href="https://www.oaic.gov.au/privacy/privacy-complaints/lodge-a-privacy-complaint-with-us" rel="noopener noreferrer" target="_blank">Office of the Australian Information Commissioner</a> and a breach of New Zealand's Privacy Principles to the <a data-custom-class="link" href="https://www.privacy.org.nz/your-rights/making-a-complaint/" rel="noopener noreferrer" target="_blank">Office of New Zealand Privacy Commissioner</a>.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <span data-custom-class="heading_2"><h3><strong>Republic of South Africa</strong></h3></span>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">At any time, you have the right to request access to or correction of your personal information. You can make such a request by contacting us by using the contact details provided in the section <a data-custom-class="link" href="#request">"HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?"</a></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">If you are unsatisfied with the manner in which we address any complaint with regard to our processing of personal information, you can contact the office of the regulator, the details of which are:</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><a data-custom-class="link" href="https://inforegulator.org.za/" rel="noopener noreferrer" target="_blank">The Information Regulator (South Africa)</a></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">General enquiries: <a data-custom-class="link" href="mailto:enquiries@inforegulator.org.za">enquiries@inforegulator.org.za</a></span></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">Complaints (complete POPIA/PAIA form 5): <a data-custom-class="link" href="mailto:PAIAComplaints@inforegulator.org.za">PAIAComplaints@inforegulator.org.za</a> &amp; <a data-custom-class="link" href="mailto:POPIAComplaints@inforegulator.org.za">POPIAComplaints@inforegulator.org.za</a></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      </div>
+        .page-hero h1 {
+            font-size: clamp(2rem, 3.4vw, 2.8rem);
+            font-weight: 800;
+            color: var(--ink);
+            letter-spacing: -0.025em;
+            margin-bottom: 12px;
+            line-height: 1.1;
+        }
 
-      <!-- SECTION 13 - Custom clause -->
-      <div id="clausea" style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>13. LOCAL-FIRST ARCHITECTURE</h2></span></strong>
-      <span data-custom-class="body_text">SoundScript is a desktop application designed with a local-first privacy model. Your scripts, API keys, license file, cached audio, and downloaded AI models are stored only on your own device. BitProgram operates no servers that collect, store, or process your personal information.</span>
-      <div style="line-height: 1.5;"><br></div>
-      <span data-custom-class="body_text">The only data that leaves your device are: (1) text you submit to cloud AI services (ElevenLabs, Google Gemini) when you select a cloud engine, (2) your license key and a cryptographically hashed machine identifier sent to Gumroad for license verification, and (3) model files downloaded from public repositories on first use. All other operations — including all local AI generation, caching, and file management — occur entirely on your device.</span>
-      <div style="line-height: 1.5;"><br></div>
-      <span data-custom-class="body_text">You can delete all data associated with SoundScript at any time by uninstalling the application or clearing its data folder. Because no personal information is stored on BitProgram servers, there is nothing for us to delete on our end.</span>
-      </div>
-      <div style="line-height: 1.5;"><br></div>
+        .page-hero .updated {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
 
-      <!-- SECTION 14 -->
-      <div id="policyupdates" style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>14. DO WE MAKE UPDATES TO THIS NOTICE?</h2></span></strong>
-      <span data-custom-class="body_text"><em><strong>In Short:</strong> Yes, we will update this notice as necessary to stay compliant with relevant laws.</em></span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">We may update this Privacy Notice from time to time. The updated version will be indicated by an updated "Revised" date at the top of this Privacy Notice. If we make material changes to this Privacy Notice, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this Privacy Notice frequently to be informed of how we are protecting your information.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      </div>
+        .page-hero .updated i { color: var(--brand); }
 
-      <!-- SECTION 15 - Contact (no address) -->
-      <div id="contact" style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>15. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</h2></span></strong>
-      <span data-custom-class="body_text">If you have questions or comments about this notice, you may email us at <a target="_blank" data-custom-class="link" href="mailto:bitprogram0@gmail.com">bitprogram0@gmail.com</a> or contact us through our <a target="_blank" data-custom-class="link" href="YOUR-CONTACT-FORM-URL">contact form</a>.</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text"><strong>BitProgram</strong></span></div>
-      <div style="line-height: 1.5;"><span data-custom-class="body_text">Pakistan</span></div>
-      <div style="line-height: 1.5;"><br></div>
-      </div>
+        /* ═══════════════════════════════════════════════════════════
+           LAYOUT
+           ═══════════════════════════════════════════════════════════ */
+        .layout {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+            display: grid;
+            grid-template-columns: var(--toc-w) 1fr;
+            gap: 56px;
+            align-items: start;
+        }
 
-      <!-- SECTION 16 -->
-      <div id="request" style="line-height: 1.5;"><strong><span data-custom-class="heading_1"><h2>16. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?</h2></span></strong>
-      <span data-custom-class="body_text">Based on the applicable laws of your country or state of residence in the US, you may have the right to request access to the personal information we collect from you, details about how we have processed it, correct inaccuracies, or delete your personal information. You may also have the right to withdraw your consent to our processing of your personal information. These rights may be limited in some circumstances by applicable law. To request to review, update, or delete your personal information, please visit: <a target="_blank" data-custom-class="link" href="YOUR-CONTACT-FORM-URL">YOUR-CONTACT-FORM-URL</a>, or email us at <a href="mailto:bitprogram0@gmail.com">bitprogram0@gmail.com</a>.</span></div>
+        /* ═══════════════════════════════════════════════════════════
+           SIDEBAR TOC
+           ═══════════════════════════════════════════════════════════ */
+        .toc {
+            position: sticky;
+            top: 90px;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+            padding-right: 12px;
+        }
 
-      <style>
-      ul { list-style-type: square; }
-      ul > li > ul { list-style-type: circle; }
-      ul > li > ul > li > ul { list-style-type: square; }
-      ol li { font-family: Arial; }
-      </style>
-      </div>
-      <br>
-      <div><span data-custom-class="body_text">This Privacy Policy was created using Termly's </span><a href="https://termly.io/products/privacy-policy-generator/" target="_blank" rel="noopener external" data-custom-class="link">Privacy Policy Generator</a></div>
+        .toc::-webkit-scrollbar { width: 4px; }
+        .toc::-webkit-scrollbar-thumb {
+            background: var(--line-2);
+            border-radius: 2px;
+        }
+
+        .toc-title {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            padding-left: 0;
+        }
+
+        .toc-list a {
+            display: block;
+            padding: 7px 12px;
+            border-radius: var(--radius-sm);
+            font-size: 0.84rem;
+            color: var(--ink-3);
+            font-weight: 500;
+            line-height: 1.35;
+            border-left: 2px solid transparent;
+            transition: all 0.15s ease;
+            text-decoration: none;
+        }
+
+        .toc-list a:hover {
+            background: var(--brand-soft);
+            color: var(--brand);
+            text-decoration: none;
+        }
+
+        .toc-list a.active {
+            background: var(--brand-soft);
+            color: var(--brand);
+            border-left-color: var(--brand);
+            font-weight: 600;
+        }
+
+        .toc-num {
+            color: var(--muted-2);
+            font-weight: 600;
+            margin-right: 6px;
+            font-size: 0.75rem;
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           CONTENT
+           ═══════════════════════════════════════════════════════════ */
+        .content {
+            max-width: 760px;
+            min-width: 0;
+        }
+
+        .intro {
+            padding: 22px 24px;
+            background: var(--bg-soft);
+            border-left: 3px solid var(--brand);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin-bottom: 32px;
+            font-size: 0.96rem;
+            color: var(--ink-3);
+        }
+
+        .intro p + p { margin-top: 12px; }
+
+        .content h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--ink);
+            letter-spacing: -0.015em;
+            margin-top: 52px;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--line);
+            scroll-margin-top: 90px;
+        }
+
+        .content h2:first-of-type { margin-top: 0; }
+
+        .content h2 .num {
+            display: inline-block;
+            color: var(--brand);
+            margin-right: 8px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .content h3 {
+            font-size: 1.02rem;
+            font-weight: 600;
+            color: var(--ink);
+            margin-top: 28px;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            margin-bottom: 16px;
+            color: var(--ink-3);
+        }
+
+        .content strong {
+            color: var(--ink);
+            font-weight: 600;
+        }
+
+        .content ul, .content ol {
+            margin-bottom: 20px;
+            padding-left: 22px;
+        }
+
+        .content li {
+            margin-bottom: 10px;
+            color: var(--ink-3);
+            padding-left: 4px;
+        }
+
+        .content li::marker {
+            color: var(--brand);
+            font-weight: 600;
+        }
+
+        .content ul li::marker { content: "▸  "; }
+
+        /* Nested list */
+        .content ul ul {
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+        .content ul ul li::marker { content: "○  "; }
+
+        /* ─── Callouts ─── */
+        .callout {
+            padding: 18px 22px;
+            border-radius: var(--radius-sm);
+            margin: 20px 0;
+            font-size: 0.94rem;
+        }
+
+        .callout.info {
+            background: var(--info-bg);
+            color: var(--info-text);
+            border-left: 3px solid var(--brand);
+        }
+
+        .callout.info strong { color: #0c2d6b; }
+
+        .callout.privacy {
+            background: var(--success-bg);
+            color: #14532d;
+            border-left: 3px solid var(--success);
+        }
+
+        .callout.privacy strong { color: #052e16; }
+
+        /* ─── "In Short" summary blocks ─── */
+        .in-short {
+            padding: 14px 18px;
+            background: var(--bg-alt);
+            border-radius: var(--radius-sm);
+            font-size: 0.92rem;
+            color: var(--ink-3);
+            margin-bottom: 22px;
+            line-height: 1.65;
+        }
+
+        .in-short strong { color: var(--ink); }
+
+        .in-short em {
+            font-style: italic;
+            color: var(--ink-2);
+        }
+
+        /* ─── Summary points ─── */
+        .summary-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 40px;
+        }
+
+        .summary-item {
+            padding: 18px 20px;
+            background: var(--bg-soft);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-sm);
+            font-size: 0.94rem;
+            color: var(--ink-3);
+            line-height: 1.65;
+        }
+
+        .summary-item strong { color: var(--ink); }
+
+        /* ─── Table ─── */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 20px 0 28px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--line);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            min-width: 620px;
+        }
+
+        thead th {
+            background: var(--bg-alt);
+            color: var(--ink);
+            font-weight: 700;
+            text-align: left;
+            padding: 12px 14px;
+            font-size: 0.82rem;
+            letter-spacing: 0.02em;
+            border-bottom: 2px solid var(--line-2);
+        }
+
+        tbody td {
+            padding: 12px 14px;
+            color: var(--ink-3);
+            border-bottom: 1px solid var(--line);
+            vertical-align: top;
+            line-height: 1.55;
+        }
+
+        tbody tr:last-child td { border-bottom: none; }
+
+        tbody tr:hover { background: var(--bg-soft); }
+
+        td.col-yes, td.col-no {
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+        }
+
+        td.col-yes {
+            color: var(--success);
+            background: var(--success-bg);
+        }
+
+        td.col-no {
+            color: var(--muted);
+        }
+
+        /* ─── Contact card ─── */
+        .contact-card {
+            padding: 24px;
+            background: var(--bg-soft);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-card .label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .contact-card .value {
+            font-size: 0.96rem;
+            color: var(--ink);
+            font-weight: 500;
+        }
+
+        .contact-card a {
+            color: var(--brand);
+            font-weight: 600;
+        }
+
+        /* ─── Credit note ─── */
+        .credit-note {
+            margin-top: 56px;
+            padding-top: 24px;
+            border-top: 1px solid var(--line);
+            font-size: 0.82rem;
+            color: var(--muted);
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .credit-note a {
+            color: var(--muted);
+            text-decoration: underline;
+            text-decoration-color: var(--line-2);
+        }
+        .credit-note a:hover { color: var(--brand); }
+
+        /* ═══════════════════════════════════════════════════════════
+           FOOTER
+           ═══════════════════════════════════════════════════════════ */
+        footer.site {
+            background: #0a0f24;
+            color: var(--muted-2);
+            padding: 40px 0 24px;
+            font-size: 0.86rem;
+        }
+
+        footer.site .container {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            padding-bottom: 24px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-links a {
+            color: var(--muted-2);
+            font-weight: 500;
+            text-decoration: none;
+        }
+        .footer-links a:hover { color: #fff; text-decoration: none; }
+
+        .footer-copy {
+            text-align: center;
+            font-size: 0.78rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           BACK TO TOP
+           ═══════════════════════════════════════════════════════════ */
+        .back-top {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--brand);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            box-shadow: 0 8px 20px rgba(74, 108, 247, 0.35);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.25s ease;
+            border: none;
+            z-index: 90;
+        }
+
+        .back-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-top:hover { background: var(--brand-dark); }
+
+        /* ═══════════════════════════════════════════════════════════
+           RESPONSIVE
+           ═══════════════════════════════════════════════════════════ */
+        @media (max-width: 960px) {
+            .layout {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 32px 24px 64px;
+            }
+
+            .toc {
+                position: static;
+                max-height: none;
+                padding: 20px;
+                background: var(--bg-soft);
+                border: 1px solid var(--line);
+                border-radius: var(--radius);
+            }
+
+            .toc-list {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 6px;
+            }
+
+            .toc-list a {
+                padding: 6px 12px;
+                background: #fff;
+                border: 1px solid var(--line);
+                border-left: 1px solid var(--line);
+                font-size: 0.8rem;
+                border-radius: 999px;
+            }
+
+            .toc-list a.active {
+                border-left-color: var(--line);
+            }
+
+            .toc-num { display: none; }
+        }
+
+        @media (max-width: 640px) {
+            .page-hero { padding: 40px 0 28px; }
+            .content h2 { font-size: 1.15rem; margin-top: 40px; }
+            .content h3 { font-size: 0.98rem; }
+            .content p, .content li { font-size: 0.94rem; }
+            .back-top { bottom: 20px; right: 20px; }
+            .header-link .label { display: none; }
+            .footer-links { gap: 16px; }
+            .summary-item { padding: 14px 16px; }
+        }
+
+        /* Reduce motion */
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            * { transition-duration: 0.01ms !important; }
+        }
+
+        /* Print */
+        @media print {
+            header.site, .toc, .back-top, footer.site { display: none; }
+            .layout { grid-template-columns: 1fr; padding: 0; }
+            .content { max-width: 100%; }
+            .content h2 { page-break-after: avoid; }
+            body { font-size: 11pt; }
+            .table-wrap { border: 1px solid #999; }
+            thead th { background: #eee; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
+    <header class="site">
+        <div class="container">
+            <a href="index.html" class="brand">
+                <span class="brand-mark"><img src="assets/app_icon.png" alt="SoundScript" /></span>
+                Sound<span>Script</span>
+            </a>
+            <div class="header-actions">
+                <a href="terms.html" class="header-link">
+                    <i class="fas fa-file-contract"></i>
+                    <span class="label">Terms of Service</span>
+                </a>
+                <a href="index.html" class="header-link">
+                    <i class="fas fa-arrow-left"></i>
+                    <span class="label">Back to site</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════ PAGE HERO ═══════════════════════════ -->
+    <section class="page-hero">
+        <div class="container">
+            <a href="index.html" class="breadcrumb">
+                <i class="fas fa-home"></i>
+                Home
+                <i class="fas fa-chevron-right"></i>
+                Legal
+            </a>
+            <h1>Privacy Policy</h1>
+            <div class="updated">
+                <i class="fas fa-calendar-alt"></i>
+                Last updated: September 20, 2026
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════ MAIN LAYOUT ═══════════════════════════ -->
+    <div class="layout">
+
+        <!-- ─── SIDEBAR TOC ─── -->
+        <aside class="toc">
+            <div class="toc-title">Contents</div>
+            <ul class="toc-list">
+                <li><a href="#infocollect"><span class="toc-num">01</span>Information We Collect</a></li>
+                <li><a href="#infouse"><span class="toc-num">02</span>How We Process Information</a></li>
+                <li><a href="#legalbases"><span class="toc-num">03</span>Legal Bases</a></li>
+                <li><a href="#whoshare"><span class="toc-num">04</span>When We Share Information</a></li>
+                <li><a href="#ai"><span class="toc-num">05</span>AI-Based Products</a></li>
+                <li><a href="#intltransfers"><span class="toc-num">06</span>International Transfers</a></li>
+                <li><a href="#inforetain"><span class="toc-num">07</span>Data Retention</a></li>
+                <li><a href="#infominors"><span class="toc-num">08</span>Minors</a></li>
+                <li><a href="#privacyrights"><span class="toc-num">09</span>Your Privacy Rights</a></li>
+                <li><a href="#DNT"><span class="toc-num">10</span>Do-Not-Track</a></li>
+                <li><a href="#uslaws"><span class="toc-num">11</span>US State Privacy Rights</a></li>
+                <li><a href="#otherlaws"><span class="toc-num">12</span>Other Regions</a></li>
+                <li><a href="#clausea"><span class="toc-num">13</span>Local-First Architecture</a></li>
+                <li><a href="#policyupdates"><span class="toc-num">14</span>Updates to This Notice</a></li>
+                <li><a href="#contact"><span class="toc-num">15</span>Contact Us</a></li>
+                <li><a href="#request"><span class="toc-num">16</span>Review, Update, Delete Data</a></li>
+            </ul>
+        </aside>
+
+        <!-- ─── CONTENT ─── -->
+        <main class="content">
+
+            <!-- Intro -->
+            <div class="intro">
+                <p>This Privacy Notice for <strong>BitProgram</strong> ("<strong>we</strong>," "<strong>us</strong>," or "<strong>our</strong>"), describes how and why we might access, collect, store, use, and/or share ("<strong>process</strong>") your personal information when you use our services ("<strong>Services</strong>"), including when you:</p>
+                <ul style="margin-top: 10px; margin-bottom: 0;">
+                    <li>Visit our website at <a target="_blank" href="https://bitprogram0-alt.github.io/soundscript-landingpage/" rel="noopener">https://bitprogram0-alt.github.io/soundscript-landingpage/</a> or any website of ours that links to this Privacy Notice</li>
+                    <li>Download and use our desktop application, SoundScript</li>
+                    <li>Engage with us in other related ways, including any marketing or events</li>
+                </ul>
+            </div>
+
+            <p><strong>Questions or concerns?</strong> Reading this Privacy Notice will help you understand your privacy rights and choices. We are responsible for making decisions about how your personal information is processed. If you do not agree with our policies and practices, please do not use our Services.</p>
+
+            <!-- ─── SUMMARY OF KEY POINTS ─── -->
+            <h2 id="summary">Summary of Key Points</h2>
+            <p style="font-style: italic; color: var(--muted); margin-bottom: 24px;">
+                This summary provides key points from our Privacy Notice, but you can find out more details about any of these topics by clicking the links below or by using our <a href="#infocollect">table of contents</a> to find the section you are looking for.
+            </p>
+
+            <div class="summary-list">
+                <div class="summary-item">
+                    <strong>What personal information do we process?</strong> When you visit, use, or navigate our Services, we may process personal information depending on how you interact with us and the Services, the choices you make, and the products and features you use. Learn more about <a href="#infocollect">personal information you disclose to us</a>.
+                </div>
+                <div class="summary-item">
+                    <strong>Do we process any sensitive personal information?</strong> We do not process sensitive personal information.
+                </div>
+                <div class="summary-item">
+                    <strong>Do we collect any information from third parties?</strong> We do not collect any information from third parties.
+                </div>
+                <div class="summary-item">
+                    <strong>How do we process your information?</strong> We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent. We process your information only when we have a valid legal reason to do so. Learn more about <a href="#infouse">how we process your information</a>.
+                </div>
+                <div class="summary-item">
+                    <strong>In what situations and with which parties do we share personal information?</strong> We may share information in specific situations and with specific third parties. Learn more about <a href="#whoshare">when and with whom we share your personal information</a>.
+                </div>
+                <div class="summary-item">
+                    <strong>What are your rights?</strong> Depending on where you are located geographically, the applicable privacy law may mean you have certain rights regarding your personal information. Learn more about <a href="#privacyrights">your privacy rights</a>.
+                </div>
+                <div class="summary-item">
+                    <strong>How do you exercise your rights?</strong> The easiest way to exercise your rights is by emailing us at <a href="mailto:bitprogram0@gmail.com">bitprogram0@gmail.com</a>. We will consider and act upon any request in accordance with applicable data protection laws.
+                </div>
+            </div>
+
+            <p>Want to learn more about what we do with any information we collect? <a href="#infocollect">Review the Privacy Notice in full</a>.</p>
+
+            <!-- ─── SECTION 1 ─── -->
+            <h2 id="infocollect"><span class="num">1.</span>What Information Do We Collect?</h2>
+
+            <div class="in-short">
+                <strong><em>In Short:</em></strong> <em>We collect personal information that you provide to us.</em>
+            </div>
+
+            <p>We collect personal information that you voluntarily provide to us when you express an interest in obtaining information about us or our products and Services, when you participate in activities on the Services, or otherwise when you contact us.</p>
+
+            <p><strong>Personal Information Provided by You.</strong> The personal information that we collect depends on the context of your interactions with us and the Services, the choices you make, and the products and features you use. The personal information we collect may include the following:</p>
+            <ul>
+                <li>email addresses</li>
+                <li>contact or authentication data</li>
+                <li>license keys</li>
+                <li>api keys (elevenlabs, gemini)</li>
+            </ul>
+
+            <p id="sensitiveinfo"><strong>Sensitive Information.</strong> We do not process sensitive information.</p>
+
+            <p>All personal information that you provide to us must be true, complete, and accurate, and you must notify us of any changes to such personal information.</p>
+
+            <h3>Information automatically collected</h3>
+
+            <div class="in-short">
+                <strong><em>In Short:</em></strong> <em>We do not collect IP addresses, browser information, cookies, analytics, usage logs, or crash reports. The only information generated automatically by the app is a hashed machine identifier used for license enforcement.</em>
+            </div>
+
+            <p>SoundScript generates a cryptographically hashed machine identifier on your device to support license activation and anti-piracy enforcement. This identifier is derived from the device's network adapter address and operating system name, then hashed (SHA-256) so it cannot be reversed to identify you or your physical device. This hashed identifier is transmitted to Gumroad's verification API only during license activation.</p>
+
+            <p>We do not collect IP addresses, browser type, operating system details beyond what is used to generate the hash, device model, location, or any usage analytics.</p>
+
+            <div class="callout info">
+                <strong>Google API.</strong> Our use of information received from Google APIs will adhere to <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener noreferrer" target="_blank">Google API Services User Data Policy</a>, including the <a href="https://developers.google.com/terms/api-services-user-data-policy#limited-use" rel="noopener noreferrer" target="_blank">Limited Use requirements</a>.
+            </div>
+
+            <!-- ─── SECTION 2 ─── -->
+            <h2 id="infouse"><span class="num">2.</span>How Do We Process Your Information?</h2>
+
+            <div class="in-short">
+                <strong><em>In Short:</em></strong> <em>We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We process the personal information for the following purposes listed below.</em>
+            </div>
+
+            <p><strong>We process your personal information for a variety of reasons, depending on how you interact with our Services, including:</strong></p>
+            <ul>
+                <li><strong>To deliver and facilitate delivery of services to the user.</strong> We may process your information to provide you with the requested service. <em>(Retention period: Duration of the license, plus 12 months for dispute resolution)</em></li>
+                <li><strong>To respond to user inquiries/offer support to users.</strong> We may process your information to respond to your inquiries and solve any potential issues you might have with the requested service. <em>(Retention period: 12 months from the date of last contact)</em></li>
+                <li><strong>To send administrative information to you.</strong> We may process your information to send you details about our products and services, changes to our terms and policies, and other similar information. <em>(Retention period: Duration of the license, plus 12 months for dispute resolution)</em></li>
+                <li><strong>To fulfill and manage your orders.</strong> We may process your information to fulfill and manage your orders, payments, returns, and exchanges made through the Services. <em>(Retention period: Duration of the license, plus 12 months for dispute resolution)</em></li>
+                <li><strong>To protect our Services.</strong> We may process your information as part of our efforts to keep our Services safe and secure, including fraud monitoring and prevention. <em>(Retention period: Duration of the license, plus 12 months for dispute resolution)</em></li>
+                <li><strong>To save or protect an individual's vital interest.</strong> We may process your information when necessary to save or protect an individual's vital interest, such as to prevent harm.</li>
+                <li><strong>License enforcement and anti-piracy.</strong> To verify software licenses, enforce the per-license activation limit, and prevent unauthorized sharing of paid licenses. <em>(Retention period: Duration of the license plus 12 months for dispute resolution.)</em></li>
+            </ul>
+
+            <!-- ─── SECTION 3 ─── -->
+            <h2 id="legalbases"><span class="num">3.</span>What Legal Bases Do We Rely On to Process Your Information?</h2>
+
+            <div class="in-short">
+                <strong><em>In Short:</em></strong> <em>We only process your personal information when we believe it is necessary and we have a valid legal reason (i.e., legal basis) to do so under applicable law, like with your consent, to comply with laws, to provide you with services to enter into or fulfill our contractual obligations, to protect your rights, or to fulfill our legitimate business interests.</em>
+            </div>
+
+            <h3><em>If you are located in the EU or UK, this section applies to you.</em></h3>
+
+            <p>The General Data Protection Regulation (GDPR) and UK GDPR require us to explain the valid legal bases we rely on in order to process your personal information. As such, we may rely on the following legal bases to process your personal information:</p>
+            <ul>
+                <li><strong>Consent.</strong> We may process your information if you have given us permission (i.e., consent) to use your personal information for a specific purpose. You can withdraw your consent at any time. Learn more about <a href="#withdrawconsent">withdrawing your consent</a>.</li>
+                <li><strong>Performance of a Contract.</strong> We may process your personal information when we believe it is necessary to fulfill our contractual obligations to you, including providing our Services or at your request prior to entering into a contract with you.</li>
+                <li><strong>Legitimate Interests.</strong> We may process your information when we believe it is reasonably necessary to achieve our legitimate business interests and those interests do not outweigh your interests and fundamental rights and freedoms. For example, we may process your personal information for some of the purposes described in order to:
+                    <ul>
+                        <li>Diagnose problems and/or prevent fraudulent activities</li>
+                        <li>In order to protect the commercial viability of the software and ensure licenses are used as agreed in the license terms accepted at purchase.</li>
+                    </ul>
+                </li>
+                <li><strong>Legal Obligations.</strong> We may process your information where we believe it is necessary for compliance with our legal obligations, such as to cooperate with a law enforcement body or regulatory agency, exercise or defend our legal rights, or disclose your information as evidence in litigation in which we are involved.</li>
+                <li><strong>Vital Interests.</strong> We may process your information where we believe it is necessary to protect your vital interests or the vital interests of a third party, such as situations involving potential threats to the safety of any person.</li>
+            </ul>
+
+            <h3><em>If you are located in Canada, this section applies to you.</em></h3>
+
+            <p>We may process your information if you have given us specific permission (i.e., express consent) to use your personal information for a specific purpose, or in situations where your permission can be inferred (i.e., implied consent). You can <a href="#withdrawconsent">withdraw your consent</a> at any time.</p>
+
+            <p>In some exceptional cases, we may be legally permitted under applicable law to process your information without your consent, including, for example:</p>
+            <ul>
+                <li>If collection is clearly in the interests of an individual and consent cannot be obtained in a timely way</li>
+                <li>For investigations and fraud detection and prevention</li>
+                <li>For business transactions provided certain conditions are met</li>
+                <li>If it is contained in a witness statement and the collection is necessary to assess, process, or settle an insurance claim</li>
+                <li>For identifying injured, ill, or deceased persons and communicating with next of kin</li>
+                <li>If we have reasonable grounds to believe an individual has been, is, or may be victim of financial abuse</li>
+                <li>If it is reasonable to expect collection and use with consent would compromise the availability or the accuracy of the information and the collection is reasonable for purposes related to investigating a breach of an agreement or a contravention of the laws of Canada or a province</li>
+                <li>If disclosure is required to comply with a subpoena, warrant, court order, or rules of the court relating to the production of records</li>
+                <li>If it was produced by an individual in the course of their employment, business, or profession and the collection is consistent with the purposes for which the information was produced</li>
+                <li>If the collection is solely for journalistic, artistic, or literary purposes</li>
+                <li>If the information is publicly available and is specified by the regulations</li>
+                <li>We may disclose de-identified information for approved research or statistics projects, subject to ethics oversight and confidentiality commitments</li>
+            </ul>
+
+            <!-- ─── SECTION 4 ─── -->
+            <h2 id="whoshare"><span class="num">4.</span>When and With Whom Do We Share Your Personal Information?</h2>
+
+            <div class="in-short">
+                <strong><em>In Short:</em></strong> <em>We may share information in specific situations described in this section and/or with the following third parties.</em>
+            </div>
+
+            <p><strong>Vendors, Consultants, and Other Third-Party Service Providers.</strong> We may share your data with third-party vendors, service providers, contractors, or agents ("<strong>third parties</strong>") who perform services for us or on our behalf and require access to such information to do that work. We have contracts in place with our third parties, which are designed to help safeguard your personal information. The third parties we may share personal information with are as follows:</p>
+
+            <ul>
+                <li><strong>AI Service Providers</strong>
+                    <ul>
+                        <li>Google Cloud AI</li>
+                        <li>ElevenLabs</li>
+                    </ul>
+                </li>
+                <li><strong>Invoicing &amp; Billing</strong>
+                    <ul>
+                        <li>Gumroad</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>We may also need to share your personal information in the following situations:</p>
+            <ul>
+                <li><strong>Business Transfers.</strong> We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.</li>
+            </ul>
+
+            <!-- ─── SECTION 5 ─── -->
+            <h2 id="ai"><span class="num">5.</span>Do We Offer Artificial Intelligence-Based Products?</h2>
+
+            <div class="in-short">
+                <strong><em>In Short:</em></strong> <em>We offer products, features, or tools powered by artificial intelligence, machine learning, or similar technologies.</em>
+            </div>
+
+            <p>As part of our Services, we offer products, features, or tools powered by artificial intelligence, machine learning, or similar technologies (collectively, "AI Products"). These tools are designed to enhance your experience and provide you with innovative solutions. The terms in this Privacy Notice govern your use of the AI Products within our Services.</p>
+
+            <h3>Use of AI Technologies</h3>
+            <p>We provide the AI Products through third-party service providers ("AI Service Providers"), including ElevenLabs and Google Cloud AI. As outlined in this Privacy Notice, your input, output, and personal information will be shared with and processed by these AI Service Providers to enable your use of our AI Products for purposes outlined in <a href="#legalbases">"What Legal Bases Do We Rely On to Process Your Personal Information?"</a>. You must not use the AI Products in any way that violates the terms or policies of any AI Service Provider.</p>
+
+            <h3>Our AI Products</h3>
+            <p>Our AI Products are designed for the following functions:</p>
+            <ul>
+                <li>Text generation</li>
+                <li>Text-to-speech synthesis</li>
+                <li>Conversational AI chat</li>
+            </ul>
+
+            <h3>How We Process Your Data Using AI</h3>
+            <p>All personal information processed using our AI Products is handled in line with our Privacy Notice and our agreement with third parties. This ensures high security and safeguards your personal information throughout the process, giving you peace of mind about your data's safety. SoundScript does not use your data to train AI models, does not use AI for automated decision-making, and does not use AI for profiling.</p>
+
+            <h3>How to Opt Out</h3>
+            <div class="callout privacy">
+                You can opt out of cloud AI processing entirely by switching to a local engine. In the Assistant, select <strong>"Nuqta (Local)"</strong> as your engine. In Settings → TTS, select <strong>"Anhad (Local)"</strong> as your engine. You may also delete your ElevenLabs and Gemini API keys in Settings → API Keys, which disables the corresponding cloud engines. When a local engine is active, no text or audio data leaves your device.
+            </div>
+
+            <!-- ─── SECTION 6 ─── -->
+            <h2 id="intltransfers"><span class="num">6.</span>Is Your Information Transferred Internationally?</h2>
+
+            <div class="in-short">
+                <strong><em>In Short:</em></strong> <em>We may transfer, store, and process your information in countries other than your own.</em>
+            </div>
+
+            <p>Our third-party service providers operate servers located in the United States. Regardless of your location, please be aware that your information may be transferred to, stored by, and processed by us in our facilities and in the facilities of the third parties with whom we may share your personal information (see <a href="#whoshare">"When and With Whom Do We Share Your Personal Information?"</a>), including facilities in the United States and other countries.</p>
+
+            <p>If you are a resident in the European Economic Area (EEA), United Kingdom (UK), or Switzerland, then these countries may not necessarily have data protection laws or other similar laws as comprehensive as those in your country. However, we will take all necessary measures to protect your personal information in accordance with this Privacy Notice and applicable law.</p>
+
+            <p><strong>European Commission's Standard Contractual Clauses:</strong></p>
+
+            <p>We have implemented measures to protect your personal information, including by using the European Commission's Standard Contractual Clauses for transfers of personal information between us and our third-party providers. These clauses require all recipients to protect all personal information that they process originating from the EEA or UK in accordance with European data protection laws and regulations. We have implemented similar appropriate safeguards with our third-party service providers and partners and further details can be provided upon request.</p>
+
+            <!-- ─── SECTION 7 ─── -->
+            <h2 id="inforetain"><span class="num">7.</span>How Long Do We Keep Your Information?</h2>
+
+            <div class="in-short">
+                <strong><em>In Short:</em></strong> <em>We keep your information for as long as necessary to fulfill the purposes outlined in this Privacy Notice unless otherwise required by law.</em>
+            </div>
+
+            <p>We will only keep your personal information for as long as it is necessary for the purposes set out in this Privacy Notice, unless a longer retention period is required or permitted by law (such as tax, accounting, or other legal requirements). If you are located in the EU or UK, see section <a href="#infouse">"How Do We Process Your Information?"</a> for our retention periods by purpose.</p>
+
+            <p>When we have no ongoing legitimate business need to process your personal information, we will either delete or anonymize such information, or, if this is not possible, then we will securely store your personal information and isolate it from any further processing until deletion is possible.</p>
+
+            <!-- ─── SECTION 8 ─── -->
+            <h2 id="infominors"><span class="num">8.</span>Do We Collect Information From Minors?</h2>
+
+            <div class="in-short">
+                <strong><em>In Short:</em></strong> <em>We do not knowingly collect data from or market to children under 18 years of age or the equivalent age as specified by law in your jurisdiction.</em>
+            </div>
+
+            <p>We do not knowingly collect, solicit data from, or market to children under 18 years of age or the equivalent age as specified by law in your jurisdiction, nor do we knowingly sell such personal information. By using the Services, you represent that you are at least 18 or the equivalent age as specified by law in your jurisdiction or that you are the parent or guardian of such a minor and consent to such minor dependent's use of the Services. If we learn that personal information from users less than 18 years of age has been collected, we will deactivate the account and take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from children under age 18, please contact us at <a href="mailto:bitprogram0@gmail.com">bitprogram0@gmail.com</a>.</p>
+
+            <!-- ─── SECTION 9 ─── -->
+            <h2 id="privacyrights"><span class="num">9.</span>What Are Your Privacy Rights?</h2>
+
+            <div class="in-short">
+                <strong><em>In Short:</em></strong> <em>Depending on your state of residence in the US or in some regions, such as the European Economic Area (EEA), United Kingdom (UK), Switzerland, and Canada, you have rights that allow you greater access to and control over your personal information. You may review, change, or terminate your account at any time, depending on your country, province, or state of residence.</em>
+            </div>
+
+            <p>In some regions (like the EEA, UK, Switzerland, and Canada), you have certain rights under applicable data protection laws. These may include the right (i) to request access and obtain a copy of your personal information, (ii) to request rectification or erasure; (iii) to restrict the processing of your personal information; (iv) if applicable, to data portability; and (v) not to be subject to automated decision-making. In certain circumstances, you may also have the right to object to the processing of your personal information. You can make such a request by contacting us by using the contact details provided in the section <a href="#contact">"How Can You Contact Us About This Notice?"</a> below.</p>
+
+            <p>We will consider and act upon any request in accordance with applicable data protection laws.</p>
+
+            <p>If you are located in the UK and are unhappy with how we have handled your personal information, you can make a complaint directly to us. This is in addition to the rights you have under the UK General Data Protection Regulation and the Data Protection Act 2018.</p>
+
+            <p>If you are located in the EEA or UK and you believe we are unlawfully processing your personal information, you also have the right to complain to your <a href="https://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm" rel="noopener noreferrer" target="_blank">Member State data protection authority</a> or <a href="https://ico.org.uk/make-a-complaint/" rel="noopener noreferrer" target="_blank">UK data protection authority</a>.</p>
+
+            <p>If you are located in Switzerland, you may contact the <a href="https://www.edoeb.admin.ch/edoeb/en/home.html" rel="noopener noreferrer" target="_blank">Federal Data Protection and Information Commissioner</a>.</p>
+
+            <div id="withdrawconsent" class="callout info">
+                <strong>Withdrawing your consent:</strong> If we are relying on your consent to process your personal information, you have the right to withdraw your consent at any time. You can withdraw your consent at any time by contacting us by using the contact details provided in the section <a href="#contact">"How Can You Contact Us About This Notice?"</a> below.
+            </div>
+
+            <p>However, please note that this will not affect the lawfulness of the processing before its withdrawal nor, when applicable law allows, will it affect the processing of your personal information conducted in reliance on lawful processing grounds other than consent.</p>
+
+            <!-- ─── SECTION 10 ─── -->
+            <h2 id="DNT"><span class="num">10.</span>Controls for Do-Not-Track Features</h2>
+
+            <p>Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track ("DNT") feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage, no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. SoundScript is a desktop application and does not perform online tracking of any kind.</p>
+
+            <!-- ─── SECTION 11 ─── -->
+            <h2 id="uslaws"><span class="num">11.</span>Do United States Residents Have Specific Privacy Rights?</h2>
+
+            <div class="in-short">
+                <strong><em>In Short:</em></strong> <em>If you are a resident of California, Colorado, Connecticut, Delaware, Florida, Indiana, Iowa, Kentucky, Maryland, Minnesota, Montana, Nebraska, New Hampshire, New Jersey, Oregon, Rhode Island, Tennessee, Texas, Utah, or Virginia, you may have the right to request access to and receive details about the personal information we maintain about you and how we have processed it, correct inaccuracies, get a copy of, or delete your personal information. You may also have the right to withdraw your consent to our processing of your personal information. These rights may be limited in some circumstances by applicable law. More information is provided below.</em>
+            </div>
+
+            <h3>Categories of Personal Information We Collect</h3>
+            <p>The table below shows the categories of personal information we have collected in the past twelve (12) months.</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 33%;">Category</th>
+                            <th style="width: 52%;">Examples</th>
+                            <th style="width: 15%; text-align: center;">Collected</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>A.</strong> Identifiers</td>
+                            <td>Contact details, such as email address, unique personal identifier, online identifier</td>
+                            <td class="col-yes">YES</td>
+                        </tr>
+                        <tr>
+                            <td><strong>B.</strong> Personal information as defined in the California Customer Records statute</td>
+                            <td>Name, contact information, education, employment, employment history, and financial information</td>
+                            <td class="col-no">NO</td>
+                        </tr>
+                        <tr>
+                            <td><strong>C.</strong> Protected classification characteristics under state or federal law</td>
+                            <td>Gender, age, date of birth, race and ethnicity, national origin, marital status</td>
+                            <td class="col-no">NO</td>
+                        </tr>
+                        <tr>
+                            <td><strong>D.</strong> Commercial information</td>
+                            <td>Transaction information, purchase history, financial details, and payment information</td>
+                            <td class="col-yes">YES</td>
+                        </tr>
+                        <tr>
+                            <td><strong>E.</strong> Biometric information</td>
+                            <td>Fingerprints and voiceprints</td>
+                            <td class="col-no">NO</td>
+                        </tr>
+                        <tr>
+                            <td><strong>F.</strong> Internet or other similar network activity</td>
+                            <td>Browsing history, search history, online behavior, interest data</td>
+                            <td class="col-no">NO</td>
+                        </tr>
+                        <tr>
+                            <td><strong>G.</strong> Geolocation data</td>
+                            <td>Device location</td>
+                            <td class="col-no">NO</td>
+                        </tr>
+                        <tr>
+                            <td><strong>H.</strong> Audio, electronic, sensory, or similar information</td>
+                            <td>Images and audio, video or call recordings created in connection with our business activities</td>
+                            <td class="col-no">NO</td>
+                        </tr>
+                        <tr>
+                            <td><strong>I.</strong> Professional or employment-related information</td>
+                            <td>Business contact details in order to provide you our Services at a business level or job title, work history, and professional qualifications</td>
+                            <td class="col-no">NO</td>
+                        </tr>
+                        <tr>
+                            <td><strong>J.</strong> Education Information</td>
+                            <td>Student records and directory information</td>
+                            <td class="col-no">NO</td>
+                        </tr>
+                        <tr>
+                            <td><strong>K.</strong> Inferences drawn from collected personal information</td>
+                            <td>Inferences drawn from any of the collected personal information listed above to create a profile</td>
+                            <td class="col-no">NO</td>
+                        </tr>
+                        <tr>
+                            <td><strong>L.</strong> Sensitive personal Information</td>
+                            <td></td>
+                            <td class="col-no">NO</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>We will use and retain the collected personal information as needed to provide the Services or for:</p>
+            <ul>
+                <li><strong>Category A</strong> — As long as the user holds a valid license, plus 12 months for dispute resolution</li>
+                <li><strong>Category D</strong> — As long as the user holds a valid license, plus 12 months for dispute resolution</li>
+            </ul>
+
+            <h3>Sources of Personal Information</h3>
+            <p>Learn more about the sources of personal information we collect in <a href="#infocollect">"What Information Do We Collect?"</a></p>
+
+            <h3>How We Use and Share Personal Information</h3>
+            <p>Learn more about how we use your personal information in the section <a href="#infouse">"How Do We Process Your Information?"</a></p>
+
+            <p><strong>Will your information be shared with anyone else?</strong></p>
+
+            <p>We may disclose your personal information with our service providers pursuant to a written contract between us and each service provider. Learn more about how we disclose personal information in the section <a href="#whoshare">"When and With Whom Do We Share Your Personal Information?"</a></p>
+
+            <p>We have not sold or shared any personal information to third parties for a business or commercial purpose in the preceding twelve (12) months. We have disclosed the following categories of personal information to third parties for a business or commercial purpose in the preceding twelve (12) months:</p>
+            <ul>
+                <li>Category A. Identifiers</li>
+                <li>Category D. Commercial information</li>
+            </ul>
+
+            <p>The categories of third parties to whom we disclosed personal information for a business or commercial purpose can be found under <a href="#whoshare">"When and With Whom Do We Share Your Personal Information?"</a>.</p>
+
+            <h3>Your Rights</h3>
+            <p>You have rights under certain US state data protection laws. However, these rights are not absolute, and in certain cases, we may decline your request as permitted by law. These rights include:</p>
+            <ul>
+                <li><strong>Right to know</strong> whether or not we are processing your personal data</li>
+                <li><strong>Right to access</strong> your personal data</li>
+                <li><strong>Right to correct</strong> inaccuracies in your personal data</li>
+                <li><strong>Right to request</strong> the deletion of your personal data</li>
+                <li><strong>Right to obtain a copy</strong> of the personal data you previously shared with us</li>
+                <li><strong>Right to non-discrimination</strong> for exercising your rights</li>
+                <li><strong>Right to opt out</strong> of the processing of your personal data if it is used for targeted advertising (or sharing as defined under California's privacy law), the sale of personal data, or profiling in furtherance of decisions that produce legal or similarly significant effects ("profiling")</li>
+            </ul>
+
+            <p>Depending upon the state where you live, you may also have the following rights:</p>
+            <ul>
+                <li>Right to access the categories of personal data being processed (as permitted by applicable law, including the privacy law in Minnesota)</li>
+                <li>Right to obtain a list of the categories of third parties to which we have disclosed personal data (as permitted by applicable law, including the privacy law in California, Delaware, and Maryland)</li>
+                <li>Right to obtain a list of specific third parties to which we have disclosed personal data (as permitted by applicable law, including the privacy law in Minnesota and Oregon)</li>
+                <li>Right to obtain a list of third parties to which we have sold personal data (as permitted by applicable law, including the privacy law in Connecticut)</li>
+                <li>Right to review, understand, question, and depending on where you live, correct how personal data has been profiled (as permitted by applicable law, including the privacy law in Connecticut and Minnesota)</li>
+                <li>Right to limit use and disclosure of sensitive personal data (as permitted by applicable law, including the privacy law in California)</li>
+                <li>Right to opt out of the collection of sensitive data and personal data collected through the operation of a voice or facial recognition feature (as permitted by applicable law, including the privacy law in Florida)</li>
+            </ul>
+
+            <h3>How to Exercise Your Rights</h3>
+            <p>To exercise these rights, you can contact us by emailing us at <a href="mailto:bitprogram0@gmail.com">bitprogram0@gmail.com</a>, or by referring to the contact details at the bottom of this document.</p>
+
+            <p>Under certain US state data protection laws, you can designate an authorized agent to make a request on your behalf. We may deny a request from an authorized agent that does not submit proof that they have been validly authorized to act on your behalf in accordance with applicable laws.</p>
+
+            <h3>Request Verification</h3>
+            <p>Upon receiving your request, we will need to verify your identity to determine you are the same person about whom we have the information in our system. We will only use personal information provided in your request to verify your identity or authority to make the request.</p>
+
+            <h3>Appeals</h3>
+            <p>Under certain US state data protection laws, if we decline to take action regarding your request, you may appeal our decision by emailing us at <a href="mailto:bitprogram0@gmail.com">bitprogram0@gmail.com</a>. We will inform you in writing of any action taken or not taken in response to the appeal, including a written explanation of the reasons for the decisions. If your appeal is denied, you may submit a complaint to your state attorney general.</p>
+
+            <!-- ─── SECTION 12 ─── -->
+            <h2 id="otherlaws"><span class="num">12.</span>Do Other Regions Have Specific Privacy Rights?</h2>
+
+            <div class="in-short">
+                <strong><em>In Short:</em></strong> <em>You may have additional rights based on the country you reside in.</em>
+            </div>
+
+            <h3>Australia and New Zealand</h3>
+            <p>We collect and process your personal information under the obligations and conditions set by Australia's Privacy Act 1988 and New Zealand's Privacy Act 2020 (Privacy Act).</p>
+
+            <p>This Privacy Notice satisfies the notice requirements defined in both Privacy Acts, in particular: what personal information we collect from you, from which sources, for which purposes, and other recipients of your personal information.</p>
+
+            <p>At any time, you have the right to request access to or correction of your personal information. You can make such a request by contacting us by using the contact details provided in the section <a href="#request">"How Can You Review, Update, or Delete the Data We Collect From You?"</a></p>
+
+            <p>If you believe we are unlawfully processing your personal information, you have the right to submit a complaint about a breach of the Australian Privacy Principles to the <a href="https://www.oaic.gov.au/privacy/privacy-complaints/lodge-a-privacy-complaint-with-us" rel="noopener noreferrer" target="_blank">Office of the Australian Information Commissioner</a> and a breach of New Zealand's Privacy Principles to the <a href="https://www.privacy.org.nz/your-rights/making-a-complaint/" rel="noopener noreferrer" target="_blank">Office of New Zealand Privacy Commissioner</a>.</p>
+
+            <h3>Republic of South Africa</h3>
+            <p>At any time, you have the right to request access to or correction of your personal information. You can make such a request by contacting us by using the contact details provided in the section <a href="#request">"How Can You Review, Update, or Delete the Data We Collect From You?"</a></p>
+
+            <p>If you are unsatisfied with the manner in which we address any complaint with regard to our processing of personal information, you can contact the office of the regulator, the details of which are:</p>
+
+            <div class="contact-card">
+                <div class="label">Regulator</div>
+                <div class="value"><a href="https://inforegulator.org.za/" rel="noopener noreferrer" target="_blank">The Information Regulator (South Africa)</a></div>
+                <div class="label">General Enquiries</div>
+                <div class="value"><a href="mailto:enquiries@inforegulator.org.za">enquiries@inforegulator.org.za</a></div>
+                <div class="label">Complaints (POPIA/PAIA form 5)</div>
+                <div class="value">
+                    <a href="mailto:PAIAComplaints@inforegulator.org.za">PAIAComplaints@inforegulator.org.za</a><br>
+                    <a href="mailto:POPIAComplaints@inforegulator.org.za">POPIAComplaints@inforegulator.org.za</a>
+                </div>
+            </div>
+
+            <!-- ─── SECTION 13 ─── -->
+            <h2 id="clausea"><span class="num">13.</span>Local-First Architecture</h2>
+
+            <div class="callout privacy">
+                SoundScript is a desktop application designed with a <strong>local-first privacy model</strong>. Your scripts, API keys, license file, cached audio, and downloaded AI models are stored only on your own device. BitProgram operates no servers that collect, store, or process your personal information.
+            </div>
+
+            <p>The only data that leaves your device are:</p>
+            <ol>
+                <li>Text you submit to cloud AI services (ElevenLabs, Google Gemini) when you select a cloud engine.</li>
+                <li>Your license key and a cryptographically hashed machine identifier sent to Gumroad for license verification.</li>
+                <li>Model files downloaded from public repositories on first use.</li>
+            </ol>
+
+            <p>All other operations — including all local AI generation, caching, and file management — occur entirely on your device.</p>
+
+            <p>You can delete all data associated with SoundScript at any time by uninstalling the application or clearing its data folder. Because no personal information is stored on BitProgram servers, there is nothing for us to delete on our end.</p>
+
+            <!-- ─── SECTION 14 ─── -->
+            <h2 id="policyupdates"><span class="num">14.</span>Do We Make Updates to This Notice?</h2>
+
+            <div class="in-short">
+                <strong><em>In Short:</em></strong> <em>Yes, we will update this notice as necessary to stay compliant with relevant laws.</em>
+            </div>
+
+            <p>We may update this Privacy Notice from time to time. The updated version will be indicated by an updated "Revised" date at the top of this Privacy Notice. If we make material changes to this Privacy Notice, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this Privacy Notice frequently to be informed of how we are protecting your information.</p>
+
+            <!-- ─── SECTION 15 ─── -->
+            <h2 id="contact"><span class="num">15.</span>How Can You Contact Us About This Notice?</h2>
+
+            <p>If you have questions or comments about this notice, you may email us at <a href="mailto:bitprogram0@gmail.com">bitprogram0@gmail.com</a>.</p>
+
+            <div class="contact-card">
+                <div class="label">Company</div>
+                <div class="value">BitProgram</div>
+                <div class="label">Location</div>
+                <div class="value">Pakistan</div>
+                <div class="label">Email</div>
+                <div class="value"><a href="mailto:bitprogram0@gmail.com">bitprogram0@gmail.com</a></div>
+            </div>
+
+            <!-- ─── SECTION 16 ─── -->
+            <h2 id="request"><span class="num">16.</span>How Can You Review, Update, or Delete the Data We Collect From You?</h2>
+
+            <p>Based on the applicable laws of your country or state of residence in the US, you may have the right to request access to the personal information we collect from you, details about how we have processed it, correct inaccuracies, or delete your personal information. You may also have the right to withdraw your consent to our processing of your personal information. These rights may be limited in some circumstances by applicable law. To request to review, update, or delete your personal information, please email us at <a href="mailto:bitprogram0@gmail.com">bitprogram0@gmail.com</a>.</p>
+
+            <!-- Credit -->
+            <div class="credit-note">
+                This Privacy Policy was created using Termly's
+                <a href="https://termly.io/products/privacy-policy-generator/" target="_blank" rel="noopener external">Privacy Policy Generator</a>.
+            </div>
+
+        </main>
+    </div>
+
+    <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+    <footer class="site">
+        <div class="container">
+            <nav class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="mailto:bitprogram0@gmail.com">Contact</a>
+            </nav>
+            <div class="footer-copy">
+                &copy; 2026 BitProgram. All rights reserved.<br>
+                SoundScript is a proprietary product of BitProgram.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════ BACK TO TOP ═══════════════════════════ -->
+    <button class="back-top" id="backTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ═══════════════════════════ SCRIPTS ═══════════════════════════ -->
+    <script>
+        // ─── Back to top ───
+        const backTop = document.getElementById('backTop');
+        window.addEventListener('scroll', () => {
+            backTop.classList.toggle('visible', window.scrollY > 600);
+        }, { passive: true });
+        backTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ─── Active TOC highlighting ───
+        const tocLinks = Array.from(document.querySelectorAll('.toc-list a'));
+        const headings = tocLinks
+            .map(link => document.querySelector(link.getAttribute('href')))
+            .filter(Boolean);
+
+        if ('IntersectionObserver' in window && headings.length) {
+            const setActive = (id) => {
+                tocLinks.forEach(l => {
+                    l.classList.toggle('active', l.getAttribute('href') === `#${id}`);
+                });
+            };
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    const visible = entries
+                        .filter(e => e.isIntersecting)
+                        .sort((a, b) => a.target.offsetTop - b.target.offsetTop);
+                    if (visible.length) {
+                        setActive(visible[0].target.id);
+                    }
+                },
+                { rootMargin: '-80px 0px -60% 0px', threshold: 0 }
+            );
+
+            headings.forEach(h => observer.observe(h));
+        }
+
+        // ─── Smooth-scroll with header offset ───
+        document.querySelectorAll('.toc-list a, a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                const href = anchor.getAttribute('href');
+                if (!href || !href.startsWith('#') || href === '#') return;
+                const target = document.querySelector(href);
+                if (!target) return;
+                e.preventDefault();
+                const headerOffset = 80;
+                const targetY = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+                window.scrollTo({ top: targetY, behavior: 'smooth' });
+                history.replaceState(null, '', href);
+            });
+        });
+    </script>
+
+</body>
+</html>
